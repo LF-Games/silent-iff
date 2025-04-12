@@ -11,14 +11,11 @@ enum States {
 
 var control_state : States
 
-
 func _ready() -> void:
 	# for test only
 	control_state = States.PLAYER_CONTROL
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if control_state == States.PLAYER_CONTROL:
 		var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")

@@ -3,7 +3,6 @@ extends Camera2D
 @export var base_layer : TileMapLayer
 @export var target : Node2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Se nenhum target foi definido, procura pelo player no mesmo nível hierárquico
 	if (target == null):
@@ -11,10 +10,7 @@ func _ready() -> void:
 	
 	# Define limites de scroll da camera
 	set_camera_limits()
-	
-	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position = target.position
 
