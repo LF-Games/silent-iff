@@ -14,10 +14,15 @@ config/name="Silent Iff"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LevelManager="*res://entities/level/level_manager.tscn"
+
 [file_customization]
 
 folder_colors={
 "res://assets/": "orange",
+"res://entities/": "yellow",
 "res://scenes/": "blue",
 "res://src/": "green"
 }
