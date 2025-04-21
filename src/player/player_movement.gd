@@ -25,60 +25,25 @@ const PUSH_FORCE : int = 300
 
 func _ready() -> void:
 	var playerPosition : Vector2 = LevelManager.get_player_spawn_position()
+
 	if playerPosition: 
 		position = LevelManager.get_player_spawn_position()
+		
 	facing_direction = Direction.FRONT
 	player_movement = Movement.IDLE
 	is_running = false
-
-
-func _process(delta: float) -> void:
-	# Animação do player
-	if (facing_direction == Direction.RIGHT):
-		if(player_movement == Movement.IDLE):
-			animacao.play("idle_right")
-		if(player_movement == Movement.WALK):
-			animacao.play("walk_right")
-		if(player_movement == Movement.RUN):
-			pass
-	if (facing_direction == Direction.LEFT):
-		if(player_movement == Movement.IDLE):
-			animacao.play("idle_left")
-		if(player_movement == Movement.WALK):
-			animacao.play("walk_left")
-		if(player_movement == Movement.RUN):
-			pass
-	if (facing_direction == Direction.FRONT):
-		if(player_movement == Movement.IDLE):
-			animacao.play("idle_front")
-		if(player_movement == Movement.WALK):
-			animacao.play("walk_front")
-		if(player_movement == Movement.RUN):
-			pass
-	if (facing_direction == Direction.BACK):
-		if(player_movement == Movement.IDLE):
-			animacao.play("idle_back")
-		if(player_movement == Movement.WALK):
-			animacao.play("walk_back")
-		if(player_movement == Movement.RUN):
-			pass
 	
+	if LevelManager:
+		LevelManager.set_player_controller($Controller)
+
+
+func _process(delta: float) -> void:	
+	player_animation()	
+	player_interaction_area()
 	#print(str(Time.get_unix_time_from_system()) +" "+ str(velocity))
 
 func _physics_process(delta: float) -> void:
-	var colliding : KinematicCollision2D = get_last_slide_collision()
-	if colliding:
-		var collinding_node = colliding.get_collider()
-		if collinding_node.is_in_group("pushable") and player_movement != Movement.IDLE:
-			var collision_normal: Vector2 = colliding.get_normal()
-			var force_vector: Vector2
-			if abs(collision_normal.x) > abs(collision_normal.y):
-				force_vector = Vector2(1,0)*sign(collision_normal.x)*(-1)
-			else:
-				force_vector = Vector2(0,1)*sign(collision_normal.y)*(-1)
-				
-			collinding_node.apply_central_force(force_vector * PUSH_FORCE)
-	pass
+	push_block()
 
 func move(direction : Vector2) -> void:
 	# Atualiza as variáveis de estado do player
@@ -110,3 +75,59 @@ func set_player_movement(direction: Vector2) -> void:
 
 func set_player_run(run_state:bool) -> void:
 	is_running = run_state
+
+func player_animation() -> void:
+	# Animação do player
+	if (facing_direction == Direction.RIGHT):
+		if(player_movement == Movement.IDLE):
+			animacao.play("idle_right")
+		if(player_movement == Movement.WALK):
+			animacao.play("walk_right")
+		if(player_movement == Movement.RUN):
+			pass
+	if (facing_direction == Direction.LEFT):
+		if(player_movement == Movement.IDLE):
+			animacao.play("idle_left")
+		if(player_movement == Movement.WALK):
+			animacao.play("walk_left")
+		if(player_movement == Movement.RUN):
+			pass
+	if (facing_direction == Direction.FRONT):
+		if(player_movement == Movement.IDLE):
+			animacao.play("idle_front")
+		if(player_movement == Movement.WALK):
+			animacao.play("walk_front")
+		if(player_movement == Movement.RUN):
+			pass
+	if (facing_direction == Direction.BACK):
+		if(player_movement == Movement.IDLE):
+			animacao.play("idle_back")
+		if(player_movement == Movement.WALK):
+			animacao.play("walk_back")
+		if(player_movement == Movement.RUN):
+			pass
+
+func push_block() -> void:
+	var colliding : KinematicCollision2D = get_last_slide_collision()
+	if colliding:
+		var collinding_node = colliding.get_collider()
+		if collinding_node.is_in_group("pushable") and player_movement != Movement.IDLE:
+			var collision_normal: Vector2 = colliding.get_normal()
+			var force_vector: Vector2
+			if abs(collision_normal.x) > abs(collision_normal.y):
+				force_vector = Vector2(1,0)*sign(collision_normal.x)*(-1)
+			else:
+				force_vector = Vector2(0,1)*sign(collision_normal.y)*(-1)
+				
+			collinding_node.apply_central_force(force_vector * PUSH_FORCE)
+
+
+func player_interaction_area()->void:
+	if (facing_direction == Direction.RIGHT):
+		$InteractionArea.position = Vector2(8,0)
+	elif (facing_direction == Direction.LEFT):
+		$InteractionArea.position = Vector2(-8,0)
+	elif (facing_direction == Direction.FRONT):
+		$InteractionArea.position = Vector2(0,5)
+	elif (facing_direction == Direction.BACK):
+		$InteractionArea.position = Vector2(0,-5)

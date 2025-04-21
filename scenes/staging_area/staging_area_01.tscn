@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cgrdfgu16ypnv"]
+[gd_scene load_steps=35 format=4 uid="uid://cgrdfgu16ypnv"]
 
 [ext_resource type="Script" uid="uid://cnvngp1qpime0" path="res://src/level/center_root_level.gd" id="1_hy0qy"]
 [ext_resource type="PackedScene" uid="uid://bg7gnwy7juq27" path="res://entities/level/level_manager.tscn" id="2_8vfk4"]
@@ -13,7 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="8_5pihf"]
 [ext_resource type="PackedScene" uid="uid://bxqi6pk4xn5t1" path="res://entities/level/level_transition.tscn" id="9_jlysv"]
 [ext_resource type="PackedScene" uid="uid://n0hrydkkh32f" path="res://entities/props/light_torch.tscn" id="10_mnw56"]
+[ext_resource type="PackedScene" uid="uid://ce0xg2odenw40" path="res://entities/characters/npc_abby.tscn" id="11_5mji8"]
 [ext_resource type="PackedScene" uid="uid://hni187ta0mjq" path="res://entities/props/button.tscn" id="11_syyo7"]
+[ext_resource type="Texture2D" uid="uid://gm5s0vgyxlor" path="res://assets/placeholder/Actor/Characters/Bouncer/Bouncer_phone_16x16.png" id="12_5pihf"]
+[ext_resource type="Texture2D" uid="uid://0e6nyk6usoa2" path="res://assets/placeholder/Actor/Characters/Bouncer/Faceset.png" id="12_jlysv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xv6m"]
 texture = ExtResource("2_mnw56")
@@ -788,6 +791,82 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_r4s42")
 sources/1 = SubResource("TileSetAtlasSource_eussm")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlysv"]
+atlas = ExtResource("12_5pihf")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b673c"]
+atlas = ExtResource("12_5pihf")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0imp5"]
+atlas = ExtResource("12_5pihf")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs5hp"]
+atlas = ExtResource("12_5pihf")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuf0c"]
+atlas = ExtResource("12_5pihf")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq3wh"]
+atlas = ExtResource("12_5pihf")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3i0q"]
+atlas = ExtResource("12_5pihf")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcwtv"]
+atlas = ExtResource("12_5pihf")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gatm"]
+atlas = ExtResource("12_5pihf")
+region = Rect2(128, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_elfkq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlysv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b673c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0imp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs5hp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuf0c")
+}],
+"loop": false,
+"name": &"flip_page",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq3wh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3i0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcwtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gatm")
+}],
+"loop": true,
+"name": &"reading",
+"speed": 4.0
+}]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_al1ik"]
 texture = ExtResource("6_8vfk4")
 0:0/0 = 0
@@ -860,6 +939,10 @@ tile_set = SubResource("TileSet_eussm")
 position = Vector2(191, 31)
 autoplay = "Candle"
 
+[node name="Torch2" parent="Obstacle Layer" instance=ExtResource("10_mnw56")]
+position = Vector2(-188, -45)
+autoplay = "Candle"
+
 [node name="Torch3" parent="Obstacle Layer" instance=ExtResource("10_mnw56")]
 position = Vector2(351, 115)
 autoplay = "Candle"
@@ -871,7 +954,23 @@ autoplay = "Candle"
 frame_progress = 0.531424
 
 [node name="Player" parent="Obstacle Layer" instance=ExtResource("5_uhyho")]
-position = Vector2(322, -52)
+position = Vector2(-300, -61)
+
+[node name="NPC_Abby" parent="Obstacle Layer" instance=ExtResource("11_5mji8")]
+position = Vector2(-208, -29)
+dialogue_path = "res://dialogues/Abby/dialogue.json"
+dialogue_section = "StagingArea01"
+
+[node name="NPC_Bouncer" parent="Obstacle Layer" instance=ExtResource("11_5mji8")]
+position = Vector2(316, 135)
+dialogue_image = ExtResource("12_jlysv")
+dialogue_path = "res://dialogues/Bouncer/dialogue.json"
+dialogue_section = "StagingArea01"
+
+[node name="AnimatedSprite2D" parent="Obstacle Layer/NPC_Bouncer" index="1"]
+sprite_frames = SubResource("SpriteFrames_elfkq")
+frame = 4
+frame_progress = 1.0
 
 [node name="LevelBoundaries" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AADq//T/AAAAAAAAAAAZAPT/AAAAAAAAAAAZAA0AAAAAAAAAAADq/w0AAAAAAAAAAAA=")
@@ -912,3 +1011,5 @@ blend_mode = 1
 [connection signal="Button_Unpressed" from="Button" to="Spikes4" method="close"]
 [connection signal="Button_Unpressed" from="Button" to="Spikes5" method="close"]
 [connection signal="Button_Unpressed" from="Button" to="Spikes6" method="close"]
+
+[editable path="Obstacle Layer/NPC_Bouncer"]
