@@ -1,18 +1,36 @@
 extends Camera2D
 
+const SMOOTHING_DURATION: = 0.2
+const POSITION_DIVIDER:= 0.2
+
 @export var level_boundaries : TileMapLayer
 @export var target : Node2D
+
+# Current position of the camera
+var current_position: Vector2
+
+# Position the camera is moving towards
+var destination_position: Vector2
 
 func _ready() -> void:
 	# Se nenhum target foi definido, procura pelo player no mesmo nível hierárquico
 	if not target:
 		target = get_parent().find_child("Player")
+	if not level_boundaries:
+		level_boundaries = get_parent().find_child("LevelBoundaries")
 	
+	position = target.position	
 	# Define limites de scroll da camera
 	set_camera_limits()
+	
+	current_position = position
 
 func _process(delta: float) -> void:
-	position = target.position
+	destination_position = target.position
+	current_position += Vector2(destination_position.x - current_position.x, destination_position.y - current_position.y) / SMOOTHING_DURATION * delta
+	
+	position = ((current_position*5).round())/5
+	force_update_scroll()
 
 func set_camera_limits() -> void:
 	if not level_boundaries:
