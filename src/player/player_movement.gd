@@ -24,15 +24,18 @@ var is_running : bool
 const PUSH_FORCE : int = 300
 
 func _ready() -> void:
-	var playerPosition : Vector2 = LevelManager.get_player_spawn_position()
 
+	# Define a posição que o player ira iniciar o level
+	var playerPosition : Vector2 = LevelManager.get_player_spawn_position()
 	if playerPosition: 
 		position = LevelManager.get_player_spawn_position()
-		
+	
+	# Define estados padrões para as animações
 	facing_direction = Direction.FRONT
 	player_movement = Movement.IDLE
 	is_running = false
 	
+	# Envia o player_controller para o Leve Manager
 	if LevelManager:
 		LevelManager.set_player_controller($Controller)
 
@@ -40,11 +43,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:	
 	player_animation()	
 	player_interaction_area()
-	#print(str(Time.get_unix_time_from_system()) +" "+ str(velocity))
 
 func _physics_process(delta: float) -> void:
 	push_block()
 
+# Movimentação do player
 func move(direction : Vector2) -> void:
 	# Atualiza as variáveis de estado do player
 	set_facing_direction(direction)
@@ -54,6 +57,7 @@ func move(direction : Vector2) -> void:
 	velocity = direction*(run_speed if (player_movement == Movement.RUN) else walk_speed)
 	move_and_slide()
 
+# Atualiza o estado com o tipo de direção que o sprite irá mostrar
 func set_facing_direction(direction: Vector2) -> void:
 	if (direction.x > 0):
 		facing_direction = Direction.RIGHT
@@ -64,6 +68,7 @@ func set_facing_direction(direction: Vector2) -> void:
 	elif (direction.y < 0):
 		facing_direction = Direction.BACK
 
+# Atualiza o estado com o tipo de movimento que o sprite irá mostrar
 func set_player_movement(direction: Vector2) -> void:
 	if (direction.length() == 0):
 		player_movement = Movement.IDLE
@@ -73,9 +78,11 @@ func set_player_movement(direction: Vector2) -> void:
 		else:
 			player_movement = Movement.WALK
 
+# Player andando ou correndo
 func set_player_run(run_state:bool) -> void:
 	is_running = run_state
 
+# Atualiza as animações do player com base nos estados Direction e Movement
 func player_animation() -> void:
 	# Animação do player
 	if (facing_direction == Direction.RIGHT):
@@ -107,6 +114,7 @@ func player_animation() -> void:
 		if(player_movement == Movement.RUN):
 			pass
 
+# Interação com o objetos que podem ser empurrados
 func push_block() -> void:
 	var colliding : KinematicCollision2D = get_last_slide_collision()
 	if colliding:
@@ -121,7 +129,8 @@ func push_block() -> void:
 				
 			collinding_node.apply_central_force(force_vector * PUSH_FORCE)
 
-
+# Atualiza a posição do collider de interação do player com os ambiente
+# Muda de acordo com a posição do jogador pra sempre estar na direção do movimento
 func player_interaction_area()->void:
 	if (facing_direction == Direction.RIGHT):
 		$InteractionArea.position = Vector2(8,0)

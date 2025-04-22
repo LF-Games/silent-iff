@@ -7,11 +7,10 @@ var multiplier : float
 func _ready() -> void:
 	play("Candle")
 	light = $PointLight2D
+	# Define a velocidade com que a luz irá tremer
 	multiplier = randf_range(2,5)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	#light.energy = cos( deg_to_rad(Time.get_unix_time_from_system()))
+	# Efeito de tremer a luz para combinar com o sprite (fogo) 	
 	light.energy = abs(cos(Time.get_unix_time_from_system()*multiplier))
 	pass

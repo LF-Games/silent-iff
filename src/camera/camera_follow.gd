@@ -6,31 +6,39 @@ const POSITION_DIVIDER:= 0.2
 @export var level_boundaries : TileMapLayer
 @export var target : Node2D
 
-# Current position of the camera
+# Posição atual da camera
 var current_position: Vector2
 
-# Position the camera is moving towards
+# Posição final da camera
 var destination_position: Vector2
 
 func _ready() -> void:
-	# Se nenhum target foi definido, procura pelo player no mesmo nível hierárquico
+	# Se nenhum target foi definido, procura pelo player 
 	if not target:
 		target = get_parent().find_child("Player")
+
+	# Se nenhum limite foi definido, procura pelo limite do level  
 	if not level_boundaries:
 		level_boundaries = get_parent().find_child("LevelBoundaries")
 	
-	position = target.position	
+	
 	# Define limites de scroll da camera
 	set_camera_limits()
 	
+	# Inicia a camera no player
+	position = target.position	
 	current_position = position
 
 func _process(delta: float) -> void:
 	destination_position = target.position
+
+	# Suavização do movimento feito de forma manual
+	# Feito assim pra evitar jittering dos sprites
 	current_position += Vector2(destination_position.x - current_position.x, destination_position.y - current_position.y) / SMOOTHING_DURATION * delta
-	
 	position = ((current_position*5).round())/5
 	force_update_scroll()
+	
+	
 
 func set_camera_limits() -> void:
 	if not level_boundaries:

@@ -4,10 +4,11 @@ signal Button_Pressed
 signal Button_Unpressed
 
 var always_pressed : bool
-var pressing_bodies : Array
+var pressing_bodies : Array						# Lista de nodes colidindo com o botão
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Quando always_pressed for true, o botão não vai interagir com o player
+	# Vai estar sempre ativado
 	always_pressed = LevelManager.button_pressed
 	if always_pressed:
 		Button_Pressed.emit();
@@ -16,17 +17,8 @@ func _ready() -> void:
 		Button_Unpressed.emit();
 		$AnimatedSprite2D.play("up")
 
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if always_pressed:
-		$AnimatedSprite2D.play("down")
-
-	pass
-
-
+# Monitora quando um node que pode interagir com o botão entrar no seu collider
+# Atualiza a lista de nodes colidindo com o botão
 func _on_body_entered(body: Node2D) -> void:
 	if !always_pressed:
 		if body is Player or body.is_in_group("pushable"):
@@ -35,7 +27,8 @@ func _on_body_entered(body: Node2D) -> void:
 				$AnimatedSprite2D.play("down")
 				Button_Pressed.emit()
 
-
+# Monitora quando um node que pode interagir com o botão sair do seu collider
+# Atualiza a lista de nodes colidindo com o botão
 func _on_body_exited(body: Node2D) -> void:
 	if !always_pressed:
 		if body is Player or body.is_in_group("pushable"):
