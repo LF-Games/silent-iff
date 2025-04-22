@@ -1,7 +1,7 @@
 extends Camera2D
 
 const SMOOTHING_DURATION: = 0.2
-const POSITION_DIVIDER:= 0.2
+const POSITION_DIVIDER:= 5
 
 @export var level_boundaries : TileMapLayer
 @export var target : Node2D
@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	# Suavização do movimento feito de forma manual
 	# Feito assim pra evitar jittering dos sprites
 	current_position += Vector2(destination_position.x - current_position.x, destination_position.y - current_position.y) / SMOOTHING_DURATION * delta
-	position = ((current_position*5).round())/5
+	position = ((current_position*POSITION_DIVIDER).round())/POSITION_DIVIDER
 	force_update_scroll()
 	
 	
