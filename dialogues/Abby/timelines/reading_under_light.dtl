@@ -9,5 +9,5 @@ Abby: Do you enjoy reading too?
 - Nah, not so much.
 	Abby: That's a shame.
 leave Abby
-[wait time="1.0"]
+[wait time="0.5"]
 [signal arg="ABBY"]
