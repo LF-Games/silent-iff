@@ -8,4 +8,6 @@ Abby: Do you enjoy reading too?
 	Abby: Here's a tip for you\: Always look for well lit areas, it's better for reading.
 - Nah, not so much.
 	Abby: That's a shame.
-[signal arg="BOUNCER"]
+leave Abby
+[wait time="1.0"]
+[signal arg="ABBY"]

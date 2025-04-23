@@ -2,4 +2,6 @@ join Bouncer right
 Bouncer: Hello stranger.
 Bouncer: You look like a very strong bloke.
 Bouncer: I bet you can move those blocks if you push really hard.
-[signal arg="ABBY"]
+leave Bouncer
+[wait time="1.0"]
+[signal arg="BOUNCER"]
