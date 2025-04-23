@@ -4,12 +4,14 @@ var spawn_position : Vector2 					# Posição de spawn do player
 var canvas_visible : bool						# Visibilidade do canvas UI
 var player_controller : Node					# Referência para o node player_controller (Input do jogo)
 var button_pressed : bool						# Gambiarra para o prop button
+var barrel_exploded : bool						# Gambiarra para o prop barril
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	canvas_visible = false
 	button_pressed = false
-
+	barrel_exploded = false
+	
 	$Dialogue/CanvasLayer.visible = false
 	
 	pass # Replace with function body.
