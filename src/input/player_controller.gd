@@ -16,12 +16,18 @@ func _ready() -> void:
 	control_state = States.PLAYER_CONTROL
 
 func _process(delta: float) -> void:
+
+	# Opções de input quando player tem controle
 	if control_state == States.PLAYER_CONTROL:
 		var direction : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		player.move(direction)
 		
+		if Input.is_action_just_pressed("action"):
+			$"../Interaction".action_pressed()
+		
+	# Opções de input quando sistema tem controle
 	elif control_state == States.GAME_CONTROL:
-		pass
+		player.move(Vector2(0,0))
 
 # Controle do personagem é do jogador
 func control_to_player() -> void:

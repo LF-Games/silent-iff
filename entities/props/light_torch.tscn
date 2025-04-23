@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://n0hrydkkh32f"]
+
+[ext_resource type="Texture2D" uid="uid://bxif35vemxhj5" path="res://assets/placeholder/Modern Items/Graveyard_Candle_Standing_16x16.png" id="1_ctthj"]
+[ext_resource type="Script" uid="uid://bj48bnsvqak1v" path="res://src/props/light_torch.gd" id="2_74q5t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74q5t"]
+atlas = ExtResource("1_ctthj")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri385"]
+atlas = ExtResource("1_ctthj")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xq5d"]
+atlas = ExtResource("1_ctthj")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehnpn"]
+atlas = ExtResource("1_ctthj")
+region = Rect2(48, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qarhc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74q5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri385")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xq5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehnpn")
+}],
+"loop": true,
+"name": &"Candle",
+"speed": 8.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_74q5t"]
+offsets = PackedFloat32Array(0, 0.0070922, 0.159574, 0.404255, 0.542553, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.932624, 0.932624, 0.932624, 1, 0.413361, 0.413361, 0.413361, 1, 0.392864, 0.392864, 0.392864, 1, 0.363399, 0.363399, 0.363399, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ri385"]
+gradient = SubResource("Gradient_74q5t")
+fill = 1
+fill_from = Vector2(0.478632, 0.423077)
+fill_to = Vector2(0.910256, 0.290598)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74q5t"]
+radius = 6.08276
+
+[node name="Torch" type="AnimatedSprite2D"]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_qarhc")
+animation = &"Candle"
+frame_progress = 0.595568
+centered = false
+offset = Vector2(-8, -40)
+script = ExtResource("2_74q5t")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(3, -8)
+scale = Vector2(4.25, 3.79688)
+color = Color(0.654368, 0.512089, 0.104757, 1)
+energy = 0.91
+texture = SubResource("GradientTexture2D_ri385")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(3, -8)
+scale = Vector2(4.25, 3.79688)
+color = Color(0.654368, 0.512089, 0.104757, 1)
+energy = 0.91
+texture = SubResource("GradientTexture2D_ri385")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_74q5t")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw2a3j2o7bip0"]
+
+[ext_resource type="Texture2D" uid="uid://4h7ew50arn8u" path="res://assets/level_boundaries/block.png" id="1_0847m"]
+[ext_resource type="Script" uid="uid://cb4mg3pw08nng" path="res://src/level/level_boundaries.gd" id="2_oaxjg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikalg"]
+texture = ExtResource("1_0847m")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y6ac3"]
+sources/0 = SubResource("TileSetAtlasSource_ikalg")
+
+[node name="LevelBoundaries" type="TileMapLayer"]
+tile_map_data = PackedByteArray(0, 0, 253, 255, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253, 255, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_y6ac3")
+script = ExtResource("2_oaxjg")

@@ -1,0 +1,10 @@
+{
+    "StagingArea01":
+    {
+        "speaking_to_player": [
+        "You look like a strong fellow.\nTry pushing that block.",
+        "I can't go any further.\nI couldn't move those rocks.",
+        "Some obstacles can be moved.\nJust keep pushing them."
+        ] 
+    }
+}
