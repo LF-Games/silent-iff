@@ -1,6 +1,6 @@
 join Abby right
 Abby: Hi there!
-Abby: I'm Abby, nice to meet you.
+Abby: I'm [wave amp=50.0 freq=5.0 connected=1][color=#FAC898]Abby[/color][/wave], nice to meet you.
 Abby: This is my favorite spot to read.
 Abby: Do you enjoy reading too?
 - Yes, I do!

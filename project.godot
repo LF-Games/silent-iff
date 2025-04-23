@@ -67,6 +67,7 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+text/input_action="dialogic_default_action"
 
 [display]
 
