@@ -1,7 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://ce0xg2odenw40"]
+[gd_scene load_steps=23 format=3 uid="uid://ce0xg2odenw40"]
 
 [ext_resource type="Script" uid="uid://cc38b0mtbyway" path="res://src/npc/npc_abby.gd" id="1_vx1xn"]
-[ext_resource type="Texture2D" uid="uid://cqev4vlgmsg3g" path="res://assets/placeholder/Actor/Characters/Abby/Faceset.png" id="2_5murl"]
 [ext_resource type="Texture2D" uid="uid://1ekt3tdr6did" path="res://assets/placeholder/Actor/Characters/Abby/Kid_Abby_reading_16x16.png" id="2_gle63"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5murl"]
@@ -150,7 +149,6 @@ animations = [{
 [node name="NPC_Abby" type="StaticBody2D" groups=["interactable"]]
 collision_layer = 2
 script = ExtResource("1_vx1xn")
-dialogue_image = ExtResource("2_5murl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

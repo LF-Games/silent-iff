@@ -1,10 +1,10 @@
 {
-    "StagingArea01":
-    {
-        "speaking_to_player": [
-        "Hi There!\nThis is my favorite spot to read.",
-        "Hello Stranger.\nDon't interrupt me now.",
-        "I only go where is well lit."
-        ] 
-    }
+	"StagingArea01":
+	{
+		"speaking_to_player": [
+		"Hi There!\nThis is my favorite spot to read.",
+		"Hello Stranger.\nDon't interrupt me now.",
+		"I only go where is well lit."
+		] 
+	}
 }
