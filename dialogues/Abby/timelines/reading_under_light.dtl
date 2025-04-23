@@ -1,0 +1,11 @@
+join Abby right
+Abby: Hi there!
+Abby: I'm Abby, nice to meet you.
+Abby: This is my favorite spot to read.
+Abby: Do you enjoy reading too?
+- Yes, I do!
+	Abby: Great, it's always nice to meet another reader.
+	Abby: Here's a tip for you\: Always look for well lit areas, it's better for reading.
+- Nah, not so much.
+	Abby: That's a shame.
+[signal arg="BOUNCER"]

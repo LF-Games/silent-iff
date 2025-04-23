@@ -52,3 +52,9 @@ func action_pressed():
 	toggle_dialogue_canvas()
 	player_controller.control_to_player()
 	pass
+
+func control_to_system()->void:
+	player_controller.control_to_game()
+
+func control_to_player()->void:
+	player_controller.control_to_player()

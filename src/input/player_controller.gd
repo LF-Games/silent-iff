@@ -30,7 +30,8 @@ func _process(delta: float) -> void:
 		player.move(Vector2(0,0))
 		if Input.is_action_just_pressed("action"):
 			if LevelManager:
-				LevelManager.action_pressed()
+				#LevelManager.action_pressed()
+				pass
 		pass
 
 # Controle do personagem é do jogador

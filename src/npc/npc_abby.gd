@@ -1,9 +1,14 @@
 extends StaticBody2D
 class_name NPC
 
-@export var dialogue_image : CompressedTexture2D			# Imagem que será mostrada na UI de diálogo
-@export var dialogue_path : String							# Path para o .json que contém os diálogos do personagem
-@export var dialogue_section : String						# key do diálogo referente ao level atual
+
+enum NPC_Name { ABBY, BOUNCER }
+const state_names := ["ABBY", "BOUNCER"]
+
+#@export var dialogue_image : CompressedTexture2D			# Imagem que será mostrada na UI de diálogo
+#@export var dialogue_path : String							# Path para o .json que contém os diálogos do personagem
+#@export var dialogue_section : String						# key do diálogo referente ao level atual
+@export var npc : NPC_Name									# Seleciona qual NPC será utilizado
 var dialogue_json : Dictionary								# Armazena todo o diálogo na forma de um dicionário
 
 var last_time : int											# Tempo em que houve última mudança de animação
@@ -18,8 +23,12 @@ func _ready() -> void:
 	$AnimatedSprite2D.animation_finished.connect(_flip_finished)
 
 	# Busca o arquivo que contém os diálogos
-	var json_text := FileAccess.get_file_as_string(dialogue_path)
-	dialogue_json = JSON.parse_string(json_text)
+	#var json_text := FileAccess.get_file_as_string(dialogue_path)
+	#dialogue_json = JSON.parse_string(json_text)
+
+	# Conecta com o signal do Dialogic para saber quando o dialogo acabou
+	Dialogic.signal_event.connect(dialogue_end_signal)
+
 
 func _process(delta: float) -> void:
 	
@@ -39,11 +48,25 @@ func _flip_finished() -> void:
 
 # Função chamada pelo player para interação com o NPC
 func interact()->void:
-	var dialogue_quant = dialogue_json[dialogue_section]['speaking_to_player'].size()
-	var random_dialogue : String = dialogue_json[dialogue_section]['speaking_to_player'][randi_range(0, (dialogue_quant-1))]
-	speak(random_dialogue)
+	#var dialogue_quant = dialogue_json[dialogue_section]['speaking_to_player'].size()
+	#var random_dialogue : String = dialogue_json[dialogue_section]['speaking_to_player'][randi_range(0, (dialogue_quant-1))]
+	#speak(random_dialogue)
+	match npc:
+		NPC_Name.ABBY:
+			speak("reading_under_light")
+		NPC_Name.BOUNCER:
+			speak("playing_on_phone")
+			pass
+	pass
 
 # NPC envia o diálogo para ser exibido na UI
 func speak(text:String)->void:
-	LevelManager.set_dialogue_text(text, dialogue_image)
-	LevelManager.dialogue_canvas_on()
+	#LevelManager.set_dialogue_text(text, dialogue_image)
+	#LevelManager.dialogue_canvas_on()
+	Dialogic.start(text)
+	LevelManager.control_to_system()
+
+# Função conectada ao signal do diálogo
+func dialogue_end_signal(npc_name: String)->void:
+	if state_names.has(npc_name):
+		LevelManager.control_to_player()
