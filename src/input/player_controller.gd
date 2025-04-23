@@ -28,10 +28,6 @@ func _process(delta: float) -> void:
 	# Opções de input quando sistema tem controle
 	elif control_state == States.GAME_CONTROL:
 		player.move(Vector2(0,0))
-		if Input.is_action_just_pressed("action"):
-			if LevelManager:
-				LevelManager.action_pressed()
-		pass
 
 # Controle do personagem é do jogador
 func control_to_player() -> void:

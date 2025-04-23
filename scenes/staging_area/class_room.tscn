@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bw2a3j2o7bip0" path="res://entities/level/level_boundaries.tscn" id="13_c88cf"]
 [ext_resource type="PackedScene" uid="uid://bxqi6pk4xn5t1" path="res://entities/level/level_transition.tscn" id="14_58v73"]
 [ext_resource type="Script" uid="uid://b1mff1jexc850" path="res://src/other/level_changes.gd" id="14_hsmgs"]
-[ext_resource type="AudioStream" uid="uid://coqa064a74yly" path="res://assets/placeholder/Audio/Atmos 2.ogg" id="15_m75qy"]
+[ext_resource type="AudioStream" uid="uid://boduvrvqoosh6" path="res://assets/placeholder/Audio/The Creature 1.wav" id="15_m75qy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yffnq"]
 texture = ExtResource("2_m75qy")
@@ -6763,7 +6763,7 @@ tile_map_data = PackedByteArray("AAADAPn/AQANABEAAAD8//3/AQAOABwAAAD9//3/AQAOABw
 tile_set = SubResource("TileSet_5vuoi")
 
 [node name="Player" parent="props_solid" instance=ExtResource("11_jlug0")]
-position = Vector2(-232, -28)
+position = Vector2(-97, 179)
 scale = Vector2(1.00562, 0.994321)
 
 [node name="Camera Follow" parent="props_solid" node_paths=PackedStringArray("level_boundaries") instance=ExtResource("12_log1o")]
@@ -6855,7 +6855,6 @@ texture = SubResource("GradientTexture2D_m75qy")
 [node name="LevelChanges" type="Node2D" parent="."]
 script = ExtResource("14_hsmgs")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_m75qy")
 autoplay = true
-parameters/looping = false
