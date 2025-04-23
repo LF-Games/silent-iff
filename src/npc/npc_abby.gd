@@ -42,8 +42,8 @@ func interact()->void:
 	var dialogue_quant = dialogue_json[dialogue_section]['speaking_to_player'].size()
 	var random_dialogue : String = dialogue_json[dialogue_section]['speaking_to_player'][randi_range(0, (dialogue_quant-1))]
 	speak(random_dialogue)
-	LevelManager.dialogue_canvas_on()
 
 # NPC envia o diálogo para ser exibido na UI
 func speak(text:String)->void:
 	LevelManager.set_dialogue_text(text, dialogue_image)
+	LevelManager.dialogue_canvas_on()
