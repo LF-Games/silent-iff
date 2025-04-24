@@ -988,7 +988,7 @@ target = NodePath("../Obstacle Layer/Player")
 [node name="LevelTransition" parent="." instance=ExtResource("17_6quvd")]
 position = Vector2(287, -89)
 scale = Vector2(0.64, 0.282775)
-path_to_next_level = "res://scenes/staging_area/class_room.tscn"
+path_to_next_level = "res://maps/staging_area/class_room.tscn"
 spawn_position = Vector2(-97, 177)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]

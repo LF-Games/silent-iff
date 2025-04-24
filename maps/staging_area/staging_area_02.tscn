@@ -863,7 +863,7 @@ position = Vector2(-8, 117)
 [node name="LevelTransition" parent="." instance=ExtResource("6_y6gdu")]
 position = Vector2(-17, 139)
 scale = Vector2(1.5349, 0.518234)
-path_to_next_level = "res://scenes/staging_area/staging_area_01.tscn"
+path_to_next_level = "res://maps/staging_area/staging_area_01.tscn"
 spawn_position = Vector2(288, -82)
 
 [node name="Camera Follow" parent="." node_paths=PackedStringArray("level_boundaries", "target") instance=ExtResource("7_un3v2")]
