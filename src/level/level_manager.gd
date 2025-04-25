@@ -10,6 +10,12 @@ func _ready() -> void:
 	button_pressed = false
 	barrel_exploded = false
 	
+# ----- GAMBIARRA -----
+# Variável usada pelo prop button para definir o funcionamento do botão
+# Idealmente precisaria de um child node para gerenciar todos estados do level
+func set_button_pressed(val:bool) -> void:
+	button_pressed = val
+
 # Definir onde o player irá iniciar quando mudar de level
 func set_player_spawn_position(pos : Vector2) -> void:
 	spawn_position = pos
@@ -17,11 +23,6 @@ func set_player_spawn_position(pos : Vector2) -> void:
 func get_player_spawn_position() -> Vector2:
 	return spawn_position
 
-# ----- GAMBIARRA -----
-# Variável usada pelo prop button para definir o funcionamento do botão
-# Idealmente precisaria de um child node para gerenciar todos estados do level
-func set_button_pressed(val:bool) -> void:
-	button_pressed = val
 
 # Recebe o Node responsável por gerenciar as Inputs do player
 func set_player_controller(pc : Node):
