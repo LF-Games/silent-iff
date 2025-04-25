@@ -7,12 +7,12 @@ func _ready() -> void:
 	last_time = 0
 
 	if LevelManager.barrel_exploded:
-		$AnimatedSprite2D.play("exploded")
+		barrel_exploded()
 	else:
 		$AnimatedSprite2D.play("base")
 
 	# Conecta com o signal de animação terminada
-	$AnimatedSprite2D.animation_finished.connect(_moving_finished)
+	$AnimatedSprite2D.animation_finished.connect(moving_finished)
 
 func _process(delta: float) -> void:
 
@@ -27,18 +27,23 @@ func _process(delta: float) -> void:
 
 
 # Quando a animação moving termina, o barril retorna para base
-func _moving_finished() -> void:
+func moving_finished() -> void:
 	if $AnimatedSprite2D.get_animation() == "moving":
 		$AnimatedSprite2D.play("base")
 		last_time += 1 			# Adiciona 1 seg de espera até a próxima mudança
 	elif $AnimatedSprite2D.get_animation() == "explosion":
-		$AnimatedSprite2D.play("exploded")
-		LevelManager.barrel_exploded = true
+		barrel_exploded()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player and !LevelManager.barrel_exploded:
 		$AnimatedSprite2D.play("explosion")
 		$AudioStreamPlayer2D.play()
-		$CollisionShape2D.set_deferred("disabled", true)
 		LevelManager.barrel_exploded = true
+		$CollisionShape2D.set_deferred("disabled", true)
+
+func barrel_exploded()-> void:
+		$CollisionShape2D.set_deferred("disabled", true)
+		$AnimatedSprite2D.play("exploded")
+
+
