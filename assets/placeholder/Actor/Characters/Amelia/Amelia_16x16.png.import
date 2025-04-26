@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://raqsegwbgsq4"
-path="res://.godot/imported/Special1.png-5db45727569f817062ca321c707d0dcd.ctex"
+uid="uid://o2ar3lngc8dg"
+path="res://.godot/imported/Amelia_16x16.png-12b80fc3e194a4df64af4b0bf333684e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholder/Actor/Characters/EggGirl/SeparateAnim/Special1.png"
-dest_files=["res://.godot/imported/Special1.png-5db45727569f817062ca321c707d0dcd.ctex"]
+source_file="res://assets/placeholder/Actor/Characters/Amelia/Amelia_16x16.png"
+dest_files=["res://.godot/imported/Amelia_16x16.png-12b80fc3e194a4df64af4b0bf333684e.ctex"]
 
 [params]
 
