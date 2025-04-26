@@ -999,6 +999,10 @@ blend_mode = 1
 stream = ExtResource("18_g1dig")
 autoplay = true
 
+[node name="LevelTransition2" parent="." instance=ExtResource("17_6quvd")]
+position = Vector2(-299, -36)
+path_to_next_level = "res://maps/college/college_entrance.tscn"
+
 [connection signal="Button_Pressed" from="Button" to="Spikes/Spikes12" method="open"]
 [connection signal="Button_Pressed" from="Button" to="Spikes/Spikes7" method="open"]
 [connection signal="Button_Pressed" from="Button" to="Spikes/Spikes10" method="open"]

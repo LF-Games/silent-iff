@@ -1,6 +1,6 @@
 extends Camera2D
 
-const SMOOTHING_DURATION: = 0.2
+const SMOOTHING_DURATION: = 0.05
 const POSITION_DIVIDER:= 5
 
 @export var level_boundaries : TileMapLayer
