@@ -262,8 +262,8 @@ shape = SubResource("CapsuleShape2D_fap8r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n1art")
 animation = &"walk_right"
-frame_progress = 0.16545
-offset = Vector2(0, -16)
+frame_progress = 0.0547471
+offset = Vector2(0, -14)
 
 [node name="Controller" type="Node" parent="."]
 script = ExtResource("4_pa2uq")
