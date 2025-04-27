@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ct7wamw2g73k4"]
+[gd_scene load_steps=16 format=3 uid="uid://ct7wamw2g73k4"]
 
 [ext_resource type="Texture2D" uid="uid://b6sr6xgx8mh2g" path="res://assets/placeholder/Exterior/gate.png" id="1_ilflq"]
 [ext_resource type="Script" uid="uid://djleota7yi6fq" path="res://src/props/gate.gd" id="1_mch0q"]
@@ -85,6 +85,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nypiv"]
 size = Vector2(32, 32)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mch0q"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ldei8"]
+radius = 3.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilflq"]
 size = Vector2(32, 8)
 
@@ -99,6 +105,16 @@ offset = Vector2(0, -16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_nypiv")
+
+[node name="Lateral" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lateral"]
+position = Vector2(13, 0)
+shape = SubResource("CircleShape2D_mch0q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Lateral"]
+position = Vector2(-13, 0)
+shape = SubResource("CircleShape2D_ldei8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
