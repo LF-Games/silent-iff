@@ -9,7 +9,7 @@ var pressing_bodies : Array						# Lista de nodes colidindo com o botão
 func _ready() -> void:
 	# Quando always_pressed for true, o botão não vai interagir com o player
 	# Vai estar sempre ativado
-	always_pressed = LevelManager.button_pressed
+	always_pressed = LevelManager.get_level_state_variable("button_pressed")
 	if always_pressed:
 		Button_Pressed.emit();
 		$AnimatedSprite2D.play("down")

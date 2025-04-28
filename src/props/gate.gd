@@ -1,27 +1,15 @@
 extends Area2D
 
-var access_granted : bool : set = set_access_granted		# Controla se ao player pode abrir o portao
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
-	set_access_granted(true)
 
 	# Conecta com o signal de animação terminada
 	$AnimatedSprite2D.animation_finished.connect(animation_finished)
 
-	pass # Replace with function body.
-
-
-# Setter para accesso do player
-func set_access_granted(val:bool)->void:
-	access_granted = val
-
 
 # Animação abrindo o portão
 func gate_opening()->void:
-	if access_granted:
+	if LevelManager.get_level_state_variable("college_gate_access"):
 		$AnimatedSprite2D.play("opening")
 
 
@@ -33,7 +21,7 @@ func gate_opened()->void:
 
 # Animação fechando o portão
 func gate_closing()->void:
-	if access_granted:
+	if LevelManager.get_level_state_variable("college_gate_access"):
 		$AnimatedSprite2D.play("closing")
 		$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)
 

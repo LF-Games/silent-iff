@@ -2,24 +2,30 @@ extends Node2D
 
 var spawn_position : Vector2 					# Posição de spawn do player
 var player_controller : Node					# Referência para o node player_controller (Input do jogo)
-var button_pressed : bool						# Gambiarra para o prop button
-var barrel_exploded : bool						# Gambiarra para o prop barril
+var level_states : Dictionary 					# Armazenar estados com permanecia (Solução Temporária)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	button_pressed = false
-	barrel_exploded = false
+	set_level_state_variable("button_pressed", false)
+	set_level_state_variable("barrel_exploded", false)
+	set_level_state_variable("college_gate_access", false)
 	
-# ----- GAMBIARRA -----
-# Variável usada pelo prop button para definir o funcionamento do botão
-# Idealmente precisaria de um child node para gerenciar todos estados do level
-func set_button_pressed(val:bool) -> void:
-	button_pressed = val
+
+# ----- Solução Temporária -----
+func set_level_state_variable(state_name, state_value) -> void:
+	level_states[state_name] = state_value
+
+
+# ----- Solução Temporária -----
+func get_level_state_variable(state_name:String):
+	return level_states[state_name]
+
 
 # Definir onde o player irá iniciar quando mudar de level
 func set_player_spawn_position(pos : Vector2) -> void:
 	spawn_position = pos
 
+# Retorna as coordenadas para posicionar o player no carregamento do mapa
 func get_player_spawn_position() -> Vector2:
 	return spawn_position
 
@@ -28,8 +34,11 @@ func get_player_spawn_position() -> Vector2:
 func set_player_controller(pc : Node):
 	player_controller = pc
 
+# Passa o controle da input para o sistema
 func control_to_system()->void:
 	player_controller.control_to_game()
 
+
+# Passa o controle da input para o player
 func control_to_player()->void:
 	player_controller.control_to_player()

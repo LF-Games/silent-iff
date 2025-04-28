@@ -24,11 +24,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Abby": "res://dialogues/Abby/Abby.dch",
-"Bouncer": "res://dialogues/Bouncer/Bouncer.dch"
+"Bouncer": "res://dialogues/Bouncer/Bouncer.dch",
+"student_id": "res://assets/placeholder/Actor/Characters/StudentID/student_id.dch"
 }
 directories/dtl_directory={
+"college_entrance_A": "res://dialogues/Bouncer/timelines/college_entrance_A.dtl",
 "playing_on_phone": "res://dialogues/Bouncer/timelines/playing_on_phone.dtl",
-"reading_under_light": "res://dialogues/Abby/timelines/reading_under_light.dtl"
+"reading_under_light": "res://dialogues/Abby/timelines/reading_under_light.dtl",
+"student_reading_A": "res://dialogues/Abby/timelines/student_reading_A.dtl",
+"student_reading_B": "res://dialogues/Abby/timelines/student_reading_B.dtl"
 }
 layout/style_list=[]
 layout/default_style=""

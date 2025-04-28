@@ -1,6 +1,8 @@
-[gd_scene load_steps=20 format=4 uid="uid://dmsok8qw5by7w"]
+[gd_scene load_steps=22 format=4 uid="uid://dmsok8qw5by7w"]
 
 [ext_resource type="Texture2D" uid="uid://bhok1hef0rdn6" path="res://assets/placeholder/Exterior/spritesheet_college_entrance.png" id="1_cvpi1"]
+[ext_resource type="PackedScene" uid="uid://ccsxvrr11ccjg" path="res://entities/characters/npc_security_guard.tscn" id="2_fvhy2"]
+[ext_resource type="PackedScene" uid="uid://ba2nn7v3sgqfx" path="res://entities/characters/npc_student_reading.tscn" id="4_i4p7d"]
 [ext_resource type="PackedScene" uid="uid://kb1qk4wwlxlj" path="res://entities/characters/player_character.tscn" id="6_i4p7d"]
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="7_u4jgn"]
 [ext_resource type="PackedScene" uid="uid://bw2a3j2o7bip0" path="res://entities/level/level_boundaries.tscn" id="8_pf0uq"]
@@ -932,7 +934,7 @@ texture = ExtResource("1_cvpi1")
 0:6/size_in_atlas = Vector2i(1, 2)
 0:6/0 = 0
 0:6/0/texture_origin = Vector2i(0, 8)
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2, -8, -24, 0, -24, 0, -2, 8, -2, 8, 8, 8, 6, -8, 6)
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2, -8, -24, 0, -24, 0, -2, 8, -2, 8, 6, -8, 6)
 1:6/size_in_atlas = Vector2i(1, 2)
 1:6/0 = 0
 1:6/0/texture_origin = Vector2i(0, 8)
@@ -1289,7 +1291,13 @@ tile_map_data = PackedByteArray("AAAFAAIABAAHAB4AAADr//3/BAABABsAAADs//3/BAABABs
 tile_set = SubResource("TileSet_x1uvg")
 
 [node name="Player" parent="walls" instance=ExtResource("6_i4p7d")]
-position = Vector2(-215, 193)
+position = Vector2(-235, 194)
+
+[node name="Security Guard" parent="walls" instance=ExtResource("2_fvhy2")]
+position = Vector2(-8, -30)
+
+[node name="StaticBody2D" parent="walls" instance=ExtResource("4_i4p7d")]
+position = Vector2(282, 51)
 
 [node name="ObjectsCollision" type="TileMapLayer" parent="walls"]
 y_sort_enabled = true
