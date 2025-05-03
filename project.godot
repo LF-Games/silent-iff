@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LevelManager="*res://entities/level/level_manager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GlobalState="*res://src/other/global_state.gd"
 
 [dialogic]
 
