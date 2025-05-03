@@ -1,0 +1,21 @@
+join Abby right
+Abby: Eu sempre quis estudar aqui.
+Abby: Estou me dedicando muito para passar no vestibular.
+Abby: Você estuda aqui?
+- Sim, sou estudante aqui.
+	Abby: Nossa, que legal!
+	join student_id left [animation="Slide From Left"]
+	Abby: Hoje mais cedo eu encontrei essa carteirinha no chão próximo da entrada. Você sabe de quem é?
+	- Sim, sou eu!
+		Abby: Nossa, que sorte te encontrar.
+		Abby: Agora você pode passar pela catraca sem problemas.
+		do LevelManager.set_level_state_variable("college_gate_access", true)
+	- Não conheço.
+		Abby: Que pena. Se você souber de alguém procurando por uma carteirinha pode falar comigo.
+- Não.
+	Abby: Ok.
+leave student_id [animation="Slide To Left"]
+Abby: Vou voltar a estudar agora. Quero terminar esse capítulo ainda hoje.
+leave Abby
+[wait time="0.5"]
+[signal arg="student_reading_A"]

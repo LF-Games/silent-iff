@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://cgrdfgu16ypnv"]
+[gd_scene load_steps=35 format=4 uid="uid://cgrdfgu16ypnv"]
 
 [ext_resource type="Script" uid="uid://cnvngp1qpime0" path="res://src/level/center_root_level.gd" id="1_lh2mu"]
 [ext_resource type="PackedScene" uid="uid://bg7gnwy7juq27" path="res://entities/level/level_manager.tscn" id="2_s50rc"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://4h7ew50arn8u" path="res://assets/level_boundaries/block.png" id="14_sh6rp"]
 [ext_resource type="Script" uid="uid://cb4mg3pw08nng" path="res://src/level/level_boundaries.gd" id="15_sdayj"]
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="16_4prep"]
-[ext_resource type="PackedScene" uid="uid://bxqi6pk4xn5t1" path="res://entities/level/level_transition.tscn" id="17_6quvd"]
 [ext_resource type="AudioStream" uid="uid://cxv4lyyeb75q3" path="res://assets/placeholder/Audio/Alone at Twilight 1.wav" id="18_g1dig"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xv6m"]
@@ -984,12 +983,6 @@ script = ExtResource("15_sdayj")
 [node name="Camera Follow" parent="." node_paths=PackedStringArray("level_boundaries", "target") instance=ExtResource("16_4prep")]
 level_boundaries = NodePath("../LevelBoundaries")
 target = NodePath("../Obstacle Layer/Player")
-
-[node name="LevelTransition" parent="." instance=ExtResource("17_6quvd")]
-position = Vector2(287, -89)
-scale = Vector2(0.64, 0.282775)
-path_to_next_level = "res://maps/staging_area/class_room.tscn"
-spawn_position = Vector2(-97, 177)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.772549, 0.772549, 0.784314, 1)

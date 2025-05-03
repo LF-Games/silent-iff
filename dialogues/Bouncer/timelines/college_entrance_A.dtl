@@ -1,0 +1,7 @@
+join Bouncer right
+Bouncer: Boa noite.
+Bouncer: Apenas estudantes com carteirinha podem entrar aqui.
+Bouncer: Para abrir basta se aproximar da catraca com a carteirinha.
+leave Bouncer
+[wait time="0.5"]
+[signal arg="college_entrance_A"]

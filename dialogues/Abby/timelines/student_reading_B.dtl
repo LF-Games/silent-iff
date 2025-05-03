@@ -1,0 +1,6 @@
+join Abby right
+Abby: Que bom que você recuperou sua carteirinha.
+Abby: Preciso terminar esse capítulo hoje.
+leave Abby
+[wait time="0.5"]
+[signal arg="student_reading_B"]

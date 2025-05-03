@@ -6,7 +6,7 @@ func _ready() -> void:
 
 	last_time = 0
 
-	if LevelManager.barrel_exploded:
+	if LevelManager.get_level_state_variable("barrel_exploded"):
 		barrel_exploded()
 	else:
 		$AnimatedSprite2D.play("base")
@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 
 	# A cada 1 segundo o NPC tem uma chance de 50% de mudar a animação 
 	# Muda para a animação de moving
-	if !LevelManager.barrel_exploded:
+	if !LevelManager.get_level_state_variable("barrel_exploded"):
 		if (Time.get_ticks_msec()/1000) > last_time:
 			last_time = (Time.get_ticks_msec()/1000)
 			var chance = randi_range(0,100)
@@ -36,7 +36,7 @@ func moving_finished() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player and !LevelManager.barrel_exploded:
+	if body is Player and !LevelManager.get_level_state_variable("barrel_exploded"):
 		$AnimatedSprite2D.play("explosion")
 		$AudioStreamPlayer2D.play()
 		LevelManager.barrel_exploded = true
@@ -45,5 +45,3 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func barrel_exploded()-> void:
 		$CollisionShape2D.set_deferred("disabled", true)
 		$AnimatedSprite2D.play("exploded")
-
-
