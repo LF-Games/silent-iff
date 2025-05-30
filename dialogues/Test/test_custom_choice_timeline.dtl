@@ -1,0 +1,7 @@
+join Abby center
+Abby: Hello World!
+[action_choices text="Uma escolha ambiciosa"]
+	(Você fez uma escolha ambiciosa)
+[action_choices text="Uma escolha modesta" choice_type="1"]
+	(Você fez uma escolha modesta)
+FIM

@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=3 uid="uid://2r7cxn5prw1o"]
+
+[ext_resource type="Script" uid="uid://6oq45l5o0hnl" path="res://addons/dialogic_additions/ActionChoices/action_choices_layer.gd" id="1_0w3q7"]
+[ext_resource type="Texture2D" uid="uid://d0lfgbcecg0b2" path="res://icon.svg" id="1_qmm1u"]
+[ext_resource type="Script" uid="uid://d3y5g8g077bc3" path="res://addons/dialogic_additions/ActionChoices/action_choices_handler.gd" id="2_42rbc"]
+[ext_resource type="Texture2D" uid="uid://bqq8o78x7m2bp" path="res://dialogues/styles/MainStyle/arrow.svg" id="3_cyi45"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rokwn"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5xjs"]
+bg_color = Color(0.95, 0.728333, 0.285, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8vuc"]
+bg_color = Color(0.21, 0.3465, 0.84, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
+
+[node name="ActionChoicesLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_0w3q7")
+
+[node name="ActionChoicesHandler" type="Control" parent="." node_paths=PackedStringArray("pointer", "choice_bar", "ambition_label", "modesty_label")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_42rbc")
+pointer = NodePath("TextPanel/VBoxContainer/MarginContainer/ChoiceBar/Pointer")
+choice_bar = NodePath("TextPanel/VBoxContainer/MarginContainer/ChoiceBar")
+movement_cycle_duration = 0.3
+confirm_delay = 0.5
+ambition_label = NodePath("TextPanel/VBoxContainer/HBoxContainer/AmbitionLabel")
+modesty_label = NodePath("TextPanel/VBoxContainer/HBoxContainer/ModestyLabel")
+
+[node name="TextPanel" type="PanelContainer" parent="ActionChoicesHandler"]
+self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -279.0
+offset_top = -162.0
+offset_right = 279.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rokwn")
+metadata/_edit_layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ActionChoicesHandler/TextPanel"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ActionChoicesHandler/TextPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="AmbitionLabel" type="RichTextLabel" parent="ActionChoicesHandler/TextPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Option 1 choice that is pretty long, shouild take two lines. "
+fit_content = true
+autowrap_mode = 2
+horizontal_alignment = 1
+
+[node name="ModestyLabel" type="RichTextLabel" parent="ActionChoicesHandler/TextPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Option 2 "
+fit_content = true
+autowrap_mode = 2
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ActionChoicesHandler/TextPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 16
+
+[node name="ChoiceBar" type="ProgressBar" parent="ActionChoicesHandler/TextPanel/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_a5xjs")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q8vuc")
+value = 50.0
+show_percentage = false
+
+[node name="Pointer" type="TextureRect" parent="ActionChoicesHandler/TextPanel/VBoxContainer/MarginContainer/ChoiceBar"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -16.0
+offset_right = 20.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_cyi45")
+flip_v = true
+
+[node name="TextureRect" type="TextureRect" parent="ActionChoicesHandler"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 492.0
+offset_top = 240.0
+offset_right = 620.0
+offset_bottom = 368.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qmm1u")

@@ -33,10 +33,11 @@ directories/dtl_directory={
 "playing_on_phone": "res://dialogues/Bouncer/timelines/playing_on_phone.dtl",
 "reading_under_light": "res://dialogues/Abby/timelines/reading_under_light.dtl",
 "student_reading_A": "res://dialogues/Abby/timelines/student_reading_A.dtl",
-"student_reading_B": "res://dialogues/Abby/timelines/student_reading_B.dtl"
+"student_reading_B": "res://dialogues/Abby/timelines/student_reading_B.dtl",
+"test_custom_choice_timeline": "res://dialogues/Test/test_custom_choice_timeline.dtl"
 }
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://dialogues/styles/MainStyle/main_style.tres"]
+layout/default_style="res://dialogues/styles/MainStyle/main_style.tres"
 glossary/default_case_sensitive=true
 variables={}
 extensions_folder="res://addons/dialogic_additions"
@@ -73,6 +74,7 @@ audio/channel_defaults={
 }
 }
 text/input_action="dialogic_default_action"
+audio/max_channels=4.0
 
 [display]
 

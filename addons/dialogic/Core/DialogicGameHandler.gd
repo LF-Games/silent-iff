@@ -149,6 +149,12 @@ var VAR := preload("res://addons/dialogic/Modules/Variable/subsystem_variables.g
 var Voice := preload("res://addons/dialogic/Modules/Voice/subsystem_voice.gd").new():
 	get: return get_subsystem("Voice")
 
+var ActionChoices := preload("res://addons/dialogic_additions/ActionChoices/subsystem_action_choices.gd").new():
+	get: return get_subsystem("ActionChoices")
+
+var CustomTextEffects := preload("res://addons/dialogic_additions/CustomTextEffects/subsystem_custom_text_effects.gd").new():
+	get: return get_subsystem("CustomTextEffects")
+
 #endregion
 
 
