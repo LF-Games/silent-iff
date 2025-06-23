@@ -32,8 +32,8 @@ func hide_choices() -> void:
 
 
 ## Collects information on the choices of the current question.
-func get_current_choices_info() -> Dictionary[DialogicActionChoicesEvent.ActionChoiceType, ActionChoiceInfo]:
-	var choices: Dictionary[DialogicActionChoicesEvent.ActionChoiceType, ActionChoiceInfo] = {}
+func get_current_choices_info() -> Dictionary[ActionChoices.ActionChoiceType, ActionChoiceInfo]:
+	var choices: Dictionary[ActionChoices.ActionChoiceType, ActionChoiceInfo] = {}
 
 	for choice_index in get_current_choice_indexes():
 		var event: DialogicEvent = dialogic.current_timeline_events[choice_index]
@@ -55,8 +55,8 @@ func get_current_choices_info() -> Dictionary[DialogicActionChoicesEvent.ActionC
 func show_current_question(instant := true) -> void:
 	hide_choices()
 	var choices_info := get_current_choices_info()
-	var ambition_choice = choices_info.get(DialogicActionChoicesEvent.ActionChoiceType.AMBITION)
-	var modesty_choice = choices_info.get(DialogicActionChoicesEvent.ActionChoiceType.MODESTY)
+	var ambition_choice = choices_info.get(ActionChoices.ActionChoiceType.AMBITION)
+	var modesty_choice = choices_info.get(ActionChoices.ActionChoiceType.MODESTY)
 	if !ambition_choice or !modesty_choice:
 		printerr("[ActionChoices]: A pair of modesty and ambition choice events was not found.")
 		return
@@ -70,6 +70,7 @@ func show_current_question(instant := true) -> void:
 func _on_choice_selected(choice_info: ActionChoiceInfo) -> void:
 	choice_selected.emit(choice_info)
 	hide_choices()
+	ActionChoices.register_choice(choice_info.choice_type)
 	dialogic.current_state = dialogic.States.IDLE
 	dialogic.handle_event(choice_info.event_index + 1)
 
@@ -86,10 +87,10 @@ func get_current_choice_indexes() -> Array:
 		if dialogic.current_timeline_events[evt_idx] is DialogicActionChoicesEvent:
 			var choice_event := dialogic.current_timeline_events[evt_idx] as DialogicActionChoicesEvent
 			if ignore == 0:
-				if !ambition_event and choice_event.choice_type == DialogicActionChoicesEvent.ActionChoiceType.AMBITION:
+				if !ambition_event and choice_event.choice_type == ActionChoices.ActionChoiceType.AMBITION:
 					ambition_event = choice_event
 					choices.append(evt_idx)
-				elif !modesty_event and choice_event.choice_type == DialogicActionChoicesEvent.ActionChoiceType.MODESTY:
+				elif !modesty_event and choice_event.choice_type == ActionChoices.ActionChoiceType.MODESTY:
 					modesty_event = choice_event
 					choices.append(evt_idx)
 				else:

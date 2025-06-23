@@ -5,13 +5,10 @@ class_name DialogicActionChoicesEvent
 ## A choice event that requires the player to play an action minigame to determine the outcome.
 ## Needs to go after a text event, and must be added in pairs with type ambition and modesty
 
-enum ActionChoiceType {AMBITION, MODESTY}
-
-
 ### Settings
 ## The text that is displayed on the choice button.
 var text := ""
-var choice_type: ActionChoiceType = ActionChoiceType.AMBITION
+var choice_type: ActionChoices.ActionChoiceType = ActionChoices.ActionChoiceType.AMBITION
 ## A dictionary that can be filled with arbitrary information
 ## This can then be interpreted by a custom choice layer
 var extra_data := {}
@@ -25,8 +22,6 @@ var extra_data := {}
 func _execute() -> void:
 	if dialogic.ActionChoices.is_question(dialogic.current_event_idx):
 		dialogic.Text.update_dialog_text('')
-		dialogic.Text.hide_textbox()
-		await dialogic.Animations.finished
 		dialogic.ActionChoices.show_current_question(false)
 		dialogic.current_state = dialogic.States.AWAITING_CHOICE
 
@@ -61,7 +56,7 @@ func get_shortcode() -> String:
 func get_shortcode_parameters() -> Dictionary:
 	return {
 		"text": {"property": "text", "default": ""},
-		"choice_type": {"property": "choice_type", "default": ActionChoiceType.AMBITION}
+		"choice_type": {"property": "choice_type", "default": ActionChoices.ActionChoiceType.AMBITION}
 		}
 
 #endregion
@@ -90,11 +85,11 @@ func build_event_editor() -> void:
 	add_header_edit("choice_type", ValueType.FIXED_OPTIONS, {'left_text': "Type: ", 'options': [
 		{
 			'label': "Ambition",
-			'value': ActionChoiceType.AMBITION,
+			'value': ActionChoices.ActionChoiceType.AMBITION,
 		},
 		{
 			'label': "Modesty",
-			'value': ActionChoiceType.MODESTY,
+			'value': ActionChoices.ActionChoiceType.MODESTY,
 		},
 	]})
 	add_body_edit("extra_data", ValueType.DICTIONARY, {"left_text": "Extra Data:"})

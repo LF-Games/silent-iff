@@ -1,7 +1,6 @@
 extends Control
 class_name ActionChoicesHandler
 
-
 signal choice_selected(choice: ActionChoiceInfo)
 
 const GROUP_KEY := 'action_choices_handler'
@@ -12,12 +11,14 @@ const GROUP_KEY := 'action_choices_handler'
 @export var confirm_delay := 1.0
 @export var ambition_label: RichTextLabel
 @export var modesty_label: RichTextLabel
+@export var input_lock_duration := 0.05
 
 var _active := false
 var _tween: Tween
 var _pointer_progress := 0.5
 var _ambition_choice: ActionChoiceInfo
 var _modesty_choice: ActionChoiceInfo
+
 
 func _ready():
 	add_to_group(GROUP_KEY)
@@ -40,8 +41,9 @@ func start_choice(ambition_choice: ActionChoiceInfo, modesty_choice: ActionChoic
 	_modesty_choice = modesty_choice
 
 	show()
-	_active = true
 	_start_pointer_movement()
+	await get_tree().create_timer(input_lock_duration).timeout
+	_active = true
 
 
 func clear():
