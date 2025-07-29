@@ -1,0 +1,25 @@
+do CharacterDialogueController.move_to("player", -32.0, -10.0)
+player: ...
+join player leftmost
+player: Droga não tenho a carteira de entrada.
+[signal arg="spawn_upperclassman"]
+upperclassman: Ei você. Tudo certo ai?
+do CharacterDialogueController.look_at("player", "down")
+do CharacterDialogueController.move_to("upperclassman", -32.0, 12.0)
+join upperclassman rightmost [mirrored="true"]
+[wait time="0.5" hide_text="false" skippable="true"]
+player: Não muito, aparentemente preciso de uma carteira para entrar na universidade
+upperclassman: É, você consegue elas na secretaria
+player: Que fica dentro da faculdade?
+upperclassman: É
+...
+upperclassman: Deixa que eu passo pra você.
+player: Obrigado cara, que curso você faz?
+upperclassman: Valeu, eu faço [wave]######## [/wave]
+player: Ótimo eu faço isso também
+do CharacterDialogueController.move_to("player", -12.0, -10.0)
+do CharacterDialogueController.look_at("player", "left")
+do CharacterDialogueController.move_to("upperclassman", -32.0, -42.0)
+[signal arg="open_gate"]
+do CharacterDialogueController.move_to("upperclassman", -32.0, -85.0)
+[signal arg="despawn_upperclassman"]

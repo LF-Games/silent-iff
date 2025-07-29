@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ccsxvrr11ccjg"]
 
-[ext_resource type="Script" uid="uid://cknpsrvg3vdqi" path="res://src/npc/npc_security_guard.gd" id="1_dp6do"]
+[ext_resource type="Script" uid="uid://cknpsrvg3vdqi" path="res://src/characters/npc/npc_security_guard.gd" id="1_dp6do"]
 [ext_resource type="Texture2D" uid="uid://ds6yhk4lphp87" path="res://assets/placeholder/Actor/Characters/Bouncer/Bouncer_idle_anim_16x16.png" id="2_toxsx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh4sv"]

@@ -1,14 +1,14 @@
 extends Node2D
 
-var current_interacting : Node2D 				# Armazena o node que o player está interagindo atualmente
+var current_interacting: Node2D # Armazena o node que o player está interagindo atualmente
 
 func _ready() -> void:
 	pass # Replace with function body.
 
 # Quando o botão de ação for pressionado e houver um node armazenado em current_interacting
 # Chama a função de interação do node
-func action_pressed()->void:
-	if current_interacting:
+func action_pressed() -> void:
+	if current_interacting and current_interacting.has_method("interact"):
 		current_interacting.interact()
 
 # Se for possível interagir com o node que entrou no collider do player

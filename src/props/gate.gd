@@ -1,51 +1,36 @@
 extends Area2D
+class_name MapGate
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+signal opened
 
-	# Conecta com o signal de animação terminada
-	$AnimatedSprite2D.animation_finished.connect(animation_finished)
+@onready var anim := $AnimatedSprite2D as AnimatedSprite2D
+@onready var collision_shape := $StaticBody2D/CollisionShape2D as CollisionShape2D
 
 
 # Animação abrindo o portão
-func gate_opening()->void:
-	if LevelManager.get_level_state_variable("college_gate_access"):
-		$AnimatedSprite2D.play("opening")
-
-
-# Portão aberto
-func gate_opened()->void:
-	$AnimatedSprite2D.play("open")
-	$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+func open_gate() -> void:
+	anim.play("opening")
+	await anim.animation_finished
+	anim.play("open")
+	collision_shape.set_deferred("disabled", true)
+	opened.emit()
 
 
 # Animação fechando o portão
-func gate_closing()->void:
-	if LevelManager.get_level_state_variable("college_gate_access"):
-		$AnimatedSprite2D.play("closing")
-		$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)
+func close_gate() -> void:
+	anim.play("closing")
+	await anim.animation_finished
+	anim.play("closed")
+	collision_shape.set_deferred("disabled", false)
 
 
-# Portão fechado
-func gate_closed()->void:
-	$AnimatedSprite2D.play("closed")
+# func _on_body_entered(body: Node2D) -> void:
+# 	if body is Player:
+# 		open_gate()
+# 	pass # Replace with function body.
 
 
-# Chamada quando uma animação termina
-func animation_finished()->void:
-	if $AnimatedSprite2D.get_animation() == "closing":
-		gate_closed()
-	elif $AnimatedSprite2D.get_animation() == "opening":
-		gate_opened()
-
-
-func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
-		gate_opening()
-	pass # Replace with function body.
-
-
-func _on_body_exited(body: Node2D) -> void:
-	if body is Player:
-		gate_closing()
-	pass # Replace with function body.
+# func _on_body_exited(body: Node2D) -> void:
+# 	if body is Player:
+# 		close_gate()
+# 	pass # Replace with function body.
