@@ -17,7 +17,7 @@ func set_flag(key: StringName, value := true) -> bool:
 
 
 func get_flag(key: StringName) -> bool:
-	return _flags[key]
+	return _flags.get(key, false)
 
 
 func increment_counter(key: StringName, value := 1) -> int:

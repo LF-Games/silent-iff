@@ -20,16 +20,20 @@ config/icon="res://icon.svg"
 GlobalState="*res://src/other/global_state.gd"
 LevelManager="*res://entities/level/level_manager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+CharacterDialogueController="*res://src/characters/character_dialogue_controller.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "Abby": "res://dialogues/Abby/Abby.dch",
 "Bouncer": "res://dialogues/Bouncer/Bouncer.dch",
-"student_id": "res://assets/placeholder/Actor/Characters/StudentID/student_id.dch"
+"player": "res://dialogues/player.dch",
+"student_id": "res://assets/placeholder/Actor/Characters/StudentID/student_id.dch",
+"upperclassman": "res://dialogues/Upperclassman/upperclassman.dch"
 }
 directories/dtl_directory={
 "college_entrance_A": "res://dialogues/Bouncer/timelines/college_entrance_A.dtl",
+"intro": "res://dialogues/intro.dtl",
 "playing_on_phone": "res://dialogues/Bouncer/timelines/playing_on_phone.dtl",
 "reading_under_light": "res://dialogues/Abby/timelines/reading_under_light.dtl",
 "student_reading_A": "res://dialogues/Abby/timelines/student_reading_A.dtl",

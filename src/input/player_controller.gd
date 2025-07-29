@@ -1,7 +1,7 @@
 extends Node
 
 # Referencia para o node player
-@onready var player : Node = $".."
+@onready var player: Player = $".."
 
 # Define qual quem tem o controle do jogador
 enum States {
@@ -9,25 +9,20 @@ enum States {
 	PLAYER_CONTROL
 }
 
-var control_state : States
+var control_state: States
 
 func _ready() -> void:
 	# for test only
 	control_state = States.PLAYER_CONTROL
 
 func _process(delta: float) -> void:
-
 	# Opções de input quando player tem controle
 	if control_state == States.PLAYER_CONTROL:
-		var direction : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+		var direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		player.move(direction)
 		
 		if Input.is_action_just_pressed("action"):
 			$"../Interaction".action_pressed()
-		
-	# Opções de input quando sistema tem controle
-	elif control_state == States.GAME_CONTROL:
-		player.move(Vector2(0,0))
 
 # Controle do personagem é do jogador
 func control_to_player() -> void:
@@ -36,3 +31,4 @@ func control_to_player() -> void:
 # Controle do personagem é do jogo
 func control_to_game() -> void:
 	control_state = States.GAME_CONTROL
+	player.set_movement_state(GameCharacter.Movement.IDLE)

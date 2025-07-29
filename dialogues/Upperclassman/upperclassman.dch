@@ -4,28 +4,26 @@
 &"_translation_id": "",
 &"color": Color(1, 1, 1, 1),
 &"custom_info": {
-"prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "",
-"suffix": ""
+"style": ""
 },
 &"default_portrait": "Base",
 &"description": "",
-&"display_name": "Abby",
+&"display_name": "Veterano",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(-80, -150),
+&"offset": Vector2(0, -150),
 &"portraits": {
 "Base": {
 "export_overrides": {
-"image": "\"res://assets/placeholder/Actor/Characters/Abby/I2nVep.png\""
+"image": "\"res://assets/placeholder/Actor/Characters/Bob/bob_portrait.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 1,
 "scene": ""
 }
 },
-&"scale": 0.5
+&"scale": 0.4
 }

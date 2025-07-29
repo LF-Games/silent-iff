@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://ce0xg2odenw40"]
 
-[ext_resource type="Script" uid="uid://cc38b0mtbyway" path="res://src/npc/npc_abby.gd" id="1_vx1xn"]
+[ext_resource type="Script" uid="uid://cc38b0mtbyway" path="res://src/characters/npc/npc_abby.gd" id="1_vx1xn"]
 [ext_resource type="Texture2D" uid="uid://1ekt3tdr6did" path="res://assets/placeholder/Actor/Characters/Abby/Kid_Abby_reading_16x16.png" id="2_gle63"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5murl"]
