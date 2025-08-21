@@ -10,7 +10,7 @@ func _ready() -> void:
 	set_level_state_variable("barrel_exploded", false)
 	set_level_state_variable("college_gate_access", false)
 	Dialogic.timeline_started.connect(control_to_system)
-	Dialogic.timeline_ended.connect(control_to_player)
+	Dialogic.timeline_ended.connect(_on_dialogic_timeline_ended)
 	
 
 # ----- Solução Temporária -----
@@ -46,3 +46,8 @@ func control_to_system() -> void:
 func control_to_player() -> void:
 	if player_controller:
 		player_controller.control_to_player()
+
+
+func _on_dialogic_timeline_ended():
+	await get_tree().process_frame
+	control_to_player()
