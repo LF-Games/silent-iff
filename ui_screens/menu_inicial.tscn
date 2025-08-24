@@ -1,0 +1,184 @@
+[gd_scene load_steps=21 format=3 uid="uid://hconro3ri1m0"]
+
+[ext_resource type="Script" uid="uid://vfrhcd60re74" path="res://src/ui/menu_inicial.gd" id="1_e6mru"]
+[ext_resource type="Texture2D" uid="uid://dk5gvtcl76b3y" path="res://assets/placeholder/UI/Images/Classroom.png" id="1_t1ayk"]
+[ext_resource type="AudioStream" uid="uid://cxv4lyyeb75q3" path="res://assets/placeholder/Audio/Alone at Twilight 1.wav" id="2_blbub"]
+[ext_resource type="FontFile" uid="uid://6xnupwte4q65" path="res://assets/placeholder/UI/Fonts/SLNTHLE.TTF" id="3_ggcgr"]
+[ext_resource type="FontFile" uid="uid://pn5xdjipjrqa" path="res://assets/placeholder/UI/Fonts/PressStart2P-Regular.ttf" id="4_54083"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_54083"]
+texture = ExtResource("1_t1ayk")
+modulate_color = Color(0.699653, 0.699653, 0.699653, 1)
+
+[sub_resource type="Animation" id="Animation_t1ayk"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_blbub"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ggcgr"]
+_data = {
+&"RESET": SubResource("Animation_blbub"),
+&"fade_in": SubResource("Animation_t1ayk")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_54083"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_etgjj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_etjcj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nw87t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcf2r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_enif2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rmsuc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1md4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxgge"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_crk2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6mru"]
+
+[node name="MenuInicial" type="Control" node_paths=PackedStringArray("top_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e6mru")
+path_to_scene_iniciar = "res://maps/college/college_entrance.tscn"
+top_button = NodePath("VBoxContainer/Iniciar")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_54083")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ggcgr")
+}
+autoplay = "fade_in"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_blbub")
+autoplay = true
+
+[node name="GameTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 84.0
+offset_bottom = 241.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ggcgr")
+theme_override_font_sizes/font_size = 72
+text = "SILENT
+IFF"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -123.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 14
+
+[node name="Iniciar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_54083")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/focus = SubResource("StyleBoxEmpty_54083")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_etgjj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_etjcj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_nw87t")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gcf2r")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_enif2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rmsuc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_s1md4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fxgge")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_crk2c")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e6mru")
+text = "Iniciar"
+
+[node name="Sair" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_54083")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/focus = SubResource("StyleBoxEmpty_54083")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_etgjj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_etjcj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_nw87t")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gcf2r")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_enif2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rmsuc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_s1md4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fxgge")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_crk2c")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e6mru")
+text = "Sair"
+
+[connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_sair_pressed"]
