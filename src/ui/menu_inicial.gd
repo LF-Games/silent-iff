@@ -6,7 +6,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	top_button.grab_focus()
-	pass # Replace with function body.
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 
 
 func _on_iniciar_pressed() -> void:
+	#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file.call_deferred(path_to_scene_iniciar)
 
 
