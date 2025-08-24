@@ -75,7 +75,7 @@ energy = 0.8
 texture = SubResource("GradientTexture2D_i3yx2")
 
 [node name="PointLight2D7" type="PointLight2D" parent="Lights"]
-position = Vector2(-5, 314)
+position = Vector2(-5, 313)
 scale = Vector2(1.18667, 1.18667)
 color = Color(0.627451, 0.843137, 1, 1)
 energy = 0.8
@@ -114,5 +114,11 @@ position = Vector2(0, 417)
 scale = Vector2(3.175, 0.2)
 path_to_next_level = "res://maps/college/college_entrance.tscn"
 spawn_position = Vector2(-32, -64)
+
+[node name="LevelTransition2" parent="." instance=ExtResource("5_pluos")]
+position = Vector2(64, -349)
+scale = Vector2(3.16168, -0.110714)
+path_to_next_level = "res://maps/college/college_courtyard.tscn"
+spawn_position = Vector2(-15, 130)
 
 [node name="inGameUI" parent="." instance=ExtResource("6_k1nn7")]
