@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="7_u4jgn"]
 [ext_resource type="Script" uid="uid://ctdyjiwd1tgs2" path="res://src/dialogue/initial_dialogue.gd" id="8_i4p7d"]
 [ext_resource type="PackedScene" uid="uid://bw2a3j2o7bip0" path="res://entities/level/level_boundaries.tscn" id="8_pf0uq"]
-[ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://ui_screens/in_game_ui.tscn" id="9_u4jgn"]
+[ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://entities/ui/in_game_ui.tscn" id="9_u4jgn"]
 [ext_resource type="PackedScene" uid="uid://ct7wamw2g73k4" path="res://entities/props/gate.tscn" id="13_wpej2"]
 [ext_resource type="PackedScene" uid="uid://bxqi6pk4xn5t1" path="res://entities/level/level_transition.tscn" id="16_76hl5"]
 

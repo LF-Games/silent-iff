@@ -3,6 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://c6xne1ox4qno1" path="res://assets/placeholder/UI/Images/Splash Screen.png" id="1_mgb2d"]
 [ext_resource type="Script" uid="uid://p3odkqh6fqrd" path="res://src/ui/splash_screen.gd" id="1_pq1tg"]
 
+[sub_resource type="Animation" id="Animation_i3li2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_mgb2d"]
 resource_name = "fade_in"
 length = 3.5
@@ -33,21 +48,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, -2),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_i3li2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_brpkx"]

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bw2a3j2o7bip0" path="res://entities/level/level_boundaries.tscn" id="2_77j3w"]
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="4_pluos"]
 [ext_resource type="PackedScene" uid="uid://bxqi6pk4xn5t1" path="res://entities/level/level_transition.tscn" id="5_pluos"]
-[ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://ui_screens/in_game_ui.tscn" id="6_k1nn7"]
+[ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://entities/ui/in_game_ui.tscn" id="6_k1nn7"]
 
 [sub_resource type="Gradient" id="Gradient_wpej2"]
 offsets = PackedFloat32Array(0.103896, 0.363636, 0.681818, 0.902597, 1)
