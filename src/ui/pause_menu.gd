@@ -17,7 +17,9 @@ func _process(delta: float) -> void:
 func _retornar() -> void:
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
-	Dialogic.Styles.get_layout_node().show()
+	var _dialogic_node = Dialogic.Styles.get_layout_node()
+	if _dialogic_node:
+		_dialogic_node.show()
 	hide()
 
 
@@ -25,7 +27,9 @@ func _pause() -> void:
 	show()
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")
-	Dialogic.Styles.get_layout_node().hide()
+	var _dialogic_node = Dialogic.Styles.get_layout_node()
+	if _dialogic_node:
+		_dialogic_node.hide()
 	top_button.grab_focus()
 
 
