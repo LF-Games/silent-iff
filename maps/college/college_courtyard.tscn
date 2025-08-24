@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://dsksikl565kvt"]
+[gd_scene load_steps=36 format=4 uid="uid://dsksikl565kvt"]
 
 [ext_resource type="Texture2D" uid="uid://cqh65gxsvfqou" path="res://assets/placeholder/Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png" id="1_o4pw6"]
 [ext_resource type="Texture2D" uid="uid://dwjpuaxfpt8io" path="res://assets/placeholder/Backgrounds/Tilesets/Interior/TilesetWallSimple.png" id="2_axrhc"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://kb1qk4wwlxlj" path="res://entities/characters/player_character.tscn" id="5_ghk3r"]
 [ext_resource type="PackedScene" uid="uid://bxqi6pk4xn5t1" path="res://entities/level/level_transition.tscn" id="6_hn80m"]
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="7_hmojf"]
+[ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://ui_screens/in_game_ui.tscn" id="9_fiqlh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dvbgw"]
 texture = ExtResource("3_fiqlh")
@@ -1503,3 +1504,5 @@ position = Vector2(-16, 142)
 scale = Vector2(1.5349, 0.118229)
 path_to_next_level = "res://maps/college/college_main.tscn"
 spawn_position = Vector2(65, -330)
+
+[node name="inGameUI" parent="." instance=ExtResource("9_fiqlh")]
