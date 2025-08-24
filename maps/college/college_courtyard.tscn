@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dp7mljroqcusd"]
+[gd_scene load_steps=15 format=4 uid="uid://dp7mljroqcusd"]
 
 [ext_resource type="Texture2D" uid="uid://cqh65gxsvfqou" path="res://assets/placeholder/Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png" id="1_o4pw6"]
 [ext_resource type="Texture2D" uid="uid://dwjpuaxfpt8io" path="res://assets/placeholder/Backgrounds/Tilesets/Interior/TilesetWallSimple.png" id="2_axrhc"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kb1qk4wwlxlj" path="res://entities/characters/player_character.tscn" id="5_ghk3r"]
 [ext_resource type="PackedScene" uid="uid://bxqi6pk4xn5t1" path="res://entities/level/level_transition.tscn" id="6_hn80m"]
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="7_hmojf"]
+[ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://ui_screens/in_game_ui.tscn" id="8_axrhc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4aj8"]
 texture = ExtResource("1_o4pw6")
@@ -860,13 +861,15 @@ script = ExtResource("4_vo004")
 [node name="Player" parent="." instance=ExtResource("5_ghk3r")]
 position = Vector2(-16, 126)
 
+[node name="Camera Follow" parent="." node_paths=PackedStringArray("level_boundaries", "target") instance=ExtResource("7_hmojf")]
+zoom = Vector2(5, 5)
+level_boundaries = NodePath("../LevelBoundaries")
+target = NodePath("../Player")
+
 [node name="LevelTransition" parent="." instance=ExtResource("6_hn80m")]
 position = Vector2(-17, 139)
 scale = Vector2(1.5349, 0.518234)
 path_to_next_level = "res://maps/college/college_entrance.tscn"
 spawn_position = Vector2(-32, -64)
 
-[node name="Camera Follow" parent="." node_paths=PackedStringArray("level_boundaries", "target") instance=ExtResource("7_hmojf")]
-zoom = Vector2(5, 5)
-level_boundaries = NodePath("../LevelBoundaries")
-target = NodePath("../Player")
+[node name="inGameUI" parent="." instance=ExtResource("8_axrhc")]

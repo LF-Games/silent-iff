@@ -11,6 +11,7 @@ func _ready() -> void:
 	set_level_state_variable("college_gate_access", false)
 	Dialogic.timeline_started.connect(control_to_system)
 	Dialogic.timeline_ended.connect(_on_dialogic_timeline_ended)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 
 # ----- Solução Temporária -----

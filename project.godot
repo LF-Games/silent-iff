@@ -20,9 +20,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalState="*res://src/other/global_state.gd"
-LevelManager="*res://entities/level/level_manager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 CharacterDialogueController="*res://src/characters/character_dialogue_controller.gd"
+LevelManager="*res://entities/level/level_manager.tscn"
 
 [dialogic]
 
