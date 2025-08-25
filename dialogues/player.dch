@@ -10,7 +10,7 @@
 },
 &"default_portrait": "Base",
 &"description": "",
-&"display_name": "",
+&"display_name": "Nick",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, -150),

@@ -27,18 +27,26 @@ CharacterDialogueController="*res://src/characters/character_dialogue_controller
 directories/dch_directory={
 "Abby": "res://dialogues/Abby/Abby.dch",
 "Bouncer": "res://dialogues/Bouncer/Bouncer.dch",
+"charAgnes": "res://assets/characters/Agnes/charAgnes.dch",
+"charLuke": "res://assets/characters/Luke/charLuke.dch",
+"charManoel": "res://assets/characters/Manoel/charManoel.dch",
+"charNick": "res://assets/characters/Nick/charNick.dch",
+"charRoberta": "res://assets/characters/Roberta/charRoberta.dch",
+"charVini": "res://assets/characters/Vini/charVini.dch",
 "player": "res://dialogues/player.dch",
 "student_id": "res://assets/placeholder/Actor/Characters/StudentID/student_id.dch",
 "upperclassman": "res://dialogues/Upperclassman/upperclassman.dch"
 }
 directories/dtl_directory={
 "college_entrance_A": "res://dialogues/Bouncer/timelines/college_entrance_A.dtl",
+"dialgIntro": "res://assets/characters/Agnes/dialgIntro.dtl",
 "intro": "res://dialogues/intro.dtl",
 "playing_on_phone": "res://dialogues/Bouncer/timelines/playing_on_phone.dtl",
 "reading_under_light": "res://dialogues/Abby/timelines/reading_under_light.dtl",
 "student_reading_A": "res://dialogues/Abby/timelines/student_reading_A.dtl",
 "student_reading_B": "res://dialogues/Abby/timelines/student_reading_B.dtl",
-"test_custom_choice_timeline": "res://dialogues/Test/test_custom_choice_timeline.dtl"
+"test_custom_choice_timeline": "res://dialogues/Test/test_custom_choice_timeline.dtl",
+"timelineteste": "res://dialogues/timelineteste.dtl"
 }
 layout/style_list=["res://dialogues/styles/MainStyle/main_style.tres"]
 layout/default_style="res://dialogues/styles/MainStyle/main_style.tres"
@@ -91,6 +99,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://UI/": "purple",
 "res://assets/": "orange",
 "res://dialogues/": "red",
 "res://entities/": "yellow",
@@ -102,6 +111,10 @@ folder_colors={
 
 pushable=""
 interactable=""
+
+[gui]
+
+theme/custom_font="uid://cg3c00u0rcih2"
 
 [input]
 

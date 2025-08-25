@@ -1,14 +1,16 @@
-[gd_scene load_steps=21 format=3 uid="uid://d2vpmo7qf8jml"]
+[gd_scene load_steps=22 format=3 uid="uid://d2vpmo7qf8jml"]
 
 [ext_resource type="Script" uid="uid://0178osev0y6r" path="res://addons/dialogic_additions/ActionChoices/VisualNovelTextbox/vn_textbox_layer.gd" id="1_bpydr"]
 [ext_resource type="Script" uid="uid://1o62l11igeiu" path="res://addons/dialogic_additions/ActionChoices/VisualNovelTextbox/animations.gd" id="2_xy7a2"]
+[ext_resource type="Texture2D" uid="uid://bnn1bv15w8wtt" path="res://UI/elements/balaodefalainterface.png" id="3_0d7hy"]
 [ext_resource type="Script" uid="uid://drhfq6rmdeuri" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_4634k"]
 [ext_resource type="StyleBox" uid="uid://dkv1pl1c1dq6" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres" id="3_ssa84"]
 [ext_resource type="Script" uid="uid://dpv2dfiv5dhmr" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_ma5mw"]
+[ext_resource type="FontFile" uid="uid://cg3c00u0rcih2" path="res://PressStart2P-Regular.ttf" id="5_0d7hy"]
 [ext_resource type="Script" uid="uid://dve1vwse2peji" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="5_40a50"]
 [ext_resource type="Script" uid="uid://dkrcnu4cbj5yb" path="res://addons/dialogic_additions/ActionChoices/VisualNovelTextbox/autoadvance_indicator.gd" id="6_07xym"]
-[ext_resource type="Texture2D" uid="uid://b0rpqfg4fhebk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg" id="6_uch03"]
 [ext_resource type="Script" uid="uid://bak74s0kcr0ao" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="7_bi7sh"]
+[ext_resource type="Texture2D" uid="uid://cc2dp27rwo8ub" path="res://UI/elements/seta.png" id="9_0d7hy"]
 [ext_resource type="StyleBox" uid="uid://m7gyepkysu83" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres" id="9_yg8ig"]
 [ext_resource type="Script" uid="uid://d3y5g8g077bc3" path="res://addons/dialogic_additions/ActionChoices/action_choices_handler.gd" id="11_it31i"]
 [ext_resource type="Texture2D" uid="uid://bqq8o78x7m2bp" path="res://dialogues/styles/MainStyle/arrow.svg" id="12_q8d2l"]
@@ -202,8 +204,6 @@ _data = {
 &"textbox_pop": SubResource("Animation_htbgc")
 }
 
-[sub_resource type="FontVariation" id="FontVariation_v8y64"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it31i"]
 bg_color = Color(0.95, 0.728333, 0.285, 1)
 corner_radius_top_left = 16
@@ -274,9 +274,13 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 
+[node name="Balaodefalainterface" type="Sprite2D" parent="Anchor/AnimationParent/Sizer"]
+position = Vector2(278, -150)
+texture = ExtResource("3_0d7hy")
+
 [node name="DialogTextPanel" type="PanelContainer" parent="Anchor/AnimationParent/Sizer"]
 unique_name_in_owner = true
-self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
+self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -292,6 +296,7 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_0d7hy")
 theme_override_font_sizes/bold_italics_font_size = 15
 theme_override_font_sizes/italics_font_size = 15
 theme_override_font_sizes/normal_font_size = 15
@@ -315,7 +320,8 @@ size_flags_vertical = 8
 mouse_filter = 2
 script = ExtResource("5_40a50")
 show_on_questions = true
-texture = ExtResource("6_uch03")
+texture = ExtResource("9_0d7hy")
+texture_size = Vector2(64, -64)
 metadata/_edit_layout_mode = 1
 
 [node name="AutoAdvanceProgressbar" type="ProgressBar" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
@@ -337,7 +343,7 @@ mouse_filter = 2
 
 [node name="NameLabelPanel" type="PanelContainer" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder"]
 unique_name_in_owner = true
-self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
+self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0)
 layout_mode = 1
 offset_top = -50.0
 offset_right = 9.0
@@ -352,13 +358,13 @@ metadata/_edit_group_ = true
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("FontVariation_v8y64")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 20
 text = "S"
 script = ExtResource("7_bi7sh")
 name_label_root = NodePath("..")
 
 [node name="ActionChoicesHandler" type="VBoxContainer" parent="Anchor/AnimationParent/Sizer/DialogTextPanel" node_paths=PackedStringArray("pointer", "choice_bar", "ambition_label", "modesty_label")]
+visible = false
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 16
