@@ -1,0 +1,92 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dn6yd4fcnqwxs"]
+
+[ext_resource type="Texture2D" uid="uid://78itqslagqvr" path="res://assets/characters/Roberta/roberta anim sheet.png" id="1_8omo4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_giblx"]
+atlas = ExtResource("1_8omo4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agpdx"]
+atlas = ExtResource("1_8omo4")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ysdb"]
+atlas = ExtResource("1_8omo4")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_delb2"]
+atlas = ExtResource("1_8omo4")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ug5l"]
+atlas = ExtResource("1_8omo4")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmrln"]
+atlas = ExtResource("1_8omo4")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m38m"]
+atlas = ExtResource("1_8omo4")
+region = Rect2(128, 128, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_giblx")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agpdx")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ysdb")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_delb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ysdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ug5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ysdb")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmrln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agpdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m38m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agpdx")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]

@@ -1,0 +1,65 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "basepixel",
+&"description": "Aluno amigável",
+&"display_name": "Vini",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"basepixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Vini/vinibasepixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"bravopixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Vini/vinibravopixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"felizpixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Vini/vinifelizpixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"surpresapixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Vini/vinisurpresapixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"tristepixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Vini/vinitristepixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

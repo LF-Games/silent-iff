@@ -23,7 +23,10 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_dwajp"]
 script = ExtResource("1_31uc0")
 scene = ExtResource("3_31uc0")
-overrides = {}
+overrides = {
+"faded_color": "Color(1, 1, 1, 1)",
+"portrait_size_mode": "0"
+}
 
 [sub_resource type="Resource" id="Resource_iblcj"]
 script = ExtResource("1_31uc0")
@@ -33,7 +36,22 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_faabp"]
 script = ExtResource("1_31uc0")
 scene = ExtResource("5_fevbp")
-overrides = {}
+overrides = {
+"box_animation_in": "0",
+"box_animation_out": "1",
+"box_color_custom": "Color(0, 0, 0, 0)",
+"box_color_use_global": "false",
+"box_panel": "\"vn_textbox_default_panel.tres\"",
+"name_label_box_modulate": "Color(0, 0, 0, 0)",
+"name_label_box_use_global_color": "false",
+"name_label_custom_font_size": "20.0",
+"name_label_font": "\"res://PressStart2P-Regular.ttf\"",
+"name_label_use_global_font": "false",
+"name_label_use_global_font_size": "false",
+"normal_font": "\"res://PressStart2P-Regular.ttf\"",
+"text_use_global_font": "false",
+"text_use_global_size": "false"
+}
 
 [sub_resource type="Resource" id="Resource_1d8s1"]
 script = ExtResource("1_31uc0")
