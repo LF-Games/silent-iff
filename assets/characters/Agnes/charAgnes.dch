@@ -20,7 +20,7 @@
 "image": "\"res://assets/characters/Agnes/AgnesBravapixel.png\""
 },
 "mirror": false,
-"offset": Vector2(-10, 0),
+"offset": Vector2(-11, 15),
 "scale": 1,
 "scene": ""
 },
@@ -29,7 +29,7 @@
 "image": "\"res://assets/characters/Agnes/AgnesTristepixel.png\""
 },
 "mirror": false,
-"offset": Vector2(-16, 16),
+"offset": Vector2(-11, 15),
 "scale": 1,
 "scene": ""
 },
@@ -38,7 +38,7 @@
 "image": "\"res://assets/characters/Agnes/Agnesfelizpixel.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
+"offset": Vector2(-11, 15),
 "scale": 1,
 "scene": ""
 },
@@ -47,7 +47,7 @@
 "image": "\"res://assets/characters/Agnes/Agnesoriginalpixel.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
+"offset": Vector2(-11, 15),
 "scale": 1,
 "scene": ""
 },
@@ -56,7 +56,7 @@
 "image": "\"res://assets/characters/Agnes/Agnessurpresapixel.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
+"offset": Vector2(-11, 15),
 "scale": 1,
 "scene": ""
 }

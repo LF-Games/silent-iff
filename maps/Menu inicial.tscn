@@ -26,7 +26,7 @@ grow_vertical = 2
 position = Vector2(576, 323)
 texture = ExtResource("1_fr8we")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="rainparticle" type="CPUParticles2D" parent="."]
 position = Vector2(635, -9)
 amount = 250
 texture = ExtResource("2_b7oa8")
@@ -37,8 +37,9 @@ emission_rect_extents = Vector2(700, 1)
 gravity = Vector2(-90, 900)
 scale_amount_min = 0.5
 scale_amount_max = 1.5
+color = Color(0.654902, 0.627451, 0.529412, 0.764706)
 
-[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+[node name="splashparticle" type="CPUParticles2D" parent="."]
 position = Vector2(640, 504)
 amount = 300
 lifetime = 3.04
@@ -49,8 +50,9 @@ gravity = Vector2(0, 200)
 initial_velocity_min = 101.01
 initial_velocity_max = 101.01
 scale_amount_max = 2.0
+color = Color(0.654902, 0.627451, 0.529412, 0.764706)
 
-[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+[node name="splashbusstopparticle" type="CPUParticles2D" parent="."]
 position = Vector2(1048, 152)
 amount = 150
 lifetime = 3.04
@@ -61,7 +63,7 @@ gravity = Vector2(0, 200)
 initial_velocity_min = 101.01
 initial_velocity_max = 101.01
 scale_amount_max = 2.0
-color = Color(1, 1, 1, 0.701961)
+color = Color(0.654902, 0.627451, 0.529412, 0.764706)
 
 [node name="SoALogo" type="Sprite2D" parent="."]
 position = Vector2(576, 317)

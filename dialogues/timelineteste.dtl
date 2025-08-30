@@ -1,4 +1,4 @@
-join charLuke center [animation="Fade In"]
-charLuke (Bravopixel): Olá tudo bem.
+join charAgnes center [animation="Fade In"]
+charAgnes (AgnesTristepixel): Olá tudo bem.
 [action_choices text="Sim"]
 [action_choices text="Não" choice_type="1"]
