@@ -1,0 +1,30 @@
+join charNick center
+charNick: Oi, seu guarda.
+Opa, tudo certo?
+leave --All--
+join charNick center
+charNick: Não consigo entrar.
+Precisa passar a carteirinha.
+leave --All--
+join charNick center
+charNick: É meu primeiro dia, não tenho ela ainda.
+Deixa eu ver o protocolo aqui, espere um pouco.
+
+Um aluno passa pela frente do jogador.
+leave --All--
+join charVini center
+
+charVini: Ei carinha. Tudo certo ai?
+leave --All--
+join charNick center
+charNick: Não muito, aparentemente preciso de uma carteira para entrar na universidade
+leave --All--
+join charVini center
+charVini: É, você consegue elas na secretaria.
+leave --All--
+join charNick center
+charNick: Que fica dentro da faculdade?
+leave --All--
+join charVini center
+charVini: É… Deixa que eu passo pra você vai.
+[end_timeline]

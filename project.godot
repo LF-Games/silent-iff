@@ -38,15 +38,22 @@ directories/dch_directory={
 "upperclassman": "res://dialogues/Upperclassman/upperclassman.dch"
 }
 directories/dtl_directory={
+"Agnesmeet": "res://dialogues/Agnesmeet.dtl",
+"Luke meet": "res://dialogues/Luke meet.dtl",
+"Vini intro": "res://Vini intro.dtl",
 "college_entrance_A": "res://dialogues/Bouncer/timelines/college_entrance_A.dtl",
 "dialgIntro": "res://assets/characters/Agnes/dialgIntro.dtl",
 "intro": "res://dialogues/intro.dtl",
+"introcar": "res://dialogues/introcar.dtl",
+"manuelmeet": "res://dialogues/manuelmeet.dtl",
 "playing_on_phone": "res://dialogues/Bouncer/timelines/playing_on_phone.dtl",
 "reading_under_light": "res://dialogues/Abby/timelines/reading_under_light.dtl",
+"robertameet": "res://dialogues/robertameet.dtl",
 "student_reading_A": "res://dialogues/Abby/timelines/student_reading_A.dtl",
 "student_reading_B": "res://dialogues/Abby/timelines/student_reading_B.dtl",
 "test_custom_choice_timeline": "res://dialogues/Test/test_custom_choice_timeline.dtl",
-"timelineteste": "res://dialogues/timelineteste.dtl"
+"timelineteste": "res://dialogues/timelineteste.dtl",
+"vinimeet": "res://dialogues/vinimeet.dtl"
 }
 layout/style_list=["res://dialogues/styles/MainStyle/main_style.tres"]
 layout/default_style="res://dialogues/styles/MainStyle/main_style.tres"
