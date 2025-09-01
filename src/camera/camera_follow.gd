@@ -52,3 +52,20 @@ func set_camera_limits() -> void:
 	limit_top = rect_map.position.y * tile_size.y
 	limit_right = (rect_map.position.x + rect_map.size.x) * tile_size.x
 	limit_bottom = (rect_map.position.y + rect_map.size.y) * tile_size.y
+	
+	# se o mapa for menor do que a área da câmera em algum eixo, 
+	# centraliza o mapa na camera
+	var viewport_size = get_viewport_rect().size / zoom;	
+	
+	# eixo x
+	var map_size_x = rect_map.size.x * tile_size.x
+	if(map_size_x < viewport_size.x):		
+		limit_left = ((rect_map.position.x + rect_map.size.x/2) * tile_size.x) - viewport_size.x/2
+		limit_right = ((rect_map.position.x + rect_map.size.x/2) * tile_size.x) + viewport_size.x/2
+	
+	# eixo y
+	var map_size_y = rect_map.size.y * tile_size.y
+	if(map_size_y < viewport_size.y):		
+		limit_top = ((rect_map.position.y + rect_map.size.y/2) * tile_size.y) - viewport_size.y/2
+		limit_bottom = ((rect_map.position.y + rect_map.size.y/2) * tile_size.y) + viewport_size.y/2
+	
