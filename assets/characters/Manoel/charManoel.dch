@@ -1,0 +1,65 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "oeloriginalpixel",
+&"description": "",
+&"display_name": "Manoel",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"oeloriginalpixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Manoel/Manoeloriginalpixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"uelBravopixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Manoel/ManuelBravopixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"uelFelizpixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Manoel/ManuelFelizpixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"uelSurpresopixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Manoel/ManuelSurpresopixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"uelTristepixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Manoel/ManuelTristepixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

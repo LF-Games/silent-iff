@@ -1,0 +1,65 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "robertabasepixel",
+&"description": "",
+&"display_name": "Roberta",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"RobertaFelizpixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Roberta/RobertaFelizpixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"RobertaSurpresapixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Roberta/RobertaSurpresapixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"RobertaTristepixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Roberta/RobertaTristepixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"robertabasepixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Roberta/robertabasepixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"robertabravapixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Roberta/robertabravapixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

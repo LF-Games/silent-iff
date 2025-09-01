@@ -1,0 +1,65 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "originalpixel",
+&"description": "Protagonista do jogo",
+&"display_name": "Nick",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Bravopixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Nick/NickBravopixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Felizpixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Nick/NickFelizpixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Surpresopixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Nick/NickSurpresopixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Tristepixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Nick/NickTristepixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"originalpixel": {
+"export_overrides": {
+"image": "\"res://assets/characters/Nick/Nickoriginalpixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}
