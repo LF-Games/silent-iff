@@ -40,7 +40,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "Agnesmeet": "res://dialogues/Agnesmeet.dtl",
 "Luke meet": "res://dialogues/Luke meet.dtl",
-"Vini intro": "res://Vini intro.dtl",
+"Vini intro": "res://dialogues/Vini intro.dtl",
 "college_entrance_A": "res://dialogues/Bouncer/timelines/college_entrance_A.dtl",
 "dialgIntro": "res://assets/characters/Agnes/dialgIntro.dtl",
 "intro": "res://dialogues/intro.dtl",
