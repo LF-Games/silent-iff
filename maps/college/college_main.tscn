@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://bckvkvktowru4"]
+[gd_scene load_steps=9 format=4 uid="uid://bckvkvktowru4"]
 
 [ext_resource type="TileSet" uid="uid://brtg8vdom3m75" path="res://assets/tilesets/test_college_tileset.tres" id="1_i3yx2"]
 [ext_resource type="PackedScene" uid="uid://kb1qk4wwlxlj" path="res://entities/characters/player_character.tscn" id="2_4r8e6"]
 [ext_resource type="PackedScene" uid="uid://bw2a3j2o7bip0" path="res://entities/level/level_boundaries.tscn" id="2_77j3w"]
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="4_pluos"]
 [ext_resource type="PackedScene" uid="uid://bxqi6pk4xn5t1" path="res://entities/level/level_transition.tscn" id="5_pluos"]
+[ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://entities/ui/in_game_ui.tscn" id="6_k1nn7"]
 
 [sub_resource type="Gradient" id="Gradient_wpej2"]
 offsets = PackedFloat32Array(0.103896, 0.363636, 0.681818, 0.902597, 1)
@@ -74,7 +75,7 @@ energy = 0.8
 texture = SubResource("GradientTexture2D_i3yx2")
 
 [node name="PointLight2D7" type="PointLight2D" parent="Lights"]
-position = Vector2(-5, 314)
+position = Vector2(-5, 313)
 scale = Vector2(1.18667, 1.18667)
 color = Color(0.627451, 0.843137, 1, 1)
 energy = 0.8
@@ -113,3 +114,11 @@ position = Vector2(0, 417)
 scale = Vector2(3.175, 0.2)
 path_to_next_level = "res://maps/college/college_entrance.tscn"
 spawn_position = Vector2(-32, -64)
+
+[node name="LevelTransition2" parent="." instance=ExtResource("5_pluos")]
+position = Vector2(64, -349)
+scale = Vector2(3.16168, -0.110714)
+path_to_next_level = "res://maps/college/college_courtyard.tscn"
+spawn_position = Vector2(-15, 130)
+
+[node name="inGameUI" parent="." instance=ExtResource("6_k1nn7")]

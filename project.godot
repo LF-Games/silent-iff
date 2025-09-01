@@ -11,16 +11,18 @@ config_version=5
 [application]
 
 config/name="Silent Iff"
-run/main_scene="uid://dmsok8qw5by7w"
+run/main_scene="uid://d0f4bqlt1718b"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalState="*res://src/other/global_state.gd"
-LevelManager="*res://entities/level/level_manager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 CharacterDialogueController="*res://src/characters/character_dialogue_controller.gd"
+LevelManager="*res://entities/level/level_manager.tscn"
 
 [dialogic]
 
@@ -104,7 +106,8 @@ folder_colors={
 "res://dialogues/": "red",
 "res://entities/": "yellow",
 "res://maps/": "blue",
-"res://src/": "green"
+"res://src/": "green",
+"res://ui_screens/": "pink"
 }
 
 [global_group]

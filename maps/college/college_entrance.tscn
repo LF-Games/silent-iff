@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dmsok8qw5by7w"]
+[gd_scene load_steps=21 format=4 uid="uid://dmsok8qw5by7w"]
 
 [ext_resource type="Texture2D" uid="uid://bhok1hef0rdn6" path="res://assets/placeholder/Exterior/spritesheet_college_entrance.png" id="1_cvpi1"]
 [ext_resource type="TileSet" uid="uid://brtg8vdom3m75" path="res://assets/tilesets/test_college_tileset.tres" id="1_i4p7d"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="7_u4jgn"]
 [ext_resource type="Script" uid="uid://ctdyjiwd1tgs2" path="res://src/dialogue/initial_dialogue.gd" id="8_i4p7d"]
 [ext_resource type="PackedScene" uid="uid://bw2a3j2o7bip0" path="res://entities/level/level_boundaries.tscn" id="8_pf0uq"]
+[ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://entities/ui/in_game_ui.tscn" id="9_u4jgn"]
 [ext_resource type="PackedScene" uid="uid://ct7wamw2g73k4" path="res://entities/props/gate.tscn" id="13_wpej2"]
 [ext_resource type="PackedScene" uid="uid://bxqi6pk4xn5t1" path="res://entities/level/level_transition.tscn" id="16_76hl5"]
 
@@ -950,9 +951,6 @@ terrain_set_0/terrain_0/name = "flowerbed"
 terrain_set_0/terrain_0/color = Color(1, 0.146149, 0.149937, 1)
 sources/4 = SubResource("TileSetAtlasSource_pf0uq")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvpi1"]
-size = Vector2(32, 8)
-
 [sub_resource type="Gradient" id="Gradient_i4p7d"]
 offsets = PackedFloat32Array(0.103896, 0.220779, 0.519481, 0.967532, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.736248, 0.736248, 0.736248, 1, 0.353383, 0.353383, 0.353383, 1, 0.075725, 0.075725, 0.075725, 1, 0, 0, 0, 1)
@@ -976,6 +974,9 @@ height = 48
 fill = 1
 fill_from = Vector2(0.486239, 0.53211)
 fill_to = Vector2(0.825688, 0.17737)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvpi1"]
+size = Vector2(32, 8)
 
 [node name="CollegeEntrance" type="Node2D"]
 
@@ -1016,14 +1017,6 @@ target = NodePath("../walls/Player")
 
 [node name="LevelBoundaries" parent="." instance=ExtResource("8_pf0uq")]
 tile_map_data = PackedByteArray("AAATAPv/AAAAAAAAAAATAA0AAAAAAAAAAADr/w0AAAAAAAAAAADr//v/AAAAAAAAAAA=")
-
-[node name="LevelTransition" parent="." instance=ExtResource("16_76hl5")]
-position = Vector2(-32, -76)
-path_to_next_level = "res://maps/college/college_main.tscn"
-spawn_position = Vector2(0, 410)
-
-[node name="CollisionShape2D" parent="LevelTransition" index="0"]
-shape = SubResource("RectangleShape2D_cvpi1")
 
 [node name="Lights" type="Node2D" parent="."]
 
@@ -1067,9 +1060,19 @@ color = Color(0.162146, 0.431637, 0.0976078, 1)
 energy = 2.0
 texture = SubResource("GradientTexture2D_76hl5")
 
+[node name="LevelTransition" parent="." instance=ExtResource("16_76hl5")]
+position = Vector2(-32, -76)
+path_to_next_level = "res://maps/college/college_main.tscn"
+spawn_position = Vector2(0, 410)
+
+[node name="CollisionShape2D" parent="LevelTransition" index="0"]
+shape = SubResource("RectangleShape2D_cvpi1")
+
 [node name="InitialDialogue" type="Node" parent="." node_paths=PackedStringArray("gate", "npc_parent")]
 script = ExtResource("8_i4p7d")
 gate = NodePath("../walls/Gate")
 npc_parent = NodePath("../walls")
+
+[node name="inGameUI" parent="." instance=ExtResource("9_u4jgn")]
 
 [editable path="LevelTransition"]
