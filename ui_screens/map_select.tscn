@@ -35,7 +35,7 @@ texture_hover = ExtResource("2_arf66")
 texture_focused = ExtResource("2_arf66")
 stretch_mode = 0
 script = ExtResource("4_6f1v2")
-path_to_level = "res://maps/college/college_entrance.tscn"
+path_to_level = "res://maps/college/college_workshop.tscn"
 selection_color = Color(0.188235, 0.576471, 0.690196, 1)
 
 [node name="Label" type="Label" parent="WorkshopButton"]
@@ -78,7 +78,7 @@ texture_hover = ExtResource("2_arf66")
 texture_focused = ExtResource("2_arf66")
 stretch_mode = 0
 script = ExtResource("4_6f1v2")
-path_to_level = "res://maps/college/college_entrance.tscn"
+path_to_level = "res://maps/college/college_library.tscn"
 selection_color = Color(0.87451, 0.552941, 0.901961, 1)
 
 [node name="Label" type="Label" parent="LibraryButton"]
