@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=4 uid="uid://bmgavl50w0qa1"]
+[gd_scene load_steps=11 format=4 uid="uid://bmgavl50w0qa1"]
 
 [ext_resource type="TileSet" uid="uid://5chuiopib5dj" path="res://assets/tilesets/library.tres" id="1_itnu8"]
 [ext_resource type="PackedScene" uid="uid://b2mrq06jsbhrw" path="res://assets/characters/Nick/PlayerNick.tscn" id="2_exm45"]
 [ext_resource type="PackedScene" uid="uid://d0ane0csjen83" path="res://entities/characters/npc_luke.tscn" id="2_fqs3s"]
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="6_w1mtw"]
 [ext_resource type="PackedScene" uid="uid://bw2a3j2o7bip0" path="res://entities/level/level_boundaries.tscn" id="7_em5rt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqs3s"]
+radius = 7.0
 
 [sub_resource type="Gradient" id="Gradient_i4p7d"]
 offsets = PackedFloat32Array(0.103896, 0.220779, 0.519481, 0.967532, 1)
@@ -48,10 +51,26 @@ tile_set = ExtResource("1_itnu8")
 [node name="Upperclassman" parent="walls" instance=ExtResource("2_fqs3s")]
 position = Vector2(175, 122)
 
+[node name="CollisionShape2D" parent="walls/Upperclassman" index="0"]
+position = Vector2(0, 0)
+rotation = 1.5708
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_fqs3s")
+
+[node name="AnimatedSprite2D" parent="walls/Upperclassman" index="1"]
+offset = Vector2(0, -28)
+
 [node name="Player" parent="walls" instance=ExtResource("2_exm45")]
 position = Vector2(142, 202)
 
+[node name="CollisionShape2D" parent="walls/Player" index="0"]
+position = Vector2(0, 0)
+
+[node name="AnimatedSprite2D" parent="walls/Player" index="1"]
+offset = Vector2(0, -28)
+
 [node name="ObjectsCollision" type="TileMapLayer" parent="walls"]
+visible = false
 y_sort_enabled = true
 rotation = 0.000124525
 tile_map_data = PackedByteArray("AAAQAAYAAAACAAkAAAASAAkAAAAMAA4AAAD//wgAAAAIAAAAAAD3/wgAAAAAAAAAAADv/wgAAAAYAAAAAADv/wAAAAAIAAAAAAD//wAAAAAAAAAAAAD3/wAAAAAYAAAAAAD3//j/AAAIAAAAAAD///j/AAAAAAAAAADv//j/AAAAAAAAABASAP3/AAASAA0AAAASAPv/AAAQAA0AAAASAPn/AAASAA0AAAASAPf/AAAQAA0AAADs/wsAAAAOAA0AAADv/+j/AAAIAAgAAAD3/+j/AAAIAAgAABDz/+j/AAAMAAgAAAD7/+j/AAAUAAgAABASAPX/AAASAA0AAAASAPP/AAAQAA0AAAANAPn/AAAIABEAAAAIAPb/AAAIABEAAAANAPL/AAAIABEAAAAIAO7/AAAIABEAAAAIAO//AAAIAA4AAAAOAPH/AAALAA0AAAAMAPH/AAAKAA0AAAAJAPX/AAALAA0AAAAHAPX/AAAKAA0AAAANAPr/AAAIAA4AAAANAPf/AAAJAA0AAAAOAPj/AAALAA0AAAA=")
@@ -111,3 +130,6 @@ position = Vector2(-79, -56)
 color = Color(0.162146, 0.431637, 0.0976078, 1)
 energy = 2.0
 texture = SubResource("GradientTexture2D_76hl5")
+
+[editable path="walls/Upperclassman"]
+[editable path="walls/Player"]

@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://bfrkkkhkkidsn"]
+[gd_scene load_steps=11 format=4 uid="uid://bfrkkkhkkidsn"]
 
 [ext_resource type="TileSet" uid="uid://1ewuogbvvi3n" path="res://assets/tilesets/workshop.tres" id="1_irfxh"]
 [ext_resource type="PackedScene" uid="uid://b2mrq06jsbhrw" path="res://assets/characters/Nick/PlayerNick.tscn" id="2_xyn6c"]
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="3_0ufkt"]
 [ext_resource type="PackedScene" uid="uid://b1nn4jeb7an18" path="res://entities/characters/npc_roberta.tscn" id="3_xyn6c"]
 [ext_resource type="PackedScene" uid="uid://bw2a3j2o7bip0" path="res://entities/level/level_boundaries.tscn" id="4_y2dup"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xyn6c"]
+radius = 8.0
+height = 25.0
 
 [sub_resource type="Gradient" id="Gradient_i4p7d"]
 offsets = PackedFloat32Array(0.103896, 0.220779, 0.519481, 0.967532, 1)
@@ -48,6 +52,12 @@ tile_set = ExtResource("1_irfxh")
 [node name="Player" parent="walls" instance=ExtResource("2_xyn6c")]
 position = Vector2(-233, 98)
 
+[node name="CollisionShape2D" parent="walls/Player" index="0"]
+position = Vector2(0, 0)
+
+[node name="AnimatedSprite2D" parent="walls/Player" index="1"]
+offset = Vector2(0, -28)
+
 [node name="ObjectsCollision" type="TileMapLayer" parent="walls"]
 y_sort_enabled = true
 rotation = 0.000124525
@@ -55,8 +65,17 @@ tile_map_data = PackedByteArray("AADu//3/AAAAAA0AAAD4/wQAAAAIAA0AAAD4//3/AAAQAAg
 tile_set = ExtResource("1_irfxh")
 
 [node name="Upperclassman" parent="walls" instance=ExtResource("3_xyn6c")]
-position = Vector2(-172, 13)
+position = Vector2(-172, 27)
 collision_layer = 1
+
+[node name="CollisionShape2D" parent="walls/Upperclassman" index="0"]
+position = Vector2(0, 0)
+rotation = 1.5708
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_xyn6c")
+
+[node name="AnimatedSprite2D" parent="walls/Upperclassman" index="1"]
+offset = Vector2(0, -28)
 
 [node name="front" type="TileMapLayer" parent="walls"]
 y_sort_enabled = true
@@ -112,3 +131,6 @@ position = Vector2(-79, -56)
 color = Color(0.162146, 0.431637, 0.0976078, 1)
 energy = 2.0
 texture = SubResource("GradientTexture2D_76hl5")
+
+[editable path="walls/Player"]
+[editable path="walls/Upperclassman"]
