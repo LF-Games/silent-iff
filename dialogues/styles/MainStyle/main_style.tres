@@ -76,7 +76,7 @@ overrides = {}
 [resource]
 script = ExtResource("10_mpasu")
 name = "main_style"
-layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_list = Array[String](["10", "12", "11", "13", "14", "15", "16", "17"])
 layer_info = {
 "": SubResource("Resource_7ntyj"),
 "10": SubResource("Resource_o2c3l"),
