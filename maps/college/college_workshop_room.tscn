@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bfrkkkhkkidsn"]
+[gd_scene load_steps=11 format=4 uid="uid://bfrkkkhkkidsn"]
 
 [ext_resource type="TileSet" uid="uid://1ewuogbvvi3n" path="res://assets/tilesets/workshop.tres" id="1_irfxh"]
 [ext_resource type="PackedScene" uid="uid://b2mrq06jsbhrw" path="res://assets/characters/Nick/PlayerNick.tscn" id="2_xyn6c"]
@@ -6,10 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b1nn4jeb7an18" path="res://entities/characters/npc_roberta.tscn" id="3_xyn6c"]
 [ext_resource type="PackedScene" uid="uid://bw2a3j2o7bip0" path="res://entities/level/level_boundaries.tscn" id="4_y2dup"]
 [ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://entities/ui/in_game_ui.tscn" id="6_0ufkt"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xyn6c"]
-radius = 8.0
-height = 25.0
 
 [sub_resource type="Gradient" id="Gradient_i4p7d"]
 offsets = PackedFloat32Array(0.103896, 0.220779, 0.519481, 0.967532, 1)
@@ -69,15 +65,6 @@ tile_set = ExtResource("1_irfxh")
 position = Vector2(-172, 27)
 collision_layer = 1
 
-[node name="CollisionShape2D" parent="walls/Upperclassman" index="0"]
-position = Vector2(0, 0)
-rotation = 1.5708
-scale = Vector2(1, 1)
-shape = SubResource("CapsuleShape2D_xyn6c")
-
-[node name="AnimatedSprite2D" parent="walls/Upperclassman" index="1"]
-offset = Vector2(0, -28)
-
 [node name="front" type="TileMapLayer" parent="walls"]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD4//7/AAAMAAEAAADt//v/AAAEAAAAAAA=")
@@ -136,4 +123,3 @@ texture = SubResource("GradientTexture2D_76hl5")
 [node name="inGameUI" parent="." instance=ExtResource("6_0ufkt")]
 
 [editable path="walls/Player"]
-[editable path="walls/Upperclassman"]

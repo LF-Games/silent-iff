@@ -3,19 +3,19 @@
 [ext_resource type="Script" uid="uid://bwpygqejil00w" path="res://src/characters/game_character.gd" id="1_xirvy"]
 [ext_resource type="SpriteFrames" uid="uid://dj1cq26dukkf4" path="res://assets/characters/figurantes/robo/roboanim.tres" id="2_xirvy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mh4sv"]
-radius = 5.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xirvy"]
+radius = 20.0
+height = 100.0
 
 [node name="Upperclassman" type="CharacterBody2D" groups=["interactable"]]
 collision_layer = 2
 script = ExtResource("1_xirvy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 36)
-scale = Vector2(7.44638, -3.18867)
-shape = SubResource("CircleShape2D_mh4sv")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xirvy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_xirvy")
 animation = &"idle_front"
-offset = Vector2(0, -14)
+offset = Vector2(0, -55)
