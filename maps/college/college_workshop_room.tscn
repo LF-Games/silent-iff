@@ -51,14 +51,16 @@ position = Vector2(-233, 98)
 [node name="ObjectsCollision" type="TileMapLayer" parent="walls"]
 y_sort_enabled = true
 rotation = 0.000124525
-tile_map_data = PackedByteArray("AADu//3/AAAAAA0AAAD4/wQAAAAIAA0AAAD4//3/AAAQAAgAAADt//7/AAAXAAoAAADv//7/AAAXAAoAAAD0//z/AAAYAAAAAAD2/wcAAAACAAQAAAD3/wkAAAAAAAQAAADs/wcAAAAUAAAAAADt/wUAAAAUAAQAAAD5/wMAAAAWAAYAAAD5/wYAAAAKAAQAAAA=")
+tile_map_data = PackedByteArray("AADu//3/AAAAAA0AAAD4/wQAAAAIAA0AAAD4//3/AAAQAAgAAADt//7/AAAXAAoAAADv//7/AAAXAAoAAAD0//z/AAAYAAAAAAD3/wkAAAAAAAQAAADs/wcAAAAUAAAAAADt/wUAAAAUAAQAAAD5/wMAAAAWAAYAAAD5/wYAAAAKAAQAAAD1/wcAAAACAAQAAAA=")
 tile_set = ExtResource("1_irfxh")
 
 [node name="Upperclassman" parent="walls" instance=ExtResource("3_xyn6c")]
 position = Vector2(-172, 13)
+collision_layer = 1
 
-[node name="front" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD4//z/AAAMAAEAAADt//r/AAAEAAAAAAA=")
+[node name="front" type="TileMapLayer" parent="walls"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD4//7/AAAMAAEAAADt//v/AAAEAAAAAAA=")
 tile_set = ExtResource("1_irfxh")
 
 [node name="Camera Follow" parent="." node_paths=PackedStringArray("level_boundaries") instance=ExtResource("3_0ufkt")]
@@ -66,7 +68,7 @@ editor_draw_screen = false
 level_boundaries = NodePath("../LevelBoundaries")
 
 [node name="LevelBoundaries" parent="." instance=ExtResource("4_y2dup")]
-tile_map_data = PackedByteArray("AADq//n/AAAAAAAAAAD7//n/AAAAAAAAAAD7/woAAAAAAAAAAADq/woAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD7/woAAAAAAAAAAADq/woAAAAAAAAAAADq//j/AAAAAAAAAAD7//j/AAAAAAAAAAA=")
 
 [node name="Lights" type="Node2D" parent="."]
 visible = false
