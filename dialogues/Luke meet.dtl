@@ -1,4 +1,4 @@
-Você se esbarra em um aluno apressado carregando livros.
+(Você se esbarra em um aluno apressado carregando livros.)
 leave --All--
 join charLuke center
 charLuke: Me desculpe, eu tinha um compromisso urgente.
@@ -8,6 +8,8 @@ charNick: Tudo bem, deixa eu te ajudar
 leave --All--
 join charLuke center
 charLuke: Não precisa, eu dou um jeito.
+do CharacterDialogueController.move_to("npc_luke", "", "200")
+do CharacterDialogueController.move_to("npc_luke", "", "-21")
 charLuke: Ué a porta está trancada, mas você acabou de entrar, né
 leave --All--
 join charNick center

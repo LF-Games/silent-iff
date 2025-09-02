@@ -35,6 +35,7 @@ directories/dch_directory={
 "charNick": "res://assets/characters/Nick/charNick.dch",
 "charRoberta": "res://assets/characters/Roberta/charRoberta.dch",
 "charVini": "res://assets/characters/Vini/charVini.dch",
+"chargeneric": "res://assets/characters/figurantes/chargeneric.dch",
 "player": "res://dialogues/player.dch",
 "student_id": "res://assets/placeholder/Actor/Characters/StudentID/student_id.dch",
 "upperclassman": "res://dialogues/Upperclassman/upperclassman.dch"
@@ -68,7 +69,7 @@ text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
-animations/join_default_length=0.5
+animations/join_default_length=0.0
 animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
@@ -96,6 +97,8 @@ audio/channel_defaults={
 }
 text/input_action="dialogic_default_action"
 audio/max_channels=4.0
+animations/join_default="Instant In"
+animations/leave_default="Fade Out"
 
 [display]
 

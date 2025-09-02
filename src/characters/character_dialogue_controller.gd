@@ -22,6 +22,16 @@ func move_to(char_name: String, pos_x: float, pos_y: float):
 	character.set_movement_state(GameCharacter.Movement.IDLE)
 	Dialogic.paused = false
 
+func delete(char_name: String): #apaga o personagem da cena
+	var character := _get_character_by_name(char_name) as GameCharacter
+
+	if !character:
+		push_warning("NPC not found in the scene tree: %s" % char_name)
+		return
+	
+	character.queue_free()
+	
+	
 
 func look_at(char_name: String, direction_str: String):
 	var character := _get_character_by_name(char_name) as GameCharacter
@@ -61,3 +71,6 @@ func _string_to_direction(string: String) -> GameCharacter.Direction:
 		% string)
 	
 	return GameCharacter.Direction.DOWN
+	
+
+	

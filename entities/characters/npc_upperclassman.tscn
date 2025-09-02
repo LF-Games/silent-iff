@@ -246,6 +246,7 @@ animations = [{
 }]
 
 [node name="Upperclassman" type="CharacterBody2D" groups=["interactable"]]
+visible = false
 collision_layer = 2
 script = ExtResource("1_nhddm")
 

@@ -38,7 +38,7 @@ tile_set = ExtResource("1_i3yx2")
 
 [node name="Objects" type="TileMapLayer" parent="Map"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD2//f/AgACAAgAAAD2//j/AgACAAkAAAD2//n/AgACAAoAAAD2//v/AgACAAgAAAD2//z/AgACAAkAAAD2//3/AgACAAoAAAD2////AgACAAgAAAD2/wAAAgACAAkAAAD2/wEAAgACAAoAAAD2/wMAAgACAAgAAAD2/wQAAgACAAkAAAD2/wUAAgACAAoAAAD2/wcAAgACAAgAAAD2/wgAAgACAAkAAAD2/wkAAgACAAoAAAD2/wsAAgACAAgAAAD2/wwAAgACAAkAAAD2/w0AAgACAAoAAAA=")
+tile_map_data = PackedByteArray("AAD2//f/AgACAAgAAAD2//v/AgACAAgAAAD2////AgACAAgAAAD2/wMAAgACAAgAAAD2/wcAAgACAAgAAAD2/wsAAgACAAgAAAA=")
 tile_set = ExtResource("1_i3yx2")
 
 [node name="Walls" type="TileMapLayer" parent="Map"]

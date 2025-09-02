@@ -49,7 +49,7 @@ overrides = {
 "name_label_use_global_font": "false",
 "name_label_use_global_font_size": "false",
 "normal_font": "\"res://PressStart2P-Regular.ttf\"",
-"text_use_global_font": "false",
+"text_size": "20.0",
 "text_use_global_size": "false"
 }
 

@@ -15,7 +15,7 @@ func _ready() -> void:
 	# for test only
 	control_state = States.PLAYER_CONTROL
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Opções de input quando player tem controle
 	if control_state == States.PLAYER_CONTROL:
 		var direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")

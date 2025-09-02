@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3cpnhts6kj5p"]
+[gd_scene load_steps=5 format=3 uid="uid://d3cpnhts6kj5p"]
 
-[ext_resource type="Script" uid="uid://bwpygqejil00w" path="res://src/characters/game_character.gd" id="1_dj6f2"]
-[ext_resource type="SpriteFrames" uid="uid://cw8jknv20f0la" path="res://assets/characters/Luke/lukeanim.tres" id="2_4aiqn"]
+[ext_resource type="Material" uid="uid://cjb5imh5qndha" path="res://src/other/outline.material" id="1_4aiqn"]
+[ext_resource type="Script" uid="uid://xr2tfldabl17" path="res://src/characters/npc/interactable_npc.gd" id="1_dj6f2"]
+[ext_resource type="SpriteFrames" uid="uid://dm5g45n5psnqm" path="res://assets/characters/Agnes/agnesanim.tres" id="2_dj6f2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh4sv"]
 radius = 5.0
 
-[node name="Upperclassman" type="CharacterBody2D" groups=["interactable"]]
-collision_layer = 2
+[node name="npc_agnes" type="CharacterBody2D"]
+material = ExtResource("1_4aiqn")
+collision_layer = 3
 script = ExtResource("1_dj6f2")
+default_timeline = "Agnesmeet"
+metadata/_custom_type_script = "uid://xr2tfldabl17"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 13)
@@ -16,6 +20,6 @@ scale = Vector2(3.12, 1)
 shape = SubResource("CircleShape2D_mh4sv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_4aiqn")
-animation = &"idle_front"
+sprite_frames = ExtResource("2_dj6f2")
+animation = &"walk_right"
 offset = Vector2(0, -14)

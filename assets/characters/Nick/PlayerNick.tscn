@@ -156,7 +156,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_71eye"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pjbht"]
 radius = 3.0
 
 [node name="Player" type="CharacterBody2D"]
@@ -180,9 +180,13 @@ script = ExtResource("3_h2en1")
 script = ExtResource("4_jy48m")
 
 [node name="InteractionArea" type="Area2D" parent="."]
-scale = Vector2(4.76, 2.92)
+position = Vector2(0, 11)
+scale = Vector2(1.04, 2)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-shape = SubResource("CircleShape2D_71eye")
+shape = SubResource("CircleShape2D_pjbht")
 debug_color = Color(0.525768, 0.572631, 0, 0.42)
+
+[connection signal="body_entered" from="InteractionArea" to="Interaction" method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="Interaction" method="_on_interaction_area_body_exited"]
