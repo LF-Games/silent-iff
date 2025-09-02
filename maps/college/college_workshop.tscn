@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://dydfw34xlviqs"]
+[gd_scene load_steps=12 format=4 uid="uid://dydfw34xlviqs"]
 
 [ext_resource type="TileSet" uid="uid://1ewuogbvvi3n" path="res://assets/tilesets/workshop.tres" id="1_hyko6"]
 [ext_resource type="PackedScene" uid="uid://b2mrq06jsbhrw" path="res://assets/characters/Nick/PlayerNick.tscn" id="2_ocada"]
 [ext_resource type="PackedScene" uid="uid://dol1xwul6swge" path="res://entities/characters/npc_robo.tscn" id="5_7vm12"]
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="5_41n87"]
 [ext_resource type="PackedScene" uid="uid://bw2a3j2o7bip0" path="res://entities/level/level_boundaries.tscn" id="6_4pbw3"]
+[ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://entities/ui/in_game_ui.tscn" id="6_80s6k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7vm12"]
 radius = 15.0
@@ -130,6 +131,8 @@ position = Vector2(-79, -56)
 color = Color(0.162146, 0.431637, 0.0976078, 1)
 energy = 2.0
 texture = SubResource("GradientTexture2D_76hl5")
+
+[node name="inGameUI" parent="." instance=ExtResource("6_80s6k")]
 
 [editable path="walls/Upperclassman"]
 [editable path="walls/Player"]
