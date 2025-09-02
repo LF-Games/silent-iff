@@ -50,7 +50,7 @@ position = Vector2(142, 202)
 [node name="ObjectsCollision" type="TileMapLayer" parent="walls"]
 y_sort_enabled = true
 rotation = 0.000124525
-tile_map_data = PackedByteArray("AAD//wgAAAAYAAQAAAAGAAgAAAAMAA0AAAA=")
+tile_map_data = PackedByteArray("AAAGAAkAAAAMAA0AAAD//wkAAAAYAAQAAAA=")
 tile_set = ExtResource("1_hyko6")
 
 [node name="front" type="TileMapLayer" parent="walls"]
@@ -109,4 +109,5 @@ energy = 2.0
 texture = SubResource("GradientTexture2D_76hl5")
 
 [node name="Upperclassman" parent="." instance=ExtResource("5_7vm12")]
-position = Vector2(-74, 250)
+position = Vector2(-81, 264)
+collision_layer = 1
