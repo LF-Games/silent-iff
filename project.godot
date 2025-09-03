@@ -30,11 +30,14 @@ directories/dch_directory={
 "Abby": "res://dialogues/Abby/Abby.dch",
 "Bouncer": "res://dialogues/Bouncer/Bouncer.dch",
 "charAgnes": "res://assets/characters/Agnes/charAgnes.dch",
+"charGuarda": "res://assets/characters/figurantes/charGuarda.dch",
 "charLuke": "res://assets/characters/Luke/charLuke.dch",
 "charManoel": "res://assets/characters/Manoel/charManoel.dch",
 "charNick": "res://assets/characters/Nick/charNick.dch",
 "charRoberta": "res://assets/characters/Roberta/charRoberta.dch",
+"charRobo": "res://assets/characters/figurantes/robo/charRobo.dch",
 "charVini": "res://assets/characters/Vini/charVini.dch",
+"chargeneric": "res://assets/characters/figurantes/chargeneric.dch",
 "player": "res://dialogues/player.dch",
 "student_id": "res://assets/placeholder/Actor/Characters/StudentID/student_id.dch",
 "upperclassman": "res://dialogues/Upperclassman/upperclassman.dch"
@@ -42,6 +45,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "Agnesmeet": "res://dialogues/Agnesmeet.dtl",
 "Luke meet": "res://dialogues/Luke meet.dtl",
+"Robomeet": "res://assets/characters/figurantes/robo/Robomeet.dtl",
 "Vini intro": "res://dialogues/Vini intro.dtl",
 "college_entrance_A": "res://dialogues/Bouncer/timelines/college_entrance_A.dtl",
 "dialgIntro": "res://assets/characters/Agnes/dialgIntro.dtl",
@@ -68,7 +72,7 @@ text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
-animations/join_default_length=0.5
+animations/join_default_length=0.0
 animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
@@ -96,9 +100,12 @@ audio/channel_defaults={
 }
 text/input_action="dialogic_default_action"
 audio/max_channels=4.0
+animations/join_default="Instant In"
+animations/leave_default="Fade Out"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -231,3 +238,4 @@ dialogic_default_action={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

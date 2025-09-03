@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2mrq06jsbhrw"]
+[gd_scene load_steps=23 format=3 uid="uid://b2mrq06jsbhrw"]
 
 [ext_resource type="Script" uid="uid://cfa128ua178t7" path="res://src/characters/player/player_movement.gd" id="1_pjbht"]
 [ext_resource type="Texture2D" uid="uid://cllricds1hhmc" path="res://assets/characters/Nick/nick anim sheet.png" id="2_x1u0q"]
@@ -10,6 +10,10 @@ radius = 8.0
 height = 32.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ec2h"]
+atlas = ExtResource("2_x1u0q")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjbht"]
 atlas = ExtResource("2_x1u0q")
 region = Rect2(0, 192, 64, 64)
 
@@ -70,6 +74,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4ec2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjbht")
 }],
 "loop": true,
 "name": &"idle_back",
@@ -156,7 +163,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_71eye"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pjbht"]
 radius = 3.0
 
 [node name="Player" type="CharacterBody2D"]
@@ -169,9 +176,10 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2yq5y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 11)
 sprite_frames = SubResource("SpriteFrames_85tvl")
-animation = &"walk_right"
-offset = Vector2(0, -14)
+animation = &"idle_left"
+offset = Vector2(0, -25)
 
 [node name="Controller" type="Node" parent="."]
 script = ExtResource("3_h2en1")
@@ -180,8 +188,13 @@ script = ExtResource("3_h2en1")
 script = ExtResource("4_jy48m")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+position = Vector2(0, 11)
+scale = Vector2(1.04, 2)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-shape = SubResource("CircleShape2D_71eye")
+shape = SubResource("CircleShape2D_pjbht")
 debug_color = Color(0.525768, 0.572631, 0, 0.42)
+
+[connection signal="body_entered" from="InteractionArea" to="Interaction" method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="Interaction" method="_on_interaction_area_body_exited"]

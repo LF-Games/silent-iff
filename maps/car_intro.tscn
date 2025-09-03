@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjr70p7utr7y1"]
+
+[ext_resource type="Script" uid="uid://ddwufabd5ixld" path="res://src/dialogue/camera/car_dialogue.gd" id="1_6ys1p"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_6ys1p")
+path_to_next_scene = "res://maps/college/college_entrance.tscn"

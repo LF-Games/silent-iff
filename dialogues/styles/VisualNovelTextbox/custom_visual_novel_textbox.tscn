@@ -1,16 +1,21 @@
-[gd_scene load_steps=18 format=3 uid="uid://cci2pjlwqxju0"]
+[gd_scene load_steps=24 format=3 uid="uid://d2vpmo7qf8jml"]
 
-[ext_resource type="Script" uid="uid://bl43m5qw8pso3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.gd" id="1_bpydr"]
-[ext_resource type="Script" uid="uid://bfc03rn8slceu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="2_xy7a2"]
+[ext_resource type="Script" uid="uid://0178osev0y6r" path="res://addons/dialogic_additions/ActionChoices/VisualNovelTextbox/vn_textbox_layer.gd" id="1_bpydr"]
+[ext_resource type="Script" uid="uid://1o62l11igeiu" path="res://addons/dialogic_additions/ActionChoices/VisualNovelTextbox/animations.gd" id="2_xy7a2"]
+[ext_resource type="Texture2D" uid="uid://bnn1bv15w8wtt" path="res://UI/elements/textbox.png" id="3_0d7hy"]
 [ext_resource type="Script" uid="uid://drhfq6rmdeuri" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_4634k"]
-[ext_resource type="Texture2D" uid="uid://bt5sa7yvew3aj" path="res://assets/placeholder/UI/Dialog/DialogueBoxSimple.png" id="3_nf8ch"]
 [ext_resource type="StyleBox" uid="uid://dkv1pl1c1dq6" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres" id="3_ssa84"]
 [ext_resource type="Script" uid="uid://dpv2dfiv5dhmr" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_ma5mw"]
+[ext_resource type="FontFile" uid="uid://cg3c00u0rcih2" path="res://assets/fonts/PressStart2P-Regular.ttf" id="5_0d7hy"]
 [ext_resource type="Script" uid="uid://dve1vwse2peji" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="5_40a50"]
-[ext_resource type="Script" uid="uid://bklme8oymw6h7" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="6_07xym"]
-[ext_resource type="Texture2D" uid="uid://b0rpqfg4fhebk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg" id="6_uch03"]
+[ext_resource type="Script" uid="uid://dkrcnu4cbj5yb" path="res://addons/dialogic_additions/ActionChoices/VisualNovelTextbox/autoadvance_indicator.gd" id="6_07xym"]
 [ext_resource type="Script" uid="uid://bak74s0kcr0ao" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="7_bi7sh"]
+[ext_resource type="Texture2D" uid="uid://cc2dp27rwo8ub" path="res://UI/elements/seta.png" id="9_0d7hy"]
 [ext_resource type="StyleBox" uid="uid://m7gyepkysu83" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres" id="9_yg8ig"]
+[ext_resource type="Script" uid="uid://d3y5g8g077bc3" path="res://addons/dialogic_additions/ActionChoices/action_choices_handler.gd" id="11_it31i"]
+[ext_resource type="Texture2D" uid="uid://dj3d8jehiwt1c" path="res://assets/ui/custom_choices/choices_box.png" id="13_1bkm2"]
+[ext_resource type="Texture2D" uid="uid://l7q3djb71p1b" path="res://assets/ui/custom_choices/bar_border.png" id="15_caop7"]
+[ext_resource type="Texture2D" uid="uid://bpbpu5cu8fv2v" path="res://assets/ui/custom_choices/pointer.png" id="16_cqfsm"]
 
 [sub_resource type="Animation" id="Animation_au0a2"]
 length = 0.001
@@ -65,7 +70,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Anchor/AnimationParent/Sizer/DialogTextPanel:rotation")
+tracks/4/path = NodePath("Anchor/AnimationParent/Sizer/MarginContainer/DialogTextPanel:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -80,7 +85,7 @@ length = 0.4
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Anchor/AnimationParent/Sizer/DialogTextPanel:rotation")
+tracks/0/path = NodePath("Anchor/AnimationParent/Sizer/MarginContainer/DialogTextPanel:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -201,7 +206,11 @@ _data = {
 &"textbox_pop": SubResource("Animation_htbgc")
 }
 
-[sub_resource type="FontVariation" id="FontVariation_v8y64"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it31i"]
+bg_color = Color(0.486275, 0.807843, 0.321569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8d2l"]
+bg_color = Color(0.654902, 0.458824, 0.380392, 1)
 
 [node name="VN_TextboxLayer" type="Control"]
 layout_mode = 3
@@ -212,9 +221,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_bpydr")
-box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres"
-box_size = Vector2(550, 150)
-name_label_box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres"
+box_panel = "res://addons/dialogic_additions/ActionChoices/VisualNovelTextbox/vn_textbox_default_panel.tres"
+box_size = Vector2(1057, 242)
+box_margin_bottom = 0
+name_label_box_panel = "res://addons/dialogic_additions/ActionChoices/VisualNovelTextbox/vn_textbox_name_label_panel.tres"
 name_label_box_modulate = Color(0, 0, 0, 1)
 
 [node name="Animations" type="AnimationPlayer" parent="."]
@@ -254,39 +264,45 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -50.0
-offset_right = 150.0
+offset_left = -528.5
+offset_top = -242.0
+offset_right = 528.5
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="Anchor/AnimationParent/Sizer"]
+[node name="TextboxTexture" type="TextureRect" parent="Anchor/AnimationParent/Sizer"]
 layout_mode = 2
-offset_left = -9.0
-offset_top = -5.0
-offset_right = 307.0
-offset_bottom = 55.0
-texture = ExtResource("3_nf8ch")
+offset_right = 1057.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0d7hy")
 
-[node name="DialogTextPanel" type="PanelContainer" parent="Anchor/AnimationParent/Sizer"]
-unique_name_in_owner = true
-self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
+[node name="MarginContainer" type="MarginContainer" parent="Anchor/AnimationParent/Sizer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 264
+theme_override_constants/margin_top = 64
+
+[node name="DialogTextPanel" type="PanelContainer" parent="Anchor/AnimationParent/Sizer/MarginContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0)
+layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("3_ssa84")
 metadata/_edit_layout_mode = 1
 
-[node name="DialogicNode_DialogText" type="RichTextLabel" parent="Anchor/AnimationParent/Sizer/DialogTextPanel" node_paths=PackedStringArray("textbox_root")]
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="Anchor/AnimationParent/Sizer/MarginContainer/DialogTextPanel" node_paths=PackedStringArray("textbox_root")]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_0d7hy")
 theme_override_font_sizes/bold_italics_font_size = 15
 theme_override_font_sizes/italics_font_size = 15
 theme_override_font_sizes/normal_font_size = 15
@@ -297,12 +313,12 @@ visible_characters_behavior = 1
 script = ExtResource("3_4634k")
 textbox_root = NodePath("..")
 
-[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/DialogicNode_DialogText"]
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="Anchor/AnimationParent/Sizer/MarginContainer/DialogTextPanel/DialogicNode_DialogText"]
 unique_name_in_owner = true
 script = ExtResource("4_ma5mw")
 play_every_character = 0
 
-[node name="NextIndicator" type="Control" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
+[node name="NextIndicator" type="Control" parent="Anchor/AnimationParent/Sizer/MarginContainer/DialogTextPanel"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -310,10 +326,11 @@ size_flags_vertical = 8
 mouse_filter = 2
 script = ExtResource("5_40a50")
 show_on_questions = true
-texture = ExtResource("6_uch03")
+texture = ExtResource("9_0d7hy")
+texture_size = Vector2(64, -64)
 metadata/_edit_layout_mode = 1
 
-[node name="AutoAdvanceProgressbar" type="ProgressBar" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
+[node name="AutoAdvanceProgressbar" type="ProgressBar" parent="Anchor/AnimationParent/Sizer/MarginContainer/DialogTextPanel"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.188235)
 custom_minimum_size = Vector2(0, 10)
@@ -326,13 +343,13 @@ value = 0.5
 show_percentage = false
 script = ExtResource("6_07xym")
 
-[node name="NameLabelHolder" type="Control" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
+[node name="NameLabelHolder" type="Control" parent="Anchor/AnimationParent/Sizer/MarginContainer/DialogTextPanel"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="NameLabelPanel" type="PanelContainer" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder"]
+[node name="NameLabelPanel" type="PanelContainer" parent="Anchor/AnimationParent/Sizer/MarginContainer/DialogTextPanel/NameLabelHolder"]
 unique_name_in_owner = true
-self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
+self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0)
 layout_mode = 1
 offset_top = -50.0
 offset_right = 9.0
@@ -343,12 +360,124 @@ metadata/_edit_layout_mode = 1
 metadata/_edit_use_custom_anchors = true
 metadata/_edit_group_ = true
 
-[node name="DialogicNode_NameLabel" type="Label" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder/NameLabelPanel" node_paths=PackedStringArray("name_label_root")]
+[node name="DialogicNode_NameLabel" type="Label" parent="Anchor/AnimationParent/Sizer/MarginContainer/DialogTextPanel/NameLabelHolder/NameLabelPanel" node_paths=PackedStringArray("name_label_root")]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("FontVariation_v8y64")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 20
 text = "S"
 script = ExtResource("7_bi7sh")
 name_label_root = NodePath("..")
+
+[node name="ActionChoicesHandler" type="TextureRect" parent="Anchor/AnimationParent/Sizer" node_paths=PackedStringArray("pointer", "choice_bar", "ambition_label", "modesty_label", "textbox_texture")]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -438.0
+offset_top = -230.0
+offset_right = 438.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+texture = ExtResource("13_1bkm2")
+stretch_mode = 3
+script = ExtResource("11_it31i")
+pointer = NodePath("MarginContainer/VBoxContainer/MarginContainer/TextureRect/Pointer")
+choice_bar = NodePath("MarginContainer/VBoxContainer/MarginContainer/TextureRect/ChoiceBar")
+movement_cycle_duration = 0.3
+confirm_delay = 0.5
+ambition_label = NodePath("MarginContainer/VBoxContainer/HBoxContainer/AmbitionLabel")
+modesty_label = NodePath("MarginContainer/VBoxContainer/HBoxContainer/ModestyLabel")
+textbox_texture = NodePath("../TextboxTexture")
+
+[node name="MarginContainer" type="MarginContainer" parent="Anchor/AnimationParent/Sizer/ActionChoicesHandler"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Anchor/AnimationParent/Sizer/ActionChoicesHandler/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Anchor/AnimationParent/Sizer/ActionChoicesHandler/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AmbitionLabel" type="RichTextLabel" parent="Anchor/AnimationParent/Sizer/ActionChoicesHandler/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Option 1 choice that is pretty long, shouild take two lines. "
+fit_content = true
+autowrap_mode = 2
+horizontal_alignment = 1
+
+[node name="ModestyLabel" type="RichTextLabel" parent="Anchor/AnimationParent/Sizer/ActionChoicesHandler/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Option 2 "
+fit_content = true
+autowrap_mode = 2
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Anchor/AnimationParent/Sizer/ActionChoicesHandler/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(818, 75)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 13
+theme_override_constants/margin_right = 13
+
+[node name="TextureRect" type="TextureRect" parent="Anchor/AnimationParent/Sizer/ActionChoicesHandler/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("15_caop7")
+stretch_mode = 3
+
+[node name="ChoiceBar" type="ProgressBar" parent="Anchor/AnimationParent/Sizer/ActionChoicesHandler/MarginContainer/VBoxContainer/MarginContainer/TextureRect"]
+show_behind_parent = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -402.0
+offset_top = -16.0
+offset_right = 402.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_it31i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q8d2l")
+value = 50.0
+show_percentage = false
+
+[node name="Pointer" type="TextureRect" parent="Anchor/AnimationParent/Sizer/ActionChoicesHandler/MarginContainer/VBoxContainer/MarginContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = 2.5
+offset_right = 16.5
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_cqfsm")

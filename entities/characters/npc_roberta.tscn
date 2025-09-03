@@ -1,21 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1nn4jeb7an18"]
+[gd_scene load_steps=5 format=3 uid="uid://b1nn4jeb7an18"]
 
-[ext_resource type="Script" uid="uid://bwpygqejil00w" path="res://src/characters/game_character.gd" id="1_wgjs7"]
+[ext_resource type="Script" uid="uid://xr2tfldabl17" path="res://src/characters/npc/interactable_npc.gd" id="1_oodmn"]
+[ext_resource type="Material" uid="uid://cjb5imh5qndha" path="res://src/other/outline.material" id="2_oodmn"]
 [ext_resource type="SpriteFrames" uid="uid://dn6yd4fcnqwxs" path="res://assets/characters/Roberta/robertaanim.tres" id="2_wgjs7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh4sv"]
 radius = 5.0
 
-[node name="Upperclassman" type="CharacterBody2D" groups=["interactable"]]
-collision_layer = 2
-script = ExtResource("1_wgjs7")
+[node name="npc_roberta" type="CharacterBody2D"]
+collision_layer = 3
+script = ExtResource("1_oodmn")
+default_timeline = "robertameet"
+metadata/_custom_type_script = "uid://xr2tfldabl17"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13)
-scale = Vector2(2.6, 1)
+position = Vector2(0, 8)
+scale = Vector2(2.6, 1.92)
 shape = SubResource("CircleShape2D_mh4sv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_oodmn")
 sprite_frames = ExtResource("2_wgjs7")
 animation = &"idle_front"
 offset = Vector2(0, -14)

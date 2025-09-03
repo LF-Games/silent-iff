@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0ane0csjen83"]
+[gd_scene load_steps=5 format=3 uid="uid://d0ane0csjen83"]
 
-[ext_resource type="Script" uid="uid://bwpygqejil00w" path="res://src/characters/game_character.gd" id="1_g6nca"]
+[ext_resource type="Script" uid="uid://xr2tfldabl17" path="res://src/characters/npc/interactable_npc.gd" id="1_g6nca"]
+[ext_resource type="Material" uid="uid://cjb5imh5qndha" path="res://src/other/outline.material" id="2_4kt5a"]
 [ext_resource type="SpriteFrames" uid="uid://cw8jknv20f0la" path="res://assets/characters/Luke/lukeanim.tres" id="2_g6nca"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh4sv"]
 radius = 5.0
 
-[node name="Upperclassman" type="CharacterBody2D" groups=["interactable"]]
+[node name="npc_luke" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_g6nca")
+default_timeline = "Luke meet"
+metadata/_custom_type_script = "uid://xr2tfldabl17"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 13)
@@ -16,6 +19,8 @@ scale = Vector2(3.12, 1)
 shape = SubResource("CircleShape2D_mh4sv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_4kt5a")
 sprite_frames = ExtResource("2_g6nca")
 animation = &"idle_front"
+autoplay = "idle_front"
 offset = Vector2(0, -14)
