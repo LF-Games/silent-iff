@@ -2,7 +2,6 @@ extends TextureButton
 
 @export var path_to_level: String
 @export var selection_color: Color
-@export var spawn_position : Vector2				# Posição que o player ira iniciar no level carregado
 
 
 func _ready():
@@ -12,7 +11,6 @@ func _ready():
 
 
 func _on_pressed():
-	LevelManager.set_player_spawn_position(spawn_position)
 	get_tree().change_scene_to_file.call_deferred(path_to_level)
 
 
