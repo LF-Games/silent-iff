@@ -12,7 +12,7 @@ join charNick center
 	charNick: Sei lá, 0, acho que fui roubado, como vou responder isso?
 	leave --All--
 	join charAgnes center
-	charAgnes (AgnesBravapixel): Você precisa ser mais atento,olhar minuciosamente cada detalhe. 
+	charAgnes (AgnesBravapixel): Você precisa ser mais atento,olhar minuciosamente cada detalhe.
 	charAgnes: Você pode não ver pelas câmeras de seguranças, mas seus olhos parecem bem funcionais.
 leave --All--
 join charNick center
@@ -23,7 +23,7 @@ join charAgnes center
 charAgnes: Você só está vendo um holograma. Eu conectei minha consciência com os servidores do Instituto a 4 anos atrás, só tem uma parte ruim...
 
 charAgnes (Agnesfelizpixel): É que eu não consegui replicar o experimento de novo.
-charAgnes (Agnesfelizpixel): Já as partes boas são muitas\: eu não perco mais tempo em tarefas frívolas como andar, comer ou dormir. Assim posso focar 100% em ajudar vocês alunos a alcançar o seu potencial máximo.
+charAgnes (Agnesfelizpixel): Já as partes boas são muitas\: eu não perco mais tempo em tarefas frívolas como andar, comer ou dormir.
 charAgnes (Agnesfelizpixel): Assim posso focar 100% em ajudar vocês alunos a alcançar o seu potencial máximo.
 leave --All--
 join charNick center

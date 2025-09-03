@@ -1,0 +1,240 @@
+[gd_scene load_steps=8 format=3 uid="uid://crle5g4krdfh1"]
+
+[ext_resource type="Texture2D" uid="uid://b8tgq63lg1sng" path="res://assets/ui/map_select/map_select_border.png" id="1_2m6fm"]
+[ext_resource type="Script" uid="uid://b7y6yqx8sp43k" path="res://src/ui/map_select.gd" id="1_jfww6"]
+[ext_resource type="Texture2D" uid="uid://l6y3oyw322ju" path="res://assets/ui/map_select/map_select_border_selected.png" id="2_arf66"]
+[ext_resource type="Texture2D" uid="uid://dt3x4ieg0pcsk" path="res://assets/ui/map_select/gear_map_icon.png" id="3_jfww6"]
+[ext_resource type="Texture2D" uid="uid://cobmb5nid41y8" path="res://assets/ui/map_select/book_map_icon.png" id="4_2iaw2"]
+[ext_resource type="Script" uid="uid://b5ero7a6dqekn" path="res://src/ui/map_select_button.gd" id="4_6f1v2"]
+[ext_resource type="Texture2D" uid="uid://devemjg1b8ob7" path="res://assets/ui/map_select/lock_map_icon.png" id="5_arf66"]
+
+[node name="MapSelect" type="ColorRect" node_paths=PackedStringArray("focus_button")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_jfww6")
+focus_button = NodePath("WorkshopButton")
+
+[node name="WorkshopButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+offset_left = 256.0
+offset_top = 34.0
+offset_right = 512.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_right = NodePath("../LibraryButton")
+focus_neighbor_bottom = NodePath("../MapButton4")
+focus_next = NodePath("../LibraryButton")
+texture_normal = ExtResource("1_2m6fm")
+texture_hover = ExtResource("2_arf66")
+texture_focused = ExtResource("2_arf66")
+stretch_mode = 0
+script = ExtResource("4_6f1v2")
+path_to_level = "res://maps/college/college_workshop_room.tscn"
+selection_color = Color(0.188235, 0.576471, 0.690196, 1)
+
+[node name="Label" type="Label" parent="WorkshopButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -16.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Oficina"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="WorkshopButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jfww6")
+
+[node name="LibraryButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+offset_left = 640.0
+offset_top = 34.0
+offset_right = 896.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../WorkshopButton")
+focus_neighbor_bottom = NodePath("../MapButton5")
+texture_normal = ExtResource("1_2m6fm")
+texture_hover = ExtResource("2_arf66")
+texture_focused = ExtResource("2_arf66")
+stretch_mode = 0
+script = ExtResource("4_6f1v2")
+path_to_level = "res://maps/college/college_library.tscn"
+selection_color = Color(0.87451, 0.552941, 0.901961, 1)
+
+[node name="Label" type="Label" parent="LibraryButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -16.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Biblioteca"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="LibraryButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_2iaw2")
+
+[node name="MapButton3" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 47.0
+offset_right = 128.0
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../WorkshopButton")
+texture_normal = ExtResource("1_2m6fm")
+texture_hover = ExtResource("2_arf66")
+texture_focused = ExtResource("2_arf66")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MapButton3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -16.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "???"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MapButton3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_arf66")
+
+[node name="MapButton4" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -21.0
+offset_right = -192.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../WorkshopButton")
+focus_neighbor_right = NodePath("../MapButton3")
+texture_normal = ExtResource("1_2m6fm")
+texture_hover = ExtResource("2_arf66")
+texture_focused = ExtResource("2_arf66")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MapButton4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -16.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "???"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MapButton4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_arf66")
+
+[node name="MapButton5" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 192.0
+offset_top = -21.0
+offset_right = 448.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../MapButton3")
+focus_neighbor_top = NodePath("../LibraryButton")
+texture_normal = ExtResource("1_2m6fm")
+texture_hover = ExtResource("2_arf66")
+texture_focused = ExtResource("2_arf66")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MapButton5"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -16.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "???"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MapButton5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_arf66")

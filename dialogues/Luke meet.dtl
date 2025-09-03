@@ -1,3 +1,4 @@
+do CharacterDialogueController.move_to("npc_luke", 154.0, 63.0)
 (Você se esbarra em um aluno apressado carregando livros.)
 leave --All--
 join charLuke center

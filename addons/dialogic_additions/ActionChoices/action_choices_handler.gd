@@ -12,6 +12,7 @@ const GROUP_KEY := 'action_choices_handler'
 @export var ambition_label: RichTextLabel
 @export var modesty_label: RichTextLabel
 @export var input_lock_duration := 0.05
+@export var textbox_texture: Control
 
 var _active := false
 var _tween: Tween
@@ -22,7 +23,7 @@ var _modesty_choice: ActionChoiceInfo
 
 func _ready():
 	add_to_group(GROUP_KEY)
-	hide()
+	_disable_display()
 
 
 func _process(_delta):
@@ -40,14 +41,15 @@ func start_choice(ambition_choice: ActionChoiceInfo, modesty_choice: ActionChoic
 	modesty_label.text = modesty_choice.text
 	_modesty_choice = modesty_choice
 
-	show()
+	_enable_display()
 	_start_pointer_movement()
 	await get_tree().create_timer(input_lock_duration).timeout
 	_active = true
 
 
 func clear():
-	hide()
+	_disable_display()
+	
 	_active = false
 	if _tween and _tween.is_running():
 		_tween.kill()
@@ -87,3 +89,21 @@ func _pick_choice():
 		choice_selected.emit(_ambition_choice)
 	else:
 		choice_selected.emit(_modesty_choice)
+
+
+func _enable_display():
+	show()
+	textbox_texture.hide()
+	for node: Control in get_tree().get_nodes_in_group('dialogic_portrait_con_speaker'):
+		node.hide()
+	for node: Control in get_tree().get_nodes_in_group('dialogic_portrait_con_position'):
+		node.hide()
+
+
+func _disable_display():
+	hide()
+	textbox_texture.show()
+	for node: Control in get_tree().get_nodes_in_group('dialogic_portrait_con_speaker'):
+		node.show()
+	for node: Control in get_tree().get_nodes_in_group('dialogic_portrait_con_position'):
+		node.show()

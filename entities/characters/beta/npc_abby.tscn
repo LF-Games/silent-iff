@@ -1,0 +1,161 @@
+[gd_scene load_steps=23 format=3 uid="uid://ce0xg2odenw40"]
+
+[ext_resource type="Script" uid="uid://cc38b0mtbyway" path="res://src/characters/npc/npc_abby.gd" id="1_vx1xn"]
+[ext_resource type="Texture2D" uid="uid://1ekt3tdr6did" path="res://assets/placeholder/Actor/Characters/Abby/Kid_Abby_reading_16x16.png" id="2_gle63"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5murl"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6lkk"]
+atlas = ExtResource("2_gle63")
+region = Rect2(192, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_048bp"]
+atlas = ExtResource("2_gle63")
+region = Rect2(208, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fj37"]
+atlas = ExtResource("2_gle63")
+region = Rect2(224, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j2c5"]
+atlas = ExtResource("2_gle63")
+region = Rect2(240, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lntc0"]
+atlas = ExtResource("2_gle63")
+region = Rect2(256, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0k5d"]
+atlas = ExtResource("2_gle63")
+region = Rect2(272, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4y08"]
+atlas = ExtResource("2_gle63")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suas7"]
+atlas = ExtResource("2_gle63")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3spll"]
+atlas = ExtResource("2_gle63")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u66kr"]
+atlas = ExtResource("2_gle63")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5e04"]
+atlas = ExtResource("2_gle63")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyvyv"]
+atlas = ExtResource("2_gle63")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oso38"]
+atlas = ExtResource("2_gle63")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmv2q"]
+atlas = ExtResource("2_gle63")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ueil"]
+atlas = ExtResource("2_gle63")
+region = Rect2(128, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1wsk"]
+atlas = ExtResource("2_gle63")
+region = Rect2(144, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv2v7"]
+atlas = ExtResource("2_gle63")
+region = Rect2(160, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwrfo"]
+atlas = ExtResource("2_gle63")
+region = Rect2(176, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sncil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6lkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_048bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fj37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j2c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lntc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0k5d")
+}],
+"loop": false,
+"name": &"flip_page",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4y08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suas7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3spll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u66kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5e04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyvyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oso38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmv2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ueil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1wsk")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_rv2v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwrfo")
+}],
+"loop": true,
+"name": &"reading",
+"speed": 4.0
+}]
+
+[node name="NPC_Abby" type="StaticBody2D" groups=["interactable"]]
+collision_layer = 2
+script = ExtResource("1_vx1xn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5murl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_sncil")
+animation = &"flip_page"
+offset = Vector2(0, -15)

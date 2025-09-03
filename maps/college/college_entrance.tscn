@@ -1072,7 +1072,7 @@ tile_set = SubResource("TileSet_x1uvg")
 
 [node name="Player" parent="walls" instance=ExtResource("6_i4p7d")]
 visible = false
-position = Vector2(-32, 79)
+position = Vector2(-32, 41)
 
 [node name="ObjectsCollision" type="TileMapLayer" parent="walls"]
 y_sort_enabled = true
@@ -1140,6 +1140,7 @@ energy = 2.0
 texture = SubResource("GradientTexture2D_76hl5")
 
 [node name="LevelTransition" parent="." instance=ExtResource("16_76hl5")]
+visible = false
 position = Vector2(-32, -76)
 path_to_next_level = "res://maps/college/college_main.tscn"
 spawn_position = Vector2(0, 410)
@@ -1147,10 +1148,9 @@ spawn_position = Vector2(0, 410)
 [node name="CollisionShape2D" parent="LevelTransition" index="0"]
 shape = SubResource("RectangleShape2D_cvpi1")
 
-[node name="InitialDialogue" type="Node" parent="." node_paths=PackedStringArray("gate", "npc_parent")]
+[node name="InitialDialogue" type="Node" parent="."]
 script = ExtResource("8_i4p7d")
-gate = NodePath("../walls/Gate")
-npc_parent = NodePath("../walls")
+path_to_next_scene = "res://maps/college/college_ground.tscn"
 
 [node name="inGameUI" parent="." instance=ExtResource("9_u4jgn")]
 

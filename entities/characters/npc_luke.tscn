@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh4sv"]
 radius = 5.0
 
-[node name="NpcLuke" type="CharacterBody2D"]
+[node name="npc_luke" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_g6nca")
 default_timeline = "Luke meet"
@@ -21,5 +21,6 @@ shape = SubResource("CircleShape2D_mh4sv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_4kt5a")
 sprite_frames = ExtResource("2_g6nca")
-animation = &"walk_right"
+animation = &"idle_front"
+autoplay = "idle_front"
 offset = Vector2(0, -14)

@@ -19,7 +19,7 @@
 },
 "style": ""
 },
-&"default_portrait": "Bravopixel",
+&"default_portrait": "basepixel",
 &"description": "",
 &"display_name": "Luke",
 &"mirror": false,

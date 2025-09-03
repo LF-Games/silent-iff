@@ -4,39 +4,41 @@ charRoberta: Tudo bem com você?
 leave --All--
 join charNick center
 [action_choices text="Resmungar"]
-	Claro que não, eu estava sendo perseguido por um robô de três metros de altura
+	charNick (Bravopixel): Claro que não, eu estava sendo perseguido por um robô de três metros de altura
 [action_choices text="Falar sério" choice_type="1"]
-	Acho que sim, meu corpo está inteiro, pelo que parece.
+	charNick (Tristepixel): Acho que sim, meu corpo está inteiro, pelo que parece.
 leave --All--
-join charNick center
+join charRoberta center
 
 charRoberta: Na verdade ele tem três metros e meio.
 
 charRoberta: Eu que criei ele, meio que sozinha.
 leave --All--
 join charNick center
-
-Barra de escolha\:
-Incrível, você deve ser muito boa.
-Nosso deve ter sido complicado.
+[action_choices text="Se impressionar"]
+	charNick: Incrível, você deve ser muito boa.
+[action_choices text="Ter pena" choice_type="1"]
+	charNick: Nosso deve ter sido complicado. 
 leave --All--
-join charNick center
+join charRoberta center
 
-charRoberta - Eu estava testando os limitadores de violência dele, ele é um robô de combate, já ganhou 5 competições.
+charRoberta (RobertaFelizpixel): charRoberta - Eu estava testando os limitadores de violência dele, ele é um robô de combate, já ganhou 5 competições.
 
-charRoberta: Deu um pouco errado, ainda bem que só tinha eu aqui, me tranquei na sala e tranquei as oficinas por precaução.
+charRoberta (RobertaTristepixel): Deu um pouco errado, ainda bem que só tinha eu aqui, me tranquei na sala e tranquei as oficinas por precaução.
 leave --All--
 join charNick center
 
 charNick: E é claro que eu tinha que entrar nessa hora.
 leave --All--
-join charNick center
+join charRoberta center
 
-charRoberta: Fazer oquê…
+charRoberta: Faze oquê…
 leave --All--
 join charNick center
 
 charNick: Então estamos presos aqui. Não tem como desligar ele sei lá.
+leave --All--
+join charRoberta center
 
 charRoberta: Como os limitadores estão com problema, não consigo controlar ele a distância, é complicado de explicar.
 leave --All--
@@ -44,7 +46,7 @@ join charNick center
 
 charNick: Tá bom, então uma hora ele deve descarregar.
 leave --All--
-join charNick center
+join charRoberta center
 
 charRoberta: Ele tá com as células de energia cheia, dura cerca de 50 horas.
 leave --All--
@@ -52,32 +54,32 @@ join charNick center
 
 charNick: Pedir ajuda, estou sem meu celular, mas você tem o seu né?
 leave --All--
-join charNick center
+join charRoberta center
 
 charRoberta: No momento que mandarmos uma mensagem, ele nós acha.
 leave --All--
 join charNick center
 
-charNick: Legal. Por causa do seu robô incrível, vamos ficar aqui até segunda-feira
+charNick: Legal. Por causa do seu robô incrível, vamos ficar aqui até segunda-feira.
 leave --All--
 join charNick center
 
 charRoberta: Eu tenho biscoitos e água aqui, acho que vamos ficar bem.
 leave --All--
 join charNick center
-
-Barra de escolha\:
-Não, não, não. Não é possível, tem que dar um jeito de sair daqui.
-Nada contra seus biscoitos, garota, mas não quero ficar aqui por 2 dias.
+[action_choices text="Negar"]
+	charNick (Bravopixel): Não, não, não. Não é possível, tem que dar um jeito de sair daqui.
+[action_choices text="Negar com educação" choice_type="1"]
+	charNick (Felizpixel): Nada contra seus biscoitos, garota, mas não quero ficar aqui por 2 dias.
 leave --All--
-join charNick center
+join charRoberta center
 
 charRoberta: Eu até pensei numa maneira mas é meio complicado.
 leave --All--
 join charNick center
 charNick: O quê? Me fala.
 leave --All--
-join charNick center
+join charRoberta center
 
 charRoberta: Posso tentar construir algo, uma antena bloqueadora de sinal. Assim consigo fazer o robô parar por alguns segundos e desligo ele, estamos numa oficina afinal.
 leave --All--
@@ -85,17 +87,17 @@ join charNick center
 
 charNick: Você pode fazer algo assim?
 leave --All--
-join charNick center
+join charRoberta center
 
-charRoberta: O problema é que está nas outras salas. Posso destranca-las mas…
+charRoberta: O problema é que está nas outras salas. Posso destrancá-las mas…
 
 charRoberta: Não sei se sou rápida o bastante para fugir dele.
 leave --All--
 join charNick center
-
-Barra de escolha\:
-Não precisa eu posso pegar, consegui fugir antes.
-Você não precisa fazer isso sozinha, eu to aqui.
+[action_choices text="Confiar em si"]
+	charNick: Não precisa eu posso pegar, consegui fugir antes.
+[action_choices text="Oferecer ajuda" choice_type="1"]
+	charNick: Você não precisa fazer isso sozinha, eu to aqui.
 leave --All--
 join charNick center
 
@@ -111,7 +113,7 @@ charRoberta: Roberta, não sei se você vai reconhecer as peças. Que curso voc�
 leave --All--
 join charNick center
 
-charNick: #########, primeiro dia de aula inclusive
+charNick: ■■■■■■■■■■■■■, primeiro dia de aula inclusive.
 leave --All--
 join charNick center
 
@@ -126,4 +128,4 @@ leave --All--
 join charNick center
 
 charRoberta: Vai ser uma escapada bem longa.
-charRoberta: Mas acho que posso tentar.
+charRoberta: Mas acho que podemos tentar.

@@ -1,16 +1,22 @@
 join charNick center
 charNick: Oi, seu guarda.
-Opa, tudo certo?
+leave --All--
+join charGuarda center
+charGuarda: Opa, tudo certo?
 leave --All--
 join charNick center
 charNick: Não consigo entrar.
-Precisa passar a carteirinha.
+leave --All--
+join charGuarda center
+charGuarda: Precisa passar a carteirinha.
 leave --All--
 join charNick center
-charNick: É meu primeiro dia, não tenho ela ainda.
-Deixa eu ver o protocolo aqui, espere um pouco.
+charNick: É minha primeira aula, não fiz minha carteirinha ainda.
+leave --All--
+join charGuarda center
+charGuarda: Deixa eu ver o protocolo aqui, espere um pouco.
 
-Um aluno passa pela frente do jogador.
+(Um aluno passa pela frente do jogador)
 leave --All--
 join charVini center
 

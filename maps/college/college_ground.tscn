@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dg44ohc24p26x"]
+[gd_scene load_steps=11 format=4 uid="uid://dg44ohc24p26x"]
 
 [ext_resource type="PackedScene" uid="uid://b2mrq06jsbhrw" path="res://assets/characters/Nick/PlayerNick.tscn" id="1_m0o5y"]
 [ext_resource type="PackedScene" uid="uid://bxfgqch8dkqfa" path="res://entities/characters/npc_vini.tscn" id="2_j4q74"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="4_lk1qh"]
 [ext_resource type="PackedScene" uid="uid://bxqi6pk4xn5t1" path="res://entities/level/level_transition.tscn" id="5_imotr"]
 [ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://entities/ui/in_game_ui.tscn" id="6_0m80c"]
+[ext_resource type="PackedScene" uid="uid://b4hyw57lx0nl5" path="res://entities/level/custcene_start.tscn" id="7_e0rci"]
 
 [sub_resource type="Gradient" id="Gradient_wpej2"]
 offsets = PackedFloat32Array(0.103896, 0.363636, 0.681818, 0.902597, 1)
@@ -39,16 +40,16 @@ tile_map_data = PackedByteArray("AADy/xAAAAAlAAQAAADy/xEAAAAlAAUAAADy/xIAAAAlAAY
 tile_set = ExtResource("2_m0o5y")
 use_kinematic_bodies = true
 
-[node name="Objects2" type="TileMapLayer" parent="Map/Walls2"]
-y_sort_enabled = true
-tile_map_data = PackedByteArray("AADz//v/AAAMABEAAADz/wwAAAAMABEAAAAIAAoAAAAQABAAAAAEAA4AAAAGABAAAAALAAsAAAAKAAQAAAAIAPn/AAAUAAQAAAD9//P/AwAcAAsAAAAFAP7/AwAUAAEAAAD4//P/AAAIAAcAAAD7/wkAAwAAAA0AAAD7/wQAAwAAAA0AAAD5////AwAIAA0AAAD9//z/AwAIAA0AAAA=")
-tile_set = ExtResource("2_m0o5y")
-
 [node name="npc_vini" parent="Map/Walls2" instance=ExtResource("2_j4q74")]
 position = Vector2(0, 260)
 
 [node name="Player" parent="Map/Walls2" instance=ExtResource("1_m0o5y")]
-position = Vector2(-2, 365)
+position = Vector2(-2, 58)
+
+[node name="Objects2" type="TileMapLayer" parent="Map/Walls2"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AADz//v/AAAMABEAAADz/wwAAAAMABEAAAAIAAoAAAAQABAAAAAEAA4AAAAGABAAAAALAAsAAAAKAAQAAAAIAPn/AAAUAAQAAAD9//P/AwAcAAsAAAAFAP7/AwAUAAEAAAD4//P/AAAIAAcAAAD7/wkAAwAAAA0AAAD7/wQAAwAAAA0AAAD5////AwAIAA0AAAD9//z/AwAIAA0AAAA=")
+tile_set = ExtResource("2_m0o5y")
 
 [node name="LevelBoundaries" parent="Map" instance=ExtResource("3_e0rci")]
 tile_map_data = PackedByteArray("AADy/xkAAAAAAAAAAAANABkAAAAAAAAAAAANAOr/AAAAAAAAAADy/+r/AAAAAAAAAAA=")
@@ -100,16 +101,35 @@ blend_mode = 1
 texture = SubResource("GradientTexture2D_i3yx2")
 texture_scale = 0.5
 
-[node name="LevelTransition" parent="." instance=ExtResource("5_imotr")]
-position = Vector2(0, 417)
-scale = Vector2(3.175, 0.2)
-path_to_next_level = "res://maps/college/college_entrance.tscn"
-spawn_position = Vector2(-32, -64)
-
-[node name="LevelTransition2" parent="." instance=ExtResource("5_imotr")]
-position = Vector2(64, -349)
-scale = Vector2(3.16168, -0.110714)
-path_to_next_level = "res://maps/college/college_courtyard.tscn"
+[node name="LevelTransition3" parent="." instance=ExtResource("5_imotr")]
+position = Vector2(42, -352)
+scale = Vector2(31.6049, -0.00135709)
+path_to_next_level = "res://ui_screens/map_select.tscn"
 spawn_position = Vector2(-15, 130)
+
+[node name="LevelTransition5" parent="." instance=ExtResource("5_imotr")]
+position = Vector2(215, -55)
+rotation = -3.14156
+scale = Vector2(1, 4.36)
+skew = -3.56436e-05
+path_to_next_level = "res://ui_screens/map_select.tscn"
+spawn_position = Vector2(-15, 130)
+
+[node name="LevelTransition6" parent="." instance=ExtResource("5_imotr")]
+position = Vector2(213, 213)
+rotation = -3.14156
+scale = Vector2(1, 4.36)
+skew = -3.56436e-05
+path_to_next_level = "res://ui_screens/map_select.tscn"
+spawn_position = Vector2(-15, 130)
+
+[node name="LevelTransition4" parent="." instance=ExtResource("5_imotr")]
+position = Vector2(-224, -24)
+rotation = 1.5708
+scale = Vector2(28.2362, 0.0122576)
+
+[node name="CustceneStart" parent="." instance=ExtResource("7_e0rci")]
+position = Vector2(0, 326)
+default_timeline = "vinimeet"
 
 [node name="inGameUI" parent="." instance=ExtResource("6_0m80c")]

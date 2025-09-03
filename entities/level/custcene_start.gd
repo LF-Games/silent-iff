@@ -8,7 +8,8 @@ func _get_timeline() -> String:
 # Quando player entra no collider, começa o dialogo
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		if default_timeline.strip_edges().is_empty():
-			return
+		Dialogic.start(_get_timeline())
+		queue_free()
 		
-	Dialogic.start(_get_timeline())
+	
+	

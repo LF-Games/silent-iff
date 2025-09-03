@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cpyqqhwvwx3cn" path="res://assets/placeholder/Backgrounds/Tilesets/TilesetHouse.png" id="9_is7y8"]
 [ext_resource type="PackedScene" uid="uid://n0hrydkkh32f" path="res://entities/props/light_torch.tscn" id="10_5mb83"]
 [ext_resource type="PackedScene" uid="uid://kb1qk4wwlxlj" path="res://entities/characters/player_character.tscn" id="11_1do16"]
-[ext_resource type="PackedScene" uid="uid://ce0xg2odenw40" path="res://entities/characters/npc_abby.tscn" id="12_x33gl"]
+[ext_resource type="PackedScene" uid="uid://ce0xg2odenw40" path="res://entities/characters/beta/npc_abby.tscn" id="12_x33gl"]
 [ext_resource type="Texture2D" uid="uid://gm5s0vgyxlor" path="res://assets/placeholder/Actor/Characters/Bouncer/Bouncer_phone_16x16.png" id="13_hv4fk"]
 [ext_resource type="Texture2D" uid="uid://4h7ew50arn8u" path="res://assets/level_boundaries/block.png" id="14_sh6rp"]
 [ext_resource type="Script" uid="uid://cb4mg3pw08nng" path="res://src/level/level_boundaries.gd" id="15_sdayj"]

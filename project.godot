@@ -30,10 +30,12 @@ directories/dch_directory={
 "Abby": "res://dialogues/Abby/Abby.dch",
 "Bouncer": "res://dialogues/Bouncer/Bouncer.dch",
 "charAgnes": "res://assets/characters/Agnes/charAgnes.dch",
+"charGuarda": "res://assets/characters/figurantes/charGuarda.dch",
 "charLuke": "res://assets/characters/Luke/charLuke.dch",
 "charManoel": "res://assets/characters/Manoel/charManoel.dch",
 "charNick": "res://assets/characters/Nick/charNick.dch",
 "charRoberta": "res://assets/characters/Roberta/charRoberta.dch",
+"charRobo": "res://assets/characters/figurantes/robo/charRobo.dch",
 "charVini": "res://assets/characters/Vini/charVini.dch",
 "chargeneric": "res://assets/characters/figurantes/chargeneric.dch",
 "player": "res://dialogues/player.dch",
@@ -43,6 +45,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "Agnesmeet": "res://dialogues/Agnesmeet.dtl",
 "Luke meet": "res://dialogues/Luke meet.dtl",
+"Robomeet": "res://assets/characters/figurantes/robo/Robomeet.dtl",
 "Vini intro": "res://dialogues/Vini intro.dtl",
 "college_entrance_A": "res://dialogues/Bouncer/timelines/college_entrance_A.dtl",
 "dialgIntro": "res://assets/characters/Agnes/dialgIntro.dtl",
@@ -102,6 +105,7 @@ animations/leave_default="Fade Out"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -234,3 +238,4 @@ dialogic_default_action={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
