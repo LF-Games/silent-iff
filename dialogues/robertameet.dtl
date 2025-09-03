@@ -22,7 +22,7 @@ join charNick center
 leave --All--
 join charRoberta center
 
-charRoberta (RobertaFelizpixel): charRoberta - Eu estava testando os limitadores de violência dele, ele é um robô de combate, já ganhou 5 competições.
+charRoberta (RobertaFelizpixel): Eu estava testando os limitadores de violência dele, ele é um robô de combate, já ganhou 5 competições.
 
 charRoberta (RobertaTristepixel): Deu um pouco errado, ainda bem que só tinha eu aqui, me tranquei na sala e tranquei as oficinas por precaução.
 leave --All--
@@ -99,7 +99,7 @@ join charNick center
 [action_choices text="Oferecer ajuda" choice_type="1"]
 	charNick: Você não precisa fazer isso sozinha, eu to aqui.
 leave --All--
-join charNick center
+join charRoberta center
 
 charRoberta: Olha … Qual é seu nome?
 leave --All--

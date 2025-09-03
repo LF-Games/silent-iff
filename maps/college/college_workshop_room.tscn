@@ -103,6 +103,7 @@ texture = SubResource("GradientTexture2D_rh4ah")
 [node name="dialg_dontgo" parent="." instance=ExtResource("7_y2dup")]
 position = Vector2(-248, 203)
 scale = Vector2(3.76, 1)
+default_timeline = "workroomback"
 
 [node name="plant" type="CharacterBody2D" parent="."]
 position = Vector2(-314, 142)
