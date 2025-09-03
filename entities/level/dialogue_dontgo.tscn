@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd2li0oorxeyc"]
+
+[ext_resource type="Script" uid="uid://da5pse8qd2aje" path="res://src/level/dialogue_dontgo.gd" id="1_3aruv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eigy5"]
+size = Vector2(13, 13)
+
+[node name="dialg_dontgo" type="Area2D"]
+script = ExtResource("1_3aruv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eigy5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

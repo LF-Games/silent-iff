@@ -28,10 +28,8 @@ func delete(char_name: String): #apaga o personagem da cena
 	if !character:
 		push_warning("NPC not found in the scene tree: %s" % char_name)
 		return
-	
+		
 	character.queue_free()
-	
-	
 
 func look_at(char_name: String, direction_str: String):
 	var character := _get_character_by_name(char_name) as GameCharacter

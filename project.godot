@@ -47,24 +47,39 @@ directories/dtl_directory={
 "Luke meet": "res://dialogues/Luke meet.dtl",
 "Robomeet": "res://assets/characters/figurantes/robo/Robomeet.dtl",
 "Vini intro": "res://dialogues/Vini intro.dtl",
+"bookintrc": "res://dialogues/Object Interactions/bookintrc.dtl",
+"bookshelfintrc": "res://dialogues/Object Interactions/bookshelfintrc.dtl",
 "college_entrance_A": "res://dialogues/Bouncer/timelines/college_entrance_A.dtl",
 "dialgIntro": "res://assets/characters/Agnes/dialgIntro.dtl",
+"elevator": "res://dialogues/Object Interactions/elevator.dtl",
+"groudback": "res://dialogues/reactions/groudback.dtl",
 "intro": "res://dialogues/intro.dtl",
 "introcar": "res://dialogues/introcar.dtl",
+"libraryback": "res://dialogues/reactions/libraryback.dtl",
 "manuelmeet": "res://dialogues/manuelmeet.dtl",
+"pcintrc": "res://dialogues/Object Interactions/pcintrc.dtl",
+"plantintrc": "res://dialogues/Object Interactions/plantintrc.dtl",
 "playing_on_phone": "res://dialogues/Bouncer/timelines/playing_on_phone.dtl",
 "reading_under_light": "res://dialogues/Abby/timelines/reading_under_light.dtl",
 "robertameet": "res://dialogues/robertameet.dtl",
+"stairintrc": "res://dialogues/Object Interactions/stairintrc.dtl",
 "student_reading_A": "res://dialogues/Abby/timelines/student_reading_A.dtl",
 "student_reading_B": "res://dialogues/Abby/timelines/student_reading_B.dtl",
 "test_custom_choice_timeline": "res://dialogues/Test/test_custom_choice_timeline.dtl",
 "timelineteste": "res://dialogues/timelineteste.dtl",
-"vinimeet": "res://dialogues/vinimeet.dtl"
+"vinimeet": "res://dialogues/vinimeet.dtl",
+"workroomback": "res://dialogues/reactions/workroomback.dtl",
+"workshopback": "res://dialogues/reactions/workshopback.dtl"
 }
 layout/style_list=["res://dialogues/styles/MainStyle/main_style.tres"]
 layout/default_style="res://dialogues/styles/MainStyle/main_style.tres"
 glossary/default_case_sensitive=true
-variables={}
+variables={
+"alarm": false,
+"book": 0.0,
+"lightsoff": false,
+"roboon": false
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -120,6 +135,7 @@ folder_colors={
 "res://dialogues/": "red",
 "res://entities/": "yellow",
 "res://maps/": "blue",
+"res://sounds/": "gray",
 "res://src/": "green",
 "res://ui_screens/": "pink"
 }

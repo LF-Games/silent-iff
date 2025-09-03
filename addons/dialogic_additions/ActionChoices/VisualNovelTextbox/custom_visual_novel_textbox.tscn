@@ -207,14 +207,12 @@ _data = {
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it31i"]
-bg_color = Color(0.486275, 0.807843, 0.321569, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+bg_color = Color(0.654902, 0.458824, 0.380392, 1)
+corner_detail = 1
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8d2l"]
-bg_color = Color(0.654902, 0.458824, 0.380392, 1)
+bg_color = Color(0.486275, 0.807843, 0.321569, 1)
 corner_radius_top_left = 16
 corner_radius_bottom_left = 16
 

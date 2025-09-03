@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjr70p7utr7y1"]
+[gd_scene load_steps=2 format=3 uid="uid://by7qychptmtk6"]
 
 [ext_resource type="Script" uid="uid://ddwufabd5ixld" path="res://src/dialogue/camera/car_dialogue.gd" id="1_6ys1p"]
 

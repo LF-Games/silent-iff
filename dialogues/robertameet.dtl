@@ -18,7 +18,7 @@ join charNick center
 [action_choices text="Se impressionar"]
 	charNick: Incrível, você deve ser muito boa.
 [action_choices text="Ter pena" choice_type="1"]
-	charNick: Nosso deve ter sido complicado. 
+	charNick: Nosso deve ter sido complicado.
 leave --All--
 join charRoberta center
 
@@ -62,7 +62,7 @@ join charNick center
 
 charNick: Legal. Por causa do seu robô incrível, vamos ficar aqui até segunda-feira.
 leave --All--
-join charNick center
+join charRoberta center
 
 charRoberta: Eu tenho biscoitos e água aqui, acho que vamos ficar bem.
 leave --All--
@@ -107,7 +107,7 @@ join charNick center
 
 charNick: Nick, inclusive, seu nome é…
 leave --All--
-join charNick center
+join charRoberta center
 
 charRoberta: Roberta, não sei se você vai reconhecer as peças. Que curso você faz Nick?
 leave --All--
@@ -115,7 +115,7 @@ join charNick center
 
 charNick: ■■■■■■■■■■■■■, primeiro dia de aula inclusive.
 leave --All--
-join charNick center
+join charRoberta center
 
 charRoberta: Você sabe o que é uma antena?
 leave --All--
@@ -125,7 +125,8 @@ join charNick center
 [action_choices text="De televisão" choice_type="1"]
 	charNick: Tipo de televisão?
 leave --All--
-join charNick center
+join charRoberta center
 
 charRoberta: Vai ser uma escapada bem longa.
 charRoberta: Mas acho que podemos tentar.
+[end_timeline]

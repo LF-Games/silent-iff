@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dg44ohc24p26x"]
+[gd_scene load_steps=14 format=4 uid="uid://dk1ymjaotdale"]
 
 [ext_resource type="PackedScene" uid="uid://b2mrq06jsbhrw" path="res://assets/characters/Nick/PlayerNick.tscn" id="1_m0o5y"]
 [ext_resource type="PackedScene" uid="uid://bxfgqch8dkqfa" path="res://entities/characters/npc_vini.tscn" id="2_j4q74"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bh06qmpmdogoo" path="res://entities/camera/camera_follow.tscn" id="4_lk1qh"]
 [ext_resource type="PackedScene" uid="uid://bxqi6pk4xn5t1" path="res://entities/level/level_transition.tscn" id="5_imotr"]
 [ext_resource type="PackedScene" uid="uid://ci0a8bo1k1spe" path="res://entities/ui/in_game_ui.tscn" id="6_0m80c"]
-[ext_resource type="PackedScene" uid="uid://b4hyw57lx0nl5" path="res://entities/level/custcene_start.tscn" id="7_e0rci"]
+[ext_resource type="PackedScene" uid="uid://cgcq8ueqfmbq5" path="res://entities/level/custcene_start.tscn" id="7_e0rci"]
+[ext_resource type="PackedScene" uid="uid://dd2li0oorxeyc" path="res://entities/level/dialogue_dontgo.tscn" id="8_lk1qh"]
+[ext_resource type="Script" uid="uid://xr2tfldabl17" path="res://src/characters/npc/interactable_npc.gd" id="10_imotr"]
 
 [sub_resource type="Gradient" id="Gradient_wpej2"]
 offsets = PackedFloat32Array(0.103896, 0.363636, 0.681818, 0.902597, 1)
@@ -20,6 +22,9 @@ height = 300
 fill = 1
 fill_from = Vector2(0.509174, 0.504587)
 fill_to = Vector2(0.137615, 0.169725)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0m80c"]
+size = Vector2(6.2766, 20)
 
 [node name="CollegeMain" type="Node2D"]
 
@@ -44,7 +49,7 @@ use_kinematic_bodies = true
 position = Vector2(0, 260)
 
 [node name="Player" parent="Map/Walls2" instance=ExtResource("1_m0o5y")]
-position = Vector2(-2, 58)
+position = Vector2(1, 375)
 
 [node name="Objects2" type="TileMapLayer" parent="Map/Walls2"]
 y_sort_enabled = true
@@ -127,9 +132,68 @@ spawn_position = Vector2(-15, 130)
 position = Vector2(-224, -24)
 rotation = 1.5708
 scale = Vector2(28.2362, 0.0122576)
+path_to_next_level = "res://ui_screens/map_select.tscn"
 
 [node name="CustceneStart" parent="." instance=ExtResource("7_e0rci")]
 position = Vector2(0, 326)
+scale = Vector2(5, 5)
 default_timeline = "vinimeet"
+
+[node name="dialg_dontgo" parent="." instance=ExtResource("8_lk1qh")]
+position = Vector2(0, 410)
+scale = Vector2(4.76, 1)
+default_timeline = "groundback"
+
+[node name="door" type="CharacterBody2D" parent="."]
+position = Vector2(-120, -188)
+scale = Vector2(7.6, 2.88)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("10_imotr")
+default_timeline = "stairintrc"
+metadata/_custom_type_script = "uid://xr2tfldabl17"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+position = Vector2(-4.76837e-07, 0)
+shape = SubResource("RectangleShape2D_0m80c")
+
+[node name="elevator" type="CharacterBody2D" parent="."]
+position = Vector2(-36, -188)
+scale = Vector2(7.6, 2.88)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("10_imotr")
+default_timeline = "elevator"
+metadata/_custom_type_script = "uid://xr2tfldabl17"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elevator"]
+position = Vector2(-4.76837e-07, 0)
+shape = SubResource("RectangleShape2D_0m80c")
+
+[node name="book" type="CharacterBody2D" parent="."]
+position = Vector2(74, 232)
+scale = Vector2(3.76, 1)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("10_imotr")
+default_timeline = "bookintrc"
+metadata/_custom_type_script = "uid://xr2tfldabl17"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="book"]
+position = Vector2(-4.76837e-07, 0)
+shape = SubResource("RectangleShape2D_0m80c")
+
+[node name="plant" type="CharacterBody2D" parent="."]
+position = Vector2(88, -10)
+scale = Vector2(3.76, 1)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("10_imotr")
+default_timeline = "plantintrc"
+metadata/_custom_type_script = "uid://xr2tfldabl17"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plant"]
+position = Vector2(-4.76837e-07, 0)
+shape = SubResource("RectangleShape2D_0m80c")
 
 [node name="inGameUI" parent="." instance=ExtResource("6_0m80c")]
