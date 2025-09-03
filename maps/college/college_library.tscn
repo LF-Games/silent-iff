@@ -63,7 +63,7 @@ editor_draw_screen = false
 level_boundaries = NodePath("../LevelBoundaries")
 
 [node name="LevelBoundaries" parent="." instance=ExtResource("7_em5rt")]
-tile_map_data = PackedByteArray("AADq/w4AAAAAAAAAAAAUAA4AAAAAAAAAAAAUANr/AAAAAAAAAADq/9r/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADq/w4AAAAAAAAAAAAUAA4AAAAAAAAAAAAUANr/AAAAAAAAAADq/9r/AAAAAAAAAAAKABIAAAAAAAAAAAAFABIAAAAAAAAAAAAKAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAA=")
 
 [node name="CustceneStart" parent="." instance=ExtResource("7_exm45")]
 position = Vector2(138, 74)
@@ -82,6 +82,7 @@ default_timeline = "Agnesmeet"
 [node name="dialg_dontgo" parent="." instance=ExtResource("8_ol2kj")]
 position = Vector2(128, 296)
 scale = Vector2(5, 1)
+default_timeline = "libraryback"
 
 [node name="bookshelfinteractable" type="CharacterBody2D" parent="."]
 position = Vector2(-135, -10)
@@ -139,8 +140,6 @@ shape = SubResource("RectangleShape2D_onx6v")
 position = Vector2(-7, 6)
 script = ExtResource("10_bq7gp")
 
-[node name="inGameUI" parent="." instance=ExtResource("8_61nrj")]
-
 [node name="plant" type="CharacterBody2D" parent="."]
 position = Vector2(-311, 197)
 scale = Vector2(3.76, 1)
@@ -153,3 +152,5 @@ metadata/_custom_type_script = "uid://xr2tfldabl17"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plant"]
 position = Vector2(-4.76837e-07, 0)
 shape = SubResource("RectangleShape2D_3wdkb")
+
+[node name="inGameUI" parent="." instance=ExtResource("8_61nrj")]

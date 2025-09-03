@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0178osev0y6r" path="res://addons/dialogic_additions/ActionChoices/VisualNovelTextbox/vn_textbox_layer.gd" id="1_bpydr"]
 [ext_resource type="Script" uid="uid://1o62l11igeiu" path="res://addons/dialogic_additions/ActionChoices/VisualNovelTextbox/animations.gd" id="2_xy7a2"]
-[ext_resource type="Texture2D" uid="uid://bnn1bv15w8wtt" path="res://UI/elements/textbox.png" id="3_0d7hy"]
+[ext_resource type="Texture2D" uid="uid://bnn1bv15w8wtt" path="res://UI/elements/balaodefalainterface.png" id="3_0d7hy"]
 [ext_resource type="Script" uid="uid://drhfq6rmdeuri" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_4634k"]
 [ext_resource type="StyleBox" uid="uid://dkv1pl1c1dq6" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres" id="3_ssa84"]
 [ext_resource type="Script" uid="uid://dpv2dfiv5dhmr" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_ma5mw"]
@@ -302,6 +302,7 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/line_separation = 5
 theme_override_fonts/normal_font = ExtResource("5_0d7hy")
 theme_override_font_sizes/bold_italics_font_size = 15
 theme_override_font_sizes/italics_font_size = 15

@@ -73,35 +73,35 @@ blend_mode = 1
 position = Vector2(-65, -135)
 scale = Vector2(1.18667, 1.18667)
 color = Color(0.627451, 0.843137, 1, 1)
-energy = 0.8
+energy = 0.37
 texture = SubResource("GradientTexture2D_i3yx2")
 
 [node name="PointLight2D6" type="PointLight2D" parent="Lights"]
 position = Vector2(-191, 193)
 scale = Vector2(1.18667, 1.18667)
 color = Color(0.627451, 0.843137, 1, 1)
-energy = 0.8
+energy = 0.37
 texture = SubResource("GradientTexture2D_i3yx2")
 
 [node name="PointLight2D7" type="PointLight2D" parent="Lights"]
 position = Vector2(-5, 313)
 scale = Vector2(1.18667, 1.18667)
 color = Color(0.627451, 0.843137, 1, 1)
-energy = 0.8
+energy = 0.37
 texture = SubResource("GradientTexture2D_i3yx2")
 
 [node name="PointLight2D9" type="PointLight2D" parent="Lights"]
 position = Vector2(-27, 84)
 scale = Vector2(1.18667, 1.18667)
 color = Color(0.627451, 0.843137, 1, 1)
-energy = 0.8
+energy = 0.37
 texture = SubResource("GradientTexture2D_i3yx2")
 
 [node name="PointLight2D8" type="PointLight2D" parent="Lights"]
 position = Vector2(64, -341)
 scale = Vector2(1.18667, 1.18667)
 color = Color(0.627451, 0.843137, 1, 1)
-energy = 0.34
+energy = 0.37
 blend_mode = 1
 texture = SubResource("GradientTexture2D_i3yx2")
 texture_scale = 0.5
@@ -132,7 +132,6 @@ spawn_position = Vector2(-15, 130)
 position = Vector2(-224, -24)
 rotation = 1.5708
 scale = Vector2(28.2362, 0.0122576)
-path_to_next_level = "res://ui_screens/map_select.tscn"
 
 [node name="CustceneStart" parent="." instance=ExtResource("7_e0rci")]
 position = Vector2(0, 326)
