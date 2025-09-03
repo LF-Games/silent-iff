@@ -30,7 +30,7 @@ leave --All--
 join charNick center
 [action_choices text="Críticar"]
 	charNick (Bravopixel): Eles não deviam se interessar muito pela sua aula.
-[action_choices text="Bajular"]
+[action_choices text="Bajular" choice_type="1"]
 	charNick (Felizpixel): Você parece bem normal para mim.
 leave --All--
 join charManoel center
