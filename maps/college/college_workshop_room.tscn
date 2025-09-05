@@ -65,9 +65,16 @@ metadata/_custom_type_script = "uid://xr2tfldabl17"
 position = Vector2(-4.76837e-07, 0)
 shape = SubResource("RectangleShape2D_tgays")
 
+[node name="CollisionShape2D" parent="walls/Player" index="0"]
+position = Vector2(0, 0)
+
+[node name="AnimatedSprite2D" parent="walls/Player" index="1"]
+offset = Vector2(0, -28)
+
 [node name="ObjectsCollision" type="TileMapLayer" parent="walls"]
 y_sort_enabled = true
 rotation = 0.000124525
+
 tile_map_data = PackedByteArray("AADu//3/AAAAAA0AAAD4/wQAAAAIAA0AAAD4//3/AAAQAAgAAADt//7/AAAXAAoAAADv//7/AAAXAAoAAAD0//z/AAAYAAAAAAD2/wcAAAACAAQAAAD3/wkAAAAAAAQAAADs/wcAAAAUAAAAAADt/wUAAAAUAAQAAAD5/wMAAAAWAAYAAAD5/wYAAAAKAAQAAADy/wsAAAAkAAQAAADy/wwAAAAkAAQAAADu/wsAAAAkAAQAAADu/wwAAAAkAAQAAADu/w0AAAAkAAQAAADy/w0AAAAkAAQAAADu/woAAAAkAAQAAAA=")
 tile_set = ExtResource("1_irfxh")
 
@@ -80,6 +87,7 @@ editor_draw_screen = false
 level_boundaries = NodePath("../LevelBoundaries")
 
 [node name="LevelBoundaries" parent="." instance=ExtResource("4_y2dup")]
+
 tile_map_data = PackedByteArray("AADq//n/AAAAAAAAAAD7//n/AAAAAAAAAAD7/woAAAAAAAAAAADq/woAAAAAAAAAAADu/w0AAAAAAAAAAADy/w0AAAAAAAAAAAA=")
 
 [node name="Lights" type="Node2D" parent="."]
@@ -122,5 +130,6 @@ shape = SubResource("RectangleShape2D_wllnq")
 [node name="inGameUI" parent="." instance=ExtResource("6_0ufkt")]
 
 [node name="DemoEndCard" parent="." instance=ExtResource("9_tgays")]
+
 
 [connection signal="interaction_finished" from="walls/roberta" to="DemoEndCard" method="_on_cutscene_finished"]

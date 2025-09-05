@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b8wvx3vdo7c8a" path="res://assets/objects/book.png" id="4_cxf8e"]
 [ext_resource type="Script" uid="uid://bhk713yav4e1o" path="res://src/characters/animations/anim_luke.gd" id="4_oulss"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mh4sv"]
-radius = 5.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6nca"]
+radius = 7.0
 
 [sub_resource type="Animation" id="Animation_ex5ap"]
 length = 0.001
@@ -107,16 +107,16 @@ default_timeline = "Luke meet"
 metadata/_custom_type_script = "uid://xr2tfldabl17"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13)
-scale = Vector2(3.12, 1)
-shape = SubResource("CircleShape2D_mh4sv")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_g6nca")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_4kt5a")
 sprite_frames = ExtResource("2_g6nca")
+
 animation = &"walk_right"
 autoplay = "idle_front"
-offset = Vector2(0, -14)
+offset = Vector2(0, -28)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

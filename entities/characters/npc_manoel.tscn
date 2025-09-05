@@ -5,8 +5,8 @@
 [ext_resource type="SpriteFrames" uid="uid://q8tsfce2kg4x" path="res://assets/characters/Manoel/manoelanim.tres" id="2_o5vpl"]
 [ext_resource type="Script" uid="uid://bgs64uqjnevmp" path="res://src/characters/animations/anim_manoel.gd" id="3_kmxkc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mh4sv"]
-radius = 5.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5vpl"]
+radius = 7.0
 
 [sub_resource type="Animation" id="Animation_kmxkc"]
 length = 0.001
@@ -78,16 +78,16 @@ default_timeline = "manuelmeet"
 metadata/_custom_type_script = "uid://xr2tfldabl17"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13)
-scale = Vector2(3.12, 1)
-shape = SubResource("CircleShape2D_mh4sv")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o5vpl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
 material = ExtResource("2_buj87")
 position = Vector2(0, -5)
 sprite_frames = ExtResource("2_o5vpl")
 animation = &"walk_back"
-offset = Vector2(0, -14)
+offset = Vector2(0, -28)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
