@@ -1,0 +1,4 @@
+join charRoberta (robertabravapixel) center
+charRoberta (robertabravapixel): Ei, não abre a porta ou ele vai achar a gente.
+do CharacterDialogueController.move_to("Player", -248.0, 175.0)
+[end_timeline]

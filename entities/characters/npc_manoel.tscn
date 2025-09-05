@@ -1,10 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://cghld6bn6rkg6"]
+[gd_scene load_steps=9 format=3 uid="uid://cghld6bn6rkg6"]
 
 [ext_resource type="Script" uid="uid://xr2tfldabl17" path="res://src/characters/npc/interactable_npc.gd" id="1_o5vpl"]
-[ext_resource type="SpriteFrames" uid="uid://cw8jknv20f0la" path="res://assets/characters/Luke/lukeanim.tres" id="2_kmxkc"]
+[ext_resource type="Material" uid="uid://cjb5imh5qndha" path="res://src/other/outline.material" id="2_buj87"]
+[ext_resource type="SpriteFrames" uid="uid://q8tsfce2kg4x" path="res://assets/characters/Manoel/manoelanim.tres" id="2_o5vpl"]
+[ext_resource type="Script" uid="uid://bgs64uqjnevmp" path="res://src/characters/animations/anim_manoel.gd" id="3_kmxkc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh4sv"]
 radius = 5.0
+
+[sub_resource type="Animation" id="Animation_kmxkc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o5vpl"]
+resource_name = "hover"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.53333, 2.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666667, 1.56667, 2.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.568627), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_buj87"]
+_data = {
+&"RESET": SubResource("Animation_kmxkc"),
+&"hover": SubResource("Animation_o5vpl")
+}
 
 [node name="npc_manuel" type="CharacterBody2D"]
 collision_layer = 3
@@ -19,6 +83,15 @@ scale = Vector2(3.12, 1)
 shape = SubResource("CircleShape2D_mh4sv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_kmxkc")
-animation = &"idle_back"
+material = ExtResource("2_buj87")
+position = Vector2(0, -5)
+sprite_frames = ExtResource("2_o5vpl")
+animation = &"walk_back"
 offset = Vector2(0, -14)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_buj87")
+}
+script = ExtResource("3_kmxkc")

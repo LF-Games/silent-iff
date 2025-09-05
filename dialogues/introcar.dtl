@@ -13,7 +13,7 @@ chargeneric: Mesmo que as aulas já tenham começado faz uma semana. É o seu pr
 leave --All--
 join charNick center
 charNick: …
-charNick: Obrigado, eu vou voltar de ônibus
+charNick: Obrigado, eu vou voltar de ônibus. Não precisa se preocupar.
 leave --All--
 join chargeneric center
 chargeneric: Nada, quero te buscar pelo menos hoje. Se cuida.

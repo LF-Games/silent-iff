@@ -1,4 +1,6 @@
+set {alarm} = true
 Perigo, Alerta 73, Alerta 73.
+do CharacterDialogueController.move_to("Player", 250.0, 250.0)
 leave --All--
 join charNick (Surpresopixel) center
 charNick: Sério? Eu nem toquei em nada.
@@ -7,5 +9,11 @@ join charRobo center
 charRobo: Otário encontrado. Combate iminente. Prepare-se ou se arrependa.
 leave --All--
 join charNick (Surpresopixel) center
-charNick: Ei, não quero combate nenhum, você sabe onde fica a saída desse lugar?
+charNick (Surpresopixel): Ei, não quero combate nenhum, você sabe onde fica a saída desse lugar?
+charNick: Acho que vou ter que correr.
+set {roboon} = true
+do CharacterDialogueController.move_to("Player", 500.0, 240.0)
+do CharacterDialogueController.move_to("Player", 500.0, -270.0)
+do CharacterDialogueController.move_to("Player", -235.0, -270.0)
+do CharacterDialogueController.move_to("Player", -235.0, -325.0)
 [end_timeline]

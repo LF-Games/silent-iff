@@ -1,11 +1,104 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0ane0csjen83"]
+[gd_scene load_steps=11 format=3 uid="uid://d0ane0csjen83"]
 
 [ext_resource type="Script" uid="uid://xr2tfldabl17" path="res://src/characters/npc/interactable_npc.gd" id="1_g6nca"]
 [ext_resource type="Material" uid="uid://cjb5imh5qndha" path="res://src/other/outline.material" id="2_4kt5a"]
 [ext_resource type="SpriteFrames" uid="uid://cw8jknv20f0la" path="res://assets/characters/Luke/lukeanim.tres" id="2_g6nca"]
+[ext_resource type="Texture2D" uid="uid://b8wvx3vdo7c8a" path="res://assets/objects/book.png" id="4_cxf8e"]
+[ext_resource type="Script" uid="uid://bhk713yav4e1o" path="res://src/characters/animations/anim_luke.gd" id="4_oulss"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh4sv"]
 radius = 5.0
+
+[sub_resource type="Animation" id="Animation_ex5ap"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(26, 9)]
+}
+
+[sub_resource type="Animation" id="Animation_oulss"]
+resource_name = "book flying"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.166667, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 2, 2.86667, 3.6, 4.26667, 4.96),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(26, 9), Vector2(26, -23.635), Vector2(26, -18), Vector2(26, -23.635), Vector2(26, -18), Vector2(26, -23.635)]
+}
+
+[sub_resource type="Animation" id="Animation_y0hoj"]
+resource_name = "bookhover"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.733333, 1.6, 2.46667, 3.23333, 4.03333, 4.92667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(26, -18), Vector2(26, -23.635), Vector2(26, -18), Vector2(26, -23.635), Vector2(26, -18), Vector2(26, -23.635), Vector2(26, -18)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y0hoj"]
+_data = {
+&"RESET": SubResource("Animation_ex5ap"),
+&"book flying": SubResource("Animation_oulss"),
+&"bookhover": SubResource("Animation_y0hoj")
+}
 
 [node name="npc_luke" type="CharacterBody2D"]
 collision_layer = 2
@@ -21,6 +114,20 @@ shape = SubResource("CircleShape2D_mh4sv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_4kt5a")
 sprite_frames = ExtResource("2_g6nca")
-animation = &"idle_front"
+animation = &"walk_right"
 autoplay = "idle_front"
 offset = Vector2(0, -14)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_y0hoj")
+}
+script = ExtResource("4_oulss")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = ExtResource("2_4kt5a")
+position = Vector2(26, 9)
+texture = ExtResource("4_cxf8e")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_finished"]

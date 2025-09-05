@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://xr2tfldabl17"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_d0ou7")
 sprite_frames = ExtResource("2_hcp05")
-animation = &"walk_back"
+animation = &"idle_back"
 offset = Vector2(0, -14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
