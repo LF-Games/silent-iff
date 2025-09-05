@@ -148,6 +148,7 @@ interactable=""
 [gui]
 
 theme/custom_font="uid://cg3c00u0rcih2"
+theme/defaults/default_clear_color=Color(0, 0, 0, 1)
 
 [input]
 
