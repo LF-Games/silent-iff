@@ -62,6 +62,9 @@ func push_block() -> void:
 	var colliding: KinematicCollision2D = get_last_slide_collision()
 	if colliding:
 		var collinding_node = colliding.get_collider()
+		if !collinding_node:
+			return
+			
 		if collinding_node.is_in_group("pushable") and movement_state != Movement.IDLE:
 			var collision_normal: Vector2 = colliding.get_normal()
 			var force_vector: Vector2
