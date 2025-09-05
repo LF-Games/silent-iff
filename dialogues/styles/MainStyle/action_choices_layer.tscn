@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://6oq45l5o0hnl" path="res://addons/dialogic_additions/ActionChoices/action_choices_layer.gd" id="1_0w3q7"]
 [ext_resource type="Script" uid="uid://d3y5g8g077bc3" path="res://addons/dialogic_additions/ActionChoices/action_choices_handler.gd" id="2_42rbc"]
 [ext_resource type="Texture2D" uid="uid://uqwch0ob0fsd" path="res://UI/elements/fundobarraescolha.png" id="3_rokwn"]
-[ext_resource type="FontFile" uid="uid://cg3c00u0rcih2" path="res://PressStart2P-Regular.ttf" id="4_a5xjs"]
+[ext_resource type="FontFile" uid="uid://cg3c00u0rcih2" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_a5xjs"]
 [ext_resource type="Texture2D" uid="uid://cc2dp27rwo8ub" path="res://UI/elements/seta.png" id="5_q8vuc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rokwn"]

@@ -1,20 +1,91 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3cpnhts6kj5p"]
+[gd_scene load_steps=8 format=3 uid="uid://d3cpnhts6kj5p"]
 
-[ext_resource type="Script" uid="uid://bwpygqejil00w" path="res://src/characters/game_character.gd" id="1_dj6f2"]
-[ext_resource type="SpriteFrames" uid="uid://cw8jknv20f0la" path="res://assets/characters/Luke/lukeanim.tres" id="2_4aiqn"]
+[ext_resource type="Material" uid="uid://cjb5imh5qndha" path="res://src/other/outline.material" id="1_4aiqn"]
+[ext_resource type="Script" uid="uid://xr2tfldabl17" path="res://src/characters/npc/interactable_npc.gd" id="1_dj6f2"]
+[ext_resource type="SpriteFrames" uid="uid://dm5g45n5psnqm" path="res://assets/characters/Agnes/agnesanim.tres" id="2_dj6f2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dj6f2"]
 radius = 7.0
 
-[node name="Upperclassman" type="CharacterBody2D" groups=["interactable"]]
-collision_layer = 2
+[sub_resource type="Animation" id="Animation_4aiqn"]
+resource_name = "bug"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.433333, 0.933333, 1.36667, 1.8, 2.36667),
+"transitions": PackedFloat32Array(1, 0.000300568, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-3.145, -3.025), Vector2(3.105, 0), Vector2(3.655, -3.9), Vector2(3.655, 3.435), Vector2(3.655, -3.9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.833333, 1.56667, 2.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.470588), Color(1, 1, 1, 1), Color(1, 1, 1, 0.537255)]
+}
+
+[sub_resource type="Animation" id="Animation_5wmnp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cwd5s"]
+_data = {
+&"RESET": SubResource("Animation_5wmnp"),
+&"bug": SubResource("Animation_4aiqn")
+}
+
+[node name="npc_agnes" type="CharacterBody2D"]
+material = ExtResource("1_4aiqn")
+collision_layer = 3
 script = ExtResource("1_dj6f2")
+default_timeline = "Agnesmeet"
+metadata/_custom_type_script = "uid://xr2tfldabl17"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dj6f2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_4aiqn")
-animation = &"idle_front"
+sprite_frames = ExtResource("2_dj6f2")
+animation = &"walk_right"
 offset = Vector2(0, -28)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cwd5s")
+}

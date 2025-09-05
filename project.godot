@@ -30,11 +30,14 @@ directories/dch_directory={
 "Abby": "res://dialogues/Abby/Abby.dch",
 "Bouncer": "res://dialogues/Bouncer/Bouncer.dch",
 "charAgnes": "res://assets/characters/Agnes/charAgnes.dch",
+"charGuarda": "res://assets/characters/figurantes/charGuarda.dch",
 "charLuke": "res://assets/characters/Luke/charLuke.dch",
 "charManoel": "res://assets/characters/Manoel/charManoel.dch",
 "charNick": "res://assets/characters/Nick/charNick.dch",
 "charRoberta": "res://assets/characters/Roberta/charRoberta.dch",
+"charRobo": "res://assets/characters/figurantes/robo/charRobo.dch",
 "charVini": "res://assets/characters/Vini/charVini.dch",
+"chargeneric": "res://assets/characters/figurantes/chargeneric.dch",
 "player": "res://dialogues/player.dch",
 "student_id": "res://assets/placeholder/Actor/Characters/StudentID/student_id.dch",
 "upperclassman": "res://dialogues/Upperclassman/upperclassman.dch"
@@ -42,25 +45,41 @@ directories/dch_directory={
 directories/dtl_directory={
 "Agnesmeet": "res://dialogues/Agnesmeet.dtl",
 "Luke meet": "res://dialogues/Luke meet.dtl",
+"Robomeet": "res://assets/characters/figurantes/robo/Robomeet.dtl",
 "Vini intro": "res://dialogues/Vini intro.dtl",
+"bookintrc": "res://dialogues/Object Interactions/bookintrc.dtl",
+"bookshelfintrc": "res://dialogues/Object Interactions/bookshelfintrc.dtl",
 "college_entrance_A": "res://dialogues/Bouncer/timelines/college_entrance_A.dtl",
 "dialgIntro": "res://assets/characters/Agnes/dialgIntro.dtl",
+"elevator": "res://dialogues/Object Interactions/elevator.dtl",
+"groudback": "res://dialogues/reactions/groudback.dtl",
 "intro": "res://dialogues/intro.dtl",
 "introcar": "res://dialogues/introcar.dtl",
+"libraryback": "res://dialogues/reactions/libraryback.dtl",
 "manuelmeet": "res://dialogues/manuelmeet.dtl",
+"pcintrc": "res://dialogues/Object Interactions/pcintrc.dtl",
+"plantintrc": "res://dialogues/Object Interactions/plantintrc.dtl",
 "playing_on_phone": "res://dialogues/Bouncer/timelines/playing_on_phone.dtl",
 "reading_under_light": "res://dialogues/Abby/timelines/reading_under_light.dtl",
 "robertameet": "res://dialogues/robertameet.dtl",
+"stairintrc": "res://dialogues/Object Interactions/stairintrc.dtl",
 "student_reading_A": "res://dialogues/Abby/timelines/student_reading_A.dtl",
 "student_reading_B": "res://dialogues/Abby/timelines/student_reading_B.dtl",
 "test_custom_choice_timeline": "res://dialogues/Test/test_custom_choice_timeline.dtl",
 "timelineteste": "res://dialogues/timelineteste.dtl",
-"vinimeet": "res://dialogues/vinimeet.dtl"
+"vinimeet": "res://dialogues/vinimeet.dtl",
+"workroomback": "res://dialogues/reactions/workroomback.dtl",
+"workshopback": "res://dialogues/reactions/workshopback.dtl"
 }
 layout/style_list=["res://dialogues/styles/MainStyle/main_style.tres"]
 layout/default_style="res://dialogues/styles/MainStyle/main_style.tres"
 glossary/default_case_sensitive=true
-variables={}
+variables={
+"alarm": false,
+"book": 0.0,
+"lightsoff": false,
+"roboon": false
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -68,7 +87,7 @@ text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
-animations/join_default_length=0.5
+animations/join_default_length=0.0
 animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
@@ -96,9 +115,12 @@ audio/channel_defaults={
 }
 text/input_action="dialogic_default_action"
 audio/max_channels=4.0
+animations/join_default="Instant In"
+animations/leave_default="Fade Out"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -113,6 +135,7 @@ folder_colors={
 "res://dialogues/": "red",
 "res://entities/": "yellow",
 "res://maps/": "blue",
+"res://sounds/": "gray",
 "res://src/": "green",
 "res://ui_screens/": "pink"
 }
@@ -125,6 +148,7 @@ interactable=""
 [gui]
 
 theme/custom_font="uid://cg3c00u0rcih2"
+theme/defaults/default_clear_color=Color(0, 0, 0, 1)
 
 [input]
 
@@ -231,3 +255,4 @@ dialogic_default_action={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

@@ -17,7 +17,7 @@ enum Movement {
 
 const GROUP_KEY := 'game_character'
 
-@export var walk_speed: int = 50
+@export var walk_speed: int = 150
 var facing_direction: Direction
 var movement_state: Movement
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D

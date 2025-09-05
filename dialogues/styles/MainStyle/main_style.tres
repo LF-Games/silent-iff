@@ -45,10 +45,10 @@ overrides = {
 "name_label_box_modulate": "Color(0, 0, 0, 0)",
 "name_label_box_use_global_color": "false",
 "name_label_custom_font_size": "20.0",
-"name_label_font": "\"res://PressStart2P-Regular.ttf\"",
+"name_label_font": "\"res://assets/fonts/PressStart2P-Regular.ttf\"",
 "name_label_use_global_font": "false",
 "name_label_use_global_font_size": "false",
-"normal_font": "\"res://PressStart2P-Regular.ttf\"",
+"normal_font": "\"res://assets/fonts/PressStart2P-Regular.ttf\"",
 "text_use_global_font": "false",
 "text_use_global_size": "false"
 }
@@ -90,4 +90,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_31uc0")]([])
-metadata/_latest_layer = "11"
+metadata/_latest_layer = "13"

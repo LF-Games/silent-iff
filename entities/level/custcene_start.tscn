@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgcq8ueqfmbq5"]
+
+[ext_resource type="Script" uid="uid://c4gw1ur1ylwip" path="res://entities/level/custcene_start.gd" id="1_eigy5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eigy5"]
+size = Vector2(13, 13)
+
+[node name="CustceneStart" type="Area2D"]
+script = ExtResource("1_eigy5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eigy5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

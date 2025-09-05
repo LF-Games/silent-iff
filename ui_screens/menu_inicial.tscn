@@ -61,7 +61,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e6mru")
-path_to_scene_iniciar = "res://maps/college/college_entrance.tscn"
+path_to_scene_iniciar = "res://maps/car_intro.tscn"
 top_button = NodePath("VBoxContainer/StartButton")
 
 [node name="SoOFundo" type="Sprite2D" parent="."]

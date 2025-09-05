@@ -1,6 +1,6 @@
 [wait_input]
 do CharacterDialogueController.move_to("player", -32.0, -10.0)
-player: ...
+charNick: ...
 join player leftmost
 player: Droga não tenho a carteira de entrada.
 [signal arg="spawn_upperclassman"]

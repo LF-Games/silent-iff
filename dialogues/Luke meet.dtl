@@ -1,4 +1,5 @@
-Você se esbarra em um aluno apressado carregando livros.
+do CharacterDialogueController.move_to("npc_luke", 154.0, 63.0)
+(Você se esbarra em um aluno apressado carregando livros.)
 leave --All--
 join charLuke center
 charLuke: Me desculpe, eu tinha um compromisso urgente.
@@ -8,7 +9,10 @@ charNick: Tudo bem, deixa eu te ajudar
 leave --All--
 join charLuke center
 charLuke: Não precisa, eu dou um jeito.
-charLuke: Ué a porta está trancada, mas você acabou de entrar, né
+do CharacterDialogueController.move_to("npc_luke", 156.0, 200.0)
+do CharacterDialogueController.move_to("npc_luke", 156.0, 63.0)
+charLuke: Ué a porta está trancada, mas você acabou de entrar, né?
+set {book} = 1.0
 leave --All--
 join charNick center
 charNick: Aquele livro flutuando é seu?
@@ -33,8 +37,8 @@ charNick (Surpresopixel): Isso é um livro do que? Magia proibida?
 leave --All--
 join charLuke center
 charLuke (Tristepixel): Pior ainda, Termodinâmica.
-
-Risada maléfica e efeito de corrupção. O livro desaparece e as luzes se apagam.
+[sound path="res://sounds/evil laugh.mp3" volume="-20.0"]
+set {lightsoff} = true
 leave --All--
 join charLuke (Tristepixel) center
 
@@ -49,5 +53,10 @@ leave --All--
 join charLuke center
 
 charLuke: Desculpe, inclusive que curso você faz? Alias meu nome é Luke.
+leave --All--
+join charNick center
 charNick: Meu nome é Nick. Eu faço ########.
+leave --All--
+join charLuke center
 charLuke: Boa sorte, é um curso e tanto. Vamos lá! Eu acho.
+[end_timeline]

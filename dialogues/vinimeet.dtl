@@ -9,7 +9,7 @@ join charVini center
 charVini: Que curso você faz?
 leave --All--
 join charNick center
-charNick: Eu faço ##########.
+charNick: Eu faço ▮▮▮▮▮▮▮▮▮▮▮.
 leave --All--
 join charVini center
 charVini: Legal eu faço também, to no quinto período. Relaxa, eles não passam nada de muito importante nos primeiros dias. Já estou há algum tempo no curso e já vi a turma nova.
@@ -33,6 +33,8 @@ leave --All--
 join charVini center
 
 charVini: Normalmente o instituto está bem mais cheio, mas hoje é uma sexta-feira, tem poucas aulas.
+do CharacterDialogueController.move_to("npc_vini", 0.0, 0.0)
+do CharacterDialogueController.move_to("Player", 0.0, 32.0)
 
 charVini: Aqui no térreo tem cinco áreas, o pátio onde tem a cantina, escadas e elevadores para as salas, além de mesas comunais, lugares para se sentar e trocar uma ideia.
 charVini: Além disso tem as outras áreas, Ginásios onde os times treinam, especialmente a atlética, os Pombos do Trovão.
@@ -90,8 +92,10 @@ charNick: Uh? Eu…
 	
 	charVini: Também ouço muita música, mas não tenho nenhum artista favorito, gosto de ficar trocando o tempo todo.
 charVini: Tá vou conectando aqui e… Ah, espera um pouco, meu celular tá tocando, alô. Oquê? Tudo bem… Olha agora eu estou…
+leave 
 
-Vini se afasta um pouco
+(Vini se afasta um pouco, para falar no celular).
+[background arg="res://assets/backgrounds/backgroundblack.png" fade="1.0"]
 De repente, uma multidão se aproxima.
 leave --All--
 join charNick center
@@ -102,6 +106,8 @@ Vini não te ouve, você perde a visão dele.
 	charNick (Bravopixel): VINI, MEU CELULAR AINDA TÁ COM VOCÊ.
 [action_choices text="Pedir licença" choice_type="1"]
 	charVini: Ei licença, tenho que passar.
+do CharacterDialogueController.delete("npc_vini")
+[background fade="0.0"]
 
 A multidão se dispersa. Você não acha mais o veterano.
 [action_choices text="Se irritar"]

@@ -1,33 +1,33 @@
 [gd_scene load_steps=11 format=3 uid="uid://ccsxvrr11ccjg"]
 
-[ext_resource type="Script" uid="uid://cknpsrvg3vdqi" path="res://src/characters/npc/npc_security_guard.gd" id="1_dp6do"]
-[ext_resource type="Texture2D" uid="uid://ds6yhk4lphp87" path="res://assets/placeholder/Actor/Characters/Bouncer/Bouncer_idle_anim_16x16.png" id="2_toxsx"]
+[ext_resource type="Script" uid="uid://cknpsrvg3vdqi" path="res://src/characters/npc/npc_security_guard.gd" id="1_ubcqf"]
+[ext_resource type="Texture2D" uid="uid://ds6yhk4lphp87" path="res://assets/placeholder/Actor/Characters/Bouncer/Bouncer_idle_anim_16x16.png" id="2_4x5cm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh4sv"]
 radius = 5.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wlg5b"]
-atlas = ExtResource("2_toxsx")
+atlas = ExtResource("2_4x5cm")
 region = Rect2(288, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8pgkw"]
-atlas = ExtResource("2_toxsx")
+atlas = ExtResource("2_4x5cm")
 region = Rect2(304, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7fcph"]
-atlas = ExtResource("2_toxsx")
+atlas = ExtResource("2_4x5cm")
 region = Rect2(320, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_atbjb"]
-atlas = ExtResource("2_toxsx")
+atlas = ExtResource("2_4x5cm")
 region = Rect2(336, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o5jck"]
-atlas = ExtResource("2_toxsx")
+atlas = ExtResource("2_4x5cm")
 region = Rect2(352, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cbgk4"]
-atlas = ExtResource("2_toxsx")
+atlas = ExtResource("2_4x5cm")
 region = Rect2(368, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bykr7"]
@@ -58,7 +58,7 @@ animations = [{
 
 [node name="Security Guard" type="StaticBody2D" groups=["interactable"]]
 collision_layer = 2
-script = ExtResource("1_dp6do")
+script = ExtResource("1_ubcqf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mh4sv")

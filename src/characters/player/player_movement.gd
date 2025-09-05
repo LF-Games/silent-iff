@@ -22,7 +22,7 @@ func _ready() -> void:
 		LevelManager.set_player_controller($Controller)
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	player_interaction_area()
 
 
@@ -62,6 +62,9 @@ func push_block() -> void:
 	var colliding: KinematicCollision2D = get_last_slide_collision()
 	if colliding:
 		var collinding_node = colliding.get_collider()
+		if !collinding_node:
+			return
+			
 		if collinding_node.is_in_group("pushable") and movement_state != Movement.IDLE:
 			var collision_normal: Vector2 = colliding.get_normal()
 			var force_vector: Vector2
@@ -77,10 +80,10 @@ func push_block() -> void:
 # Muda de acordo com a posição do jogador pra sempre estar na direção do movimento
 func player_interaction_area() -> void:
 	if (facing_direction == Direction.RIGHT):
-		$InteractionArea.position = Vector2(8, 0)
+		$InteractionArea.position = Vector2(20, 5)
 	elif (facing_direction == Direction.LEFT):
-		$InteractionArea.position = Vector2(-8, 0)
+		$InteractionArea.position = Vector2(-20, 5)
 	elif (facing_direction == Direction.DOWN):
-		$InteractionArea.position = Vector2(0, 5)
+		$InteractionArea.position = Vector2(0, 20)
 	elif (facing_direction == Direction.UP):
-		$InteractionArea.position = Vector2(0, -5)
+		$InteractionArea.position = Vector2(0, -10)
